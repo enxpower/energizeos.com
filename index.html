@@ -42,6 +42,12 @@ a{color:inherit;text-decoration:none}
 .nav-links a:hover{color:var(--slate)}
 .nav-cta{font-size:11px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--slate);padding:8px 18px;color:var(--slate);transition:background .15s,color .15s}
 .nav-cta:hover{background:var(--slate);color:#fff}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:4px;flex-direction:column;gap:5px}
+.nav-toggle span{display:block;width:22px;height:1.5px;background:var(--slate);transition:all .2s}
+.nav-mobile{display:none;position:fixed;top:64px;left:0;right:0;background:#fff;border-bottom:1px solid var(--rule);z-index:99;padding:16px 24px;flex-direction:column;gap:0}
+.nav-mobile a{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:14px 0;border-bottom:1px solid var(--rule2);display:block}
+.nav-mobile a:last-child{border-bottom:none}
+.nav-mobile.open{display:flex}
 
 /* ── HERO ── */
 .hero{padding:100px 0 88px;border-bottom:1px solid var(--rule);position:relative;overflow:hidden}
@@ -128,6 +134,8 @@ a{color:inherit;text-decoration:none}
   .products-grid{grid-template-columns:1fr}
   .docs-inner{flex-direction:column}
   .nav-links{display:none}
+  .nav-cta{display:none}
+  .nav-toggle{display:flex}
   .foot-links{text-align:left;margin-top:24px}
   .foot-inner{flex-direction:column;gap:24px}
   .markets-list{margin-top:0}
@@ -153,7 +161,8 @@ a{color:inherit;text-decoration:none}
   .foot-brand-name{font-size:12px}
   .foot-entity,.foot-parent{font-size:10px}
   .foot-copy{font-size:10px}
-  .nav-cta{padding:6px 12px;font-size:10px}
+  .nav-cta{display:none}
+  .nav-toggle{display:flex}
 }
 </style>
 </head>
@@ -177,9 +186,19 @@ a{color:inherit;text-decoration:none}
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="https://docs.energizeos.com" target="_blank" rel="noopener" class="nav-cta">Documents</a>
+    <a href="https://docs.energizeos.com" target="_blank" rel="noopener" class="nav-cta">Docs</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="#products">Products</a>
+  <a href="#programs">Programs</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <a href="https://docs.energizeos.com" target="_blank" rel="noopener">Documents</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -366,6 +385,11 @@ a{color:inherit;text-decoration:none}
   </div>
 </footer>
 
-<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+function toggleNav(){
+  document.getElementById('navMobile').classList.toggle('open');
+}
+</script>
 </body>
 </html>
