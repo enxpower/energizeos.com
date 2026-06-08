@@ -1,16 +1,15 @@
-<!doctype html><!-- v2.1 -->
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
 <title>EnergizeOS — Energy Infrastructure for North America</title>
-<meta name="description" content="EMS platforms, BESS hardware, and power infrastructure for commercial and utility-scale deployments. 500+ MW deployed across North America since 2019."/>
+<meta name="description" content="EMS platforms, BESS hardware, power transformers, and fiber infrastructure for commercial, industrial, and utility-scale deployments. 500+ MW deployed across North America since 2019."/>
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://energizeos.com/"/>
 <meta property="og:title" content="EnergizeOS — Energy Infrastructure for North America"/>
-<meta property="og:description" content="EMS platforms, BESS hardware, and power infrastructure for commercial and utility-scale deployments. 500+ MW deployed across North America since 2019."/>
+<meta property="og:description" content="EMS platforms, BESS hardware, power transformers, and fiber infrastructure. 500+ MW deployed across North America since 2019."/>
 <meta property="og:image" content="https://energizeos.com/assets/og-image.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
@@ -19,159 +18,203 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{font-size:16px;-webkit-font-smoothing:antialiased;scroll-behavior:smooth;overflow-x:hidden;max-width:100vw}
-body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#1A2B3C;background:#fff;line-height:1.6;overflow-x:hidden;max-width:100vw;width:100%}
+body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#1A2B3C;background:#FAFBFC;line-height:1.6;overflow-x:hidden;word-wrap:break-word}
 a{color:inherit;text-decoration:none}
 
-/* ── TOKENS ── */
 :root{
   --slate:#1A2B3C;
   --mid:#2E4A6E;
   --volt:#D4840A;
-  --tint:#FDF4E7;
+  --volt-dim:rgba(212,132,10,.12);
+  --tint:#FDF6ED;
   --muted:#6B7F95;
   --rule:rgba(26,43,60,.08);
   --rule2:rgba(26,43,60,.05);
+  --bg:#FAFBFC;
 }
 
+.w{max-width:1200px;margin:0 auto;padding:0 48px}
+
 /* ── NAV ── */
-.nav{background:#fff;border-bottom:1px solid var(--rule);position:sticky;top:0;z-index:100}
+.nav{background:rgba(250,251,252,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);position:sticky;top:0;z-index:100}
 .nav-inner{max-width:1200px;margin:0 auto;padding:0 48px;height:64px;display:flex;align-items:center;justify-content:space-between}
 .brand{display:flex;align-items:center;gap:10px}
-.brand-name{font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--slate)}
+.brand-name{font-size:13px;font-weight:700;letter-spacing:.02em;color:var(--slate)}
 .nav-links{display:flex;gap:36px;list-style:none}
 .nav-links a{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);transition:color .15s}
 .nav-links a:hover{color:var(--slate)}
-.nav-cta{font-size:11px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--slate);padding:8px 18px;color:var(--slate);transition:background .15s,color .15s}
+.nav-cta{font-size:10px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--slate);padding:9px 20px;color:var(--slate);transition:background .15s,color .15s;font-weight:500}
 .nav-cta:hover{background:var(--slate);color:#fff}
-.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:4px;flex-direction:column;gap:5px}
-.nav-toggle span{display:block;width:22px;height:1.5px;background:var(--slate);transition:all .2s}
-.nav-mobile{display:none;position:fixed;top:64px;left:0;right:0;background:#fff;border-bottom:1px solid var(--rule);z-index:99;padding:16px 24px;flex-direction:column;gap:0}
-.nav-mobile a{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:14px 0;border-bottom:1px solid var(--rule2);display:block}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:4px;flex-direction:column;gap:5px;width:36px;height:36px;justify-content:center}
+.nav-toggle span{display:block;width:22px;height:1.5px;background:var(--slate);transition:all .2s;border-radius:1px}
+.nav-mobile{display:none;position:fixed;top:64px;left:0;right:0;background:#FAFBFC;border-bottom:1px solid var(--rule);z-index:99;padding:8px 24px 20px;flex-direction:column}
+.nav-mobile a{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:16px 0;border-bottom:1px solid var(--rule2);display:block;transition:color .15s}
 .nav-mobile a:last-child{border-bottom:none}
+.nav-mobile a:hover{color:var(--slate)}
 .nav-mobile.open{display:flex}
 
 /* ── HERO ── */
-.hero{padding:100px 0 88px;border-bottom:1px solid var(--rule);position:relative;overflow:hidden}
-
-.w{max-width:1200px;margin:0 auto;padding:0 48px}
-.eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--volt);margin-bottom:24px}
-.hero h1{font-size:56px;font-weight:300;letter-spacing:-.025em;line-height:1.1;max-width:680px;margin-bottom:24px;color:var(--slate)}
-.hero h1 strong{font-weight:600}
-.hero-sub{font-size:15px;color:var(--muted);line-height:1.75;max-width:520px;margin-bottom:48px}
-.actions{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
-.btn-primary{font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--slate);color:#fff;padding:13px 32px;transition:opacity .15s;display:inline-block}
-.btn-primary:hover{opacity:.82}
+.hero{padding:96px 0 80px;background:#fff;border-bottom:1px solid var(--rule);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(212,132,10,.03) 0%,transparent 55%);pointer-events:none}
+.eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--volt);margin-bottom:24px;display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";display:inline-block;width:28px;height:1px;background:var(--volt)}
+.hero h1{font-size:54px;font-weight:300;letter-spacing:-.03em;line-height:1.08;max-width:700px;margin-bottom:24px;color:var(--slate)}
+.hero h1 strong{font-weight:700}
+.hero-sub{font-size:15px;color:var(--muted);line-height:1.8;max-width:540px;margin-bottom:18px}
+.hero-trust{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--volt);margin-bottom:48px;display:flex;align-items:center;gap:8px}
+.hero-trust::before{content:"✓";font-size:10px}
+.actions{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.btn-primary{font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--slate);color:#fff;padding:14px 32px;transition:opacity .15s,transform .15s;display:inline-block;font-weight:500}
+.btn-primary:hover{opacity:.85;transform:translateY(-1px)}
+.btn-outline{font-size:11px;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(26,43,60,.2);padding:14px 32px;color:var(--slate);transition:all .15s;font-weight:500}
+.btn-outline:hover{border-color:var(--slate);background:var(--tint)}
 .btn-ghost{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:inline-flex;align-items:center;gap:8px;transition:color .15s}
 .btn-ghost:hover{color:var(--slate)}
 
-/* ── STATS ── */
-.stats-strip{border-bottom:1px solid var(--rule);background:#fff}
-.stats-inner{max-width:1200px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:repeat(3,1fr)}
-.stat-item{padding:36px 0;border-right:1px solid rgba(26,43,60,.1)}
-.stat-item:last-child{border-right:none}
-.stat-item:not(:first-child){padding-left:48px}
-.stat-n{font-size:40px;font-weight:200;letter-spacing:-.03em;color:var(--slate);line-height:1}
-.stat-n span{color:var(--volt)}
-.stat-l{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+/* ── TRUST BAR ── */
+.trust-bar{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:#fff}
+.trust-inner{max-width:1200px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:repeat(4,1fr)}
+.trust-item{padding:28px 0;border-right:1px solid var(--rule);text-align:center;display:flex;flex-direction:column;align-items:center}
+.trust-item:last-child{border-right:none}
+.trust-n{font-size:28px;font-weight:300;letter-spacing:-.03em;color:var(--slate);line-height:1}
+.trust-n sup{font-size:14px;vertical-align:super;letter-spacing:0;color:var(--volt)}
+.trust-l{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:6px;line-height:1.4}
 
-/* ── PROGRAMS ── */
-.programs{padding:80px 0;border-bottom:1px solid var(--rule)}
-.sec-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--volt);margin-bottom:16px}
-.sec-title{font-size:36px;font-weight:300;letter-spacing:-.02em;color:var(--slate);margin-bottom:40px;max-width:600px}
-.programs-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;min-width:0;width:100%}
-.prog-numbers{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule)}
-.prog-num{background:#fff;padding:32px;border:none}
-.prog-num-n{font-size:36px;font-weight:200;letter-spacing:-.03em;color:var(--slate)}
-.prog-num-n em{color:var(--volt);font-style:normal}
-.prog-num-l{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:8px}
-.prog-prose{font-size:15px;color:#445;line-height:1.85;min-width:0;word-wrap:break-word;overflow-wrap:break-word}
-.prog-prose p+p{margin-top:16px}
+/* ── PROGRAMS SECTION ── */
+.programs-sec{padding:80px 0;border-bottom:1px solid var(--rule);background:#fff}
+.sec-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--volt);margin-bottom:14px;display:flex;align-items:center;gap:12px}
+.sec-label::before{content:"";display:inline-block;width:24px;height:1px;background:var(--volt)}
+.sec-title{font-size:34px;font-weight:300;letter-spacing:-.025em;color:var(--slate);margin-bottom:52px;max-width:600px}
+.programs-layout{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--rule)}
+.prog-left{padding:48px 48px 48px 0;border-right:1px solid var(--rule)}
+.prog-prose p{font-size:15px;color:#3A4A5C;line-height:1.85;margin-bottom:16px}
+.prog-prose p:last-child{margin-bottom:0}
 .prog-prose strong{font-weight:600;color:var(--slate)}
+.prog-right{padding:48px 0 48px 48px}
+.prog-numbers{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule)}
+.prog-num{background:#fff;padding:32px 28px}
+.prog-num:hover{background:var(--tint)}
+.prog-num-n{font-size:38px;font-weight:200;letter-spacing:-.04em;color:var(--slate);line-height:1}
+.prog-num-n em{color:var(--volt);font-style:normal}
+.prog-num-l{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+.clients-list{margin-top:1px}
+.client-chips{display:flex;flex-wrap:wrap;gap:8px;padding:20px 0 0}
+.chip{font-size:10px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--rule);padding:6px 12px;color:var(--muted)}
+.chip-label{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;margin-top:16px}
 
 /* ── PRODUCTS ── */
-.products{padding:80px 0;border-bottom:1px solid var(--rule);background:#fff}
-.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);margin-top:48px}
-.product-card{background:#fff;padding:40px 36px;position:relative}
+.products-sec{padding:80px 0;border-bottom:1px solid var(--rule);background:var(--bg)}
+.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);margin-top:52px}
+.product-card{background:#fff;padding:36px 32px;position:relative;transition:background .15s}
+.product-card:hover{background:var(--tint)}
 .product-card::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--volt);transition:width .3s ease}
 .product-card:hover::after{width:100%}
-.product-num{font-size:10px;letter-spacing:.12em;color:rgba(26,43,60,.2);margin-bottom:20px}
-.product-icon{margin-bottom:20px}
-.product-title{font-size:18px;font-weight:500;color:var(--slate);margin-bottom:12px;letter-spacing:-.01em}
-.product-desc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:24px}
-.product-specs{list-style:none;display:flex;flex-direction:column;gap:6px}
-.product-specs li{font-size:11px;color:#6B7F95;display:flex;gap:10px;align-items:flex-start;letter-spacing:.02em}
-.product-specs li::before{content:'—';color:var(--volt);flex-shrink:0}
+.product-num{font-size:9px;letter-spacing:.14em;color:rgba(26,43,60,.2);margin-bottom:18px;text-transform:uppercase;font-weight:600}
+.product-title{font-size:16px;font-weight:600;color:var(--slate);margin-bottom:8px;letter-spacing:-.01em}
+.product-sub{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--volt);margin-bottom:14px}
+.product-desc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:20px}
+.product-specs{list-style:none;display:flex;flex-direction:column;gap:5px}
+.product-specs li{font-size:11px;color:#6B7F95;display:flex;gap:8px;align-items:flex-start;line-height:1.5}
+.product-specs li::before{content:'—';color:var(--volt);flex-shrink:0;font-size:10px;margin-top:1px}
+
+/* ── STANDARDS STRIP ── */
+.standards{padding:40px 0;border-bottom:1px solid var(--rule);background:#fff}
+.standards-inner{display:flex;align-items:center;gap:0;flex-wrap:nowrap}
+.std-label{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding-right:32px;border-right:1px solid var(--rule);white-space:nowrap;flex-shrink:0}
+.std-tags{display:flex;flex-wrap:wrap;gap:8px;padding-left:32px}
+.std-tag{font-size:9px;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(26,43,60,.1);padding:5px 10px;color:var(--muted)}
+
+/* ── MARKETS ── */
+.markets-sec{padding:80px 0;border-bottom:1px solid var(--rule);background:var(--bg)}
+.markets-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule);margin-top:52px}
+.market-card{background:#fff;padding:36px 32px}
+.market-card:hover{background:var(--tint)}
+.market-icon{width:32px;height:2px;background:var(--volt);margin-bottom:20px}
+.market-title{font-size:16px;font-weight:600;color:var(--slate);margin-bottom:8px;letter-spacing:-.01em}
+.market-body{font-size:13px;color:var(--muted);line-height:1.75}
+.market-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:16px}
+.market-tag{font-size:9px;letter-spacing:.1em;text-transform:uppercase;background:var(--volt-dim);color:var(--volt);padding:3px 9px}
 
 /* ── DOCS CTA ── */
-.docs-cta{padding:72px 0;border-bottom:1px solid var(--rule)}
+.docs-cta{padding:80px 0;border-bottom:1px solid var(--rule);background:#fff}
 .docs-inner{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
-.docs-left h2{font-size:28px;font-weight:300;letter-spacing:-.02em;color:var(--slate);margin-bottom:8px}
-.docs-left p{font-size:14px;color:var(--muted)}
+.docs-inner h2{font-size:28px;font-weight:300;letter-spacing:-.02em;color:var(--slate);margin-bottom:8px}
+.docs-inner p{font-size:14px;color:var(--muted);max-width:480px}
 
 /* ── FOOTER ── */
-.foot{background:var(--slate);padding:48px 0;position:relative}
+.foot{background:var(--slate);padding:52px 0;position:relative}
 .foot::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--volt)}
-.foot-inner{max-width:1200px;margin:0 auto;padding:0 48px;display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap}
-.foot-brand{display:flex;align-items:center;gap:10px;margin-bottom:16px}
-.foot-brand-name{font-size:13px;font-weight:700;letter-spacing:.04em;color:#fff}
-.foot-entity{font-size:11px;color:rgba(255,255,255,.3);letter-spacing:.04em;margin-bottom:8px}
-.foot-parent{font-size:11px;color:rgba(255,255,255,.2);letter-spacing:.02em}
-.foot-parent a{color:rgba(255,255,255,.3);text-decoration:underline;text-underline-offset:3px}
-.foot-links{display:flex;flex-direction:column;gap:10px;text-align:right}
+.foot-inner{max-width:1200px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:start}
+.foot-brand{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.foot-brand-name{font-size:13px;font-weight:700;letter-spacing:.02em;color:#fff}
+.foot-entity{font-size:11px;color:rgba(255,255,255,.35);letter-spacing:.04em;margin-bottom:6px}
+.foot-contact{font-size:11px;color:rgba(255,255,255,.5);letter-spacing:.04em;margin-top:14px}
+.foot-parent{font-size:11px;color:rgba(255,255,255,.2);margin-top:6px}
+.foot-parent a{color:rgba(255,255,255,.35);text-decoration:underline;text-underline-offset:3px}
+.foot-links{display:flex;flex-direction:column;gap:12px;text-align:right}
 .foot-links a{font-size:11px;color:rgba(255,255,255,.35);letter-spacing:.06em;text-transform:uppercase;transition:color .15s}
 .foot-links a:hover{color:#fff}
-.foot-copy{font-size:11px;color:rgba(255,255,255,.2);letter-spacing:.04em;margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);width:100%}
+.foot-copy{font-size:11px;color:rgba(255,255,255,.18);letter-spacing:.04em;margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);grid-column:1/-1}
 
-/* ── RESPONSIVE ── */
+/* ── TABLET 900px ── */
 @media(max-width:900px){
-  .nav-inner,.w,.stats-inner,.foot-inner{padding-left:24px;padding-right:24px}
-  .hero{padding:64px 0 56px}
+  .w,.nav-inner,.trust-inner,.foot-inner{padding-left:24px;padding-right:24px}
+  .hero{padding:64px 0 52px}
   .hero h1{font-size:38px}
-  .stats-inner{grid-template-columns:1fr}
-  .stat-item{border-right:none;padding:24px 0;border-bottom:1px solid var(--rule)}
-  .stat-item:not(:first-child){padding-left:0}
-  .programs-layout{grid-template-columns:1fr !important;display:flex !important;flex-direction:column;gap:32px}
-  .programs-grid{grid-template-columns:1fr !important;display:flex !important;flex-direction:column;gap:32px}
-  .prog-numbers{grid-template-columns:1fr 1fr}
-  .prog-prose{font-size:13px;width:100%;min-width:0;overflow-wrap:break-word}
-  .products-grid{grid-template-columns:1fr}
-  .docs-inner{flex-direction:column}
+  .trust-inner{grid-template-columns:1fr 1fr;padding:0 24px}
+  .trust-item:nth-child(2){border-right:none}
+  .trust-item:nth-child(-n+2){border-bottom:1px solid var(--rule)}
+  .trust-item:nth-last-child(-n+2){border-bottom:none}
+  .programs-layout{grid-template-columns:1fr;border-top:none}
+  .prog-left{padding:36px 0;border-right:none;border-bottom:1px solid var(--rule)}
+  .prog-right{padding:36px 0}
+  .products-grid{grid-template-columns:1fr 1fr}
+  .markets-grid{grid-template-columns:1fr}
+  .docs-inner{flex-direction:column;gap:24px}
   .nav-links{display:none}
   .nav-cta{display:none}
   .nav-toggle{display:flex}
-  .foot-links{text-align:left;margin-top:24px}
-  .foot-inner{flex-direction:column;gap:24px}
-  .markets-list{margin-top:0}
+  .foot-inner{grid-template-columns:1fr;gap:24px}
+  .foot-links{text-align:left}
+  .standards-inner{flex-wrap:wrap;gap:16px}
+  .std-label{border-right:none;padding-right:0}
+  .std-tags{padding-left:0}
 }
+
+/* ── MOBILE 480px ── */
 @media(max-width:480px){
-  .nav-inner,.w,.stats-inner,.foot-inner{padding-left:16px;padding-right:16px}
-  .hero{padding:48px 0 40px}
+  .w,.nav-inner,.trust-inner,.foot-inner{padding-left:16px;padding-right:16px}
+  .hero{padding:52px 0 44px}
   .hero h1{font-size:30px;letter-spacing:-.02em}
-  .hero-sub{font-size:14px;margin-bottom:36px}
-  .actions{flex-direction:column;align-items:flex-start;gap:16px}
-  .btn-primary{width:100%;text-align:center;padding:14px 24px}
-  .stat-n{font-size:32px}
-  .sec-title{font-size:26px}
-  .sec-sub{font-size:13px}
+  .hero-sub{font-size:14px;margin-bottom:14px}
+  .hero-trust{margin-bottom:36px;font-size:10px}
+  .actions{flex-direction:column;align-items:stretch;gap:12px}
+  .btn-primary,.btn-outline{text-align:center;padding:15px 24px}
+  .btn-ghost{justify-content:center}
+  .eyebrow{font-size:9px}
+  .trust-inner{grid-template-columns:1fr 1fr;padding:0 16px}
+  .trust-n{font-size:24px}
+  .trust-l{font-size:8px}
+  .sec-title{font-size:26px;margin-bottom:36px}
+  .products-grid{grid-template-columns:1fr}
   .product-card{padding:28px 20px}
-  .product-title{font-size:16px}
-  .prog-num-n{font-size:28px}
+  .product-title{font-size:15px}
+  .prog-num-n{font-size:30px}
   .prog-numbers{grid-template-columns:1fr 1fr}
-  .prog-prose{font-size:13px;width:100%;min-width:0;overflow-wrap:break-word}
-  .market-item{padding:12px 14px}
-  .market-name{font-size:12px}
-  .docs-left h2{font-size:22px}
+  .prog-num{padding:24px 16px}
+  .markets-grid{grid-template-columns:1fr}
+  .market-card{padding:28px 20px}
+  .docs-inner h2{font-size:22px}
+  .foot{padding:40px 0}
   .foot-brand-name{font-size:12px}
-  .foot-entity,.foot-parent{font-size:10px}
+  .foot-entity,.foot-contact,.foot-parent{font-size:10px}
   .foot-copy{font-size:10px}
-  .nav-cta{display:none}
-  .nav-toggle{display:flex}
+  .standards{display:none}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
     <a href="/" class="brand">
@@ -186,129 +229,127 @@ a{color:inherit;text-decoration:none}
     <ul class="nav-links">
       <li><a href="#products">Products</a></li>
       <li><a href="#programs">Programs</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="#markets">Markets</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="https://docs.energizeos.com" target="_blank" rel="noopener" class="nav-cta">Docs</a>
+    <a href="https://docs.energizeos.com" target="_blank" rel="noopener" class="nav-cta">Documents</a>
     <button class="nav-toggle" id="navToggle" aria-label="Menu" onclick="toggleNav()">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 <div class="nav-mobile" id="navMobile">
-  <a href="#products">Products</a>
-  <a href="#programs">Programs</a>
-  <a href="#about">About</a>
-  <a href="#contact">Contact</a>
+  <a href="#products" onclick="toggleNav()">Products</a>
+  <a href="#programs" onclick="toggleNav()">Programs</a>
+  <a href="#markets" onclick="toggleNav()">Markets</a>
+  <a href="#contact" onclick="toggleNav()">Contact</a>
   <a href="https://docs.energizeos.com" target="_blank" rel="noopener">Documents</a>
 </div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="w">
-    <p class="eyebrow">Energy Infrastructure · North America</p>
-    <h1>Infrastructure-grade<br>energy systems for<br><strong>critical deployments.</strong></h1>
-    <p class="hero-sub">EnergizeOS delivers EMS platforms, BESS hardware, power transformers, and fiber infrastructure for commercial, industrial, and utility-scale projects across North America. Engineered for reliability. Built for long-term stability.</p>
+    <p class="eyebrow">Energy Infrastructure · Energize Solutions Inc. · Texas, USA</p>
+    <h1>Infrastructure-grade<br>energy systems for<br><strong>North America.</strong></h1>
+    <p class="hero-sub">Energize Solutions Inc. delivers EMS platforms, BESS hardware, power transformers, and fiber infrastructure for commercial, industrial, and utility-scale projects. Engineered for reliability. Built for long-term operational stability.</p>
+    <p class="hero-trust">Active deployments with SDG&amp;E · ERCOT · PJM · PepsiCo · Hydro-Québec · LA DWP</p>
     <div class="actions">
       <a href="#products" class="btn-primary">View Products</a>
-      <a href="https://docs.energizeos.com" target="_blank" rel="noopener" class="btn-ghost">Technical Documents →</a>
+      <a href="https://docs.energizeos.com" target="_blank" rel="noopener" class="btn-outline">Technical Documents</a>
     </div>
   </div>
 </section>
 
-<!-- STATS STRIP -->
-<div class="stats-strip">
-  <div class="stats-inner">
-    <div class="stat-item">
-      <div class="stat-n">500<span>+</span> <span style="font-size:24px">MW</span></div>
-      <div class="stat-l">Deployed Capacity</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-n">20<span>+</span></div>
-      <div class="stat-l">Programs Per Year</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-n" style="font-size:32px;padding-top:4px">Since 2019</div>
-      <div class="stat-l">North America Operations</div>
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><span class="trust-n">500<sup>+</sup></span><span class="trust-l">MW Deployed<br>Since 2019</span></div>
+    <div class="trust-item"><span class="trust-n">20<sup>+</sup></span><span class="trust-l">Active Programs<br>Per Year</span></div>
+    <div class="trust-item"><span class="trust-n">4</span><span class="trust-l">Grid Market<br>Jurisdictions</span></div>
+    <div class="trust-item"><span class="trust-n">B2B</span><span class="trust-l">Infrastructure<br>Only · No Retail</span></div>
+  </div>
+</div>
+
+<!-- STANDARDS STRIP -->
+<div class="standards">
+  <div class="w">
+    <div class="standards-inner">
+      <span class="std-label">Standards &amp; Compliance</span>
+      <div class="std-tags">
+        <span class="std-tag">IEEE 1547-2018</span>
+        <span class="std-tag">CA Rule 21</span>
+        <span class="std-tag">UL9540 / UL9540A</span>
+        <span class="std-tag">NFPA 855</span>
+        <span class="std-tag">ANSI/IEEE C57</span>
+        <span class="std-tag">IEC 61850</span>
+        <span class="std-tag">DNP3</span>
+        <span class="std-tag">Modbus TCP/RTU</span>
+        <span class="std-tag">NERC CIP</span>
+      </div>
     </div>
   </div>
 </div>
 
 <!-- PRODUCTS -->
-<section class="products" id="products">
+<section class="products-sec" id="products">
   <div class="w">
     <p class="sec-label">Products &amp; Capabilities</p>
-    <div class="sec-title">End-to-end energy<br>infrastructure solutions.</div>
+    <p class="sec-title">Four product lines.<br>End-to-end energy infrastructure.</p>
     <div class="products-grid">
 
       <div class="product-card">
         <div class="product-num">01</div>
-        <div class="product-icon">
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-            <rect x="0" y="8" width="36" height="20" rx="2" stroke="#1A2B3C" stroke-width="1.5" fill="none"/>
-            <line x1="8" y1="8" x2="8" y2="28" stroke="#D4840A" stroke-width="1.5"/>
-            <line x1="14" y1="8" x2="14" y2="28" stroke="#D4840A" stroke-width="1" stroke-opacity=".4"/>
-            <line x1="20" y1="8" x2="20" y2="28" stroke="#D4840A" stroke-width="1.5"/>
-            <line x1="26" y1="8" x2="26" y2="28" stroke="#D4840A" stroke-width="1" stroke-opacity=".4"/>
-            <rect x="14" y="0" width="8" height="8" rx="1" fill="#1A2B3C"/>
-            <rect x="14" y="28" width="8" height="8" rx="1" fill="#1A2B3C"/>
-          </svg>
-        </div>
         <div class="product-title">EMS Platform</div>
-        <div class="product-desc">Commercial-grade Energy Management System for BESS, microgrid, and grid-interconnection. Factory pre-configured. IEEE 1547 compliant. Deployed at PepsiCo/SDG&amp;E.</div>
+        <div class="product-sub">Energy Management System</div>
+        <div class="product-desc">Commercial-grade EMS for BESS, microgrid, and grid-interconnection. Factory pre-configured. Active deployment at PepsiCo / SDG&amp;E under CA Rule 21 and IEEE 1547-2018.</div>
         <ul class="product-specs">
-          <li>15 strategy modules — peak shaving, arbitrage, demand response, grid-forming</li>
+          <li>15 strategy modules — peak shaving, arbitrage, demand response, VPP, grid-forming</li>
           <li>C1–C7 hardware interlock chain — safety enforced at hardware level</li>
-          <li>Grid-tie, island, and seamless transition operating modes</li>
+          <li>Grid-tie, island, and seamless black-start transition modes</li>
           <li>Modbus TCP · DNP3 · IEC 61850 · Modbus RTU</li>
-          <li>Verified PCS compatibility: Power Electronics (Spain), SMA, Sungrow</li>
+          <li>PCS: Power Electronics (Spain) · SMA · Sungrow</li>
         </ul>
       </div>
 
       <div class="product-card">
         <div class="product-num">02</div>
-        <div class="product-icon">
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-            <rect x="4" y="6" width="28" height="24" rx="2" stroke="#1A2B3C" stroke-width="1.5" fill="none"/>
-            <rect x="10" y="12" width="16" height="12" rx="1" fill="#1A2B3C" fill-opacity=".08" stroke="#1A2B3C" stroke-width="1"/>
-            <line x1="13" y1="15" x2="13" y2="21" stroke="#D4840A" stroke-width="1.5"/>
-            <line x1="18" y1="15" x2="18" y2="21" stroke="#D4840A" stroke-width="1.5"/>
-            <line x1="23" y1="15" x2="23" y2="21" stroke="#D4840A" stroke-width="1.5"/>
-            <line x1="4" y1="30" x2="0" y2="34" stroke="#1A2B3C" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="32" y1="30" x2="36" y2="34" stroke="#1A2B3C" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
         <div class="product-title">BESS Hardware</div>
-        <div class="product-desc">Battery energy storage system hardware for commercial, industrial, and utility-scale deployments. Certified to UL9540 and IEEE 1547. Full integration readiness.</div>
+        <div class="product-sub">Battery Energy Storage Systems</div>
+        <div class="product-desc">BESS hardware for C&amp;I, utility, and off-grid deployments. CATL and EVE cells. UL9540 / NFPA 855 certified. Full BMS integration with EMS platform.</div>
         <ul class="product-specs">
-          <li>60 kWh – 3+ MWh system configurations</li>
-          <li>UL9540 · UL9540A · IEEE 1547 certified</li>
-          <li>C&amp;I, utility, and off-grid deployment ready</li>
-          <li>Modular architecture for scalable capacity</li>
-          <li>Full BMS integration with EMS platform</li>
+          <li>CATL + EVE lithium cells — tier-1 supply chain</li>
+          <li>UL9540 · UL9540A · NFPA 855 certified</li>
+          <li>60 kWh – 3+ MWh modular configurations</li>
+          <li>C&amp;I, utility-scale, and off-grid ready</li>
+          <li>Subcontract integration — engineered submittals included</li>
         </ul>
       </div>
 
       <div class="product-card">
         <div class="product-num">03</div>
-        <div class="product-icon">
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-            <circle cx="18" cy="18" r="14" stroke="#1A2B3C" stroke-width="1.5" fill="none"/>
-            <circle cx="18" cy="18" r="6" stroke="#D4840A" stroke-width="1.5" fill="none"/>
-            <line x1="18" y1="4" x2="18" y2="12" stroke="#1A2B3C" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="18" y1="24" x2="18" y2="32" stroke="#1A2B3C" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="4" y1="18" x2="12" y2="18" stroke="#1A2B3C" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="24" y1="18" x2="32" y2="18" stroke="#1A2B3C" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="product-title">Grid Infrastructure</div>
-        <div class="product-desc">Power infrastructure hardware and system integration support for regulated interconnection environments. EPCs, utilities, and large industrial operators.</div>
+        <div class="product-title">Power Transformers</div>
+        <div class="product-sub">EHV / HV / MV / LV Supply</div>
+        <div class="product-desc">Long-term supply framework for EHV, HV, MV, and LV power transformers. ANSI/IEEE C57 compliant. Factory acceptance testing and engineered submittals standard.</div>
         <ul class="product-specs">
-          <li>Electrical distribution and balance-of-system hardware</li>
-          <li>Utility interconnection and protection equipment</li>
-          <li>High and medium voltage systems</li>
-          <li>Engineered submittals and documentation packages</li>
-          <li>Long-term supply programs for EPC partners</li>
+          <li>EHV / HV / MV / LV — full voltage range</li>
+          <li>ANSI/IEEE C57 — all units</li>
+          <li>FAT (factory acceptance testing) included</li>
+          <li>Engineered submittal packages — EPC-ready</li>
+          <li>Long-term supply framework agreements</li>
+        </ul>
+      </div>
+
+      <div class="product-card">
+        <div class="product-num">04</div>
+        <div class="product-title">Fiber Optic</div>
+        <div class="product-sub">OSP / Campus / FTTX</div>
+        <div class="product-desc">OSP outdoor cable, campus fiber, and FTTX passive products for utility telecom, broadband EPC, and data center interconnection. OTDR-traceable, North American standards compliant.</div>
+        <ul class="product-specs">
+          <li>OSP outdoor cable — direct-buried and aerial</li>
+          <li>Campus fiber and FTTX passive products</li>
+          <li>OTDR-traceable documentation standard</li>
+          <li>Utility telecom and data center interconnect</li>
+          <li>DFW / Dallas primary market entry in progress</li>
         </ul>
       </div>
 
@@ -317,45 +358,95 @@ a{color:inherit;text-decoration:none}
 </section>
 
 <!-- PROGRAMS -->
-<section class="programs" id="programs">
+<section class="programs-sec" id="programs">
   <div class="w">
     <p class="sec-label">Active Programs</p>
-    <div class="sec-title">Deployed across utility<br>and industrial infrastructure.</div>
-    <div class="programs-grid">
-      <div class="prog-numbers">
-        <div class="prog-num">
-          <div class="prog-num-n">500<em>+</em></div>
-          <div class="prog-num-l">MW Deployed</div>
+    <p class="sec-title">Deployed across utility and<br>industrial infrastructure.</p>
+    <div class="programs-layout">
+      <div class="prog-left">
+        <div class="prog-prose">
+          <p>Our programs span the <strong>SDG&amp;E service territory</strong> (CA Rule 21 / IEEE 1547-2018), <strong>ERCOT</strong> (Texas), <strong>PJM</strong> (Eastern interconnection), and the <strong>Hydro-Québec</strong> grid zone — alongside LA DWP and Fortune 500 C&amp;I operators.</p>
+          <p>We work directly with utilities, system integrators, and large industrial operators on <strong>long-cycle infrastructure programs</strong> where reliability, compliance documentation, and long-term operational stability are non-negotiable requirements.</p>
+          <p>Every deployment includes engineered submittals, hardware-level interlock documentation, utility interconnection compliance packages, and active commissioning support from hardware delivery through final acceptance testing.</p>
         </div>
-        <div class="prog-num">
-          <div class="prog-num-n">20<em>+</em></div>
-          <div class="prog-num-l">Programs / Year</div>
-        </div>
-        <div class="prog-num">
-          <div class="prog-num-n">4</div>
-          <div class="prog-num-l">Grid Markets</div>
-        </div>
-        <div class="prog-num">
-          <div class="prog-num-n" style="font-size:28px;padding-top:4px">2019</div>
-          <div class="prog-num-l">Founded</div>
+        <p class="chip-label">Active Client Deployments</p>
+        <div class="client-chips">
+          <span class="chip">SDG&amp;E · Utility</span>
+          <span class="chip">PepsiCo · Fortune 500</span>
+          <span class="chip">ERCOT · Grid Operator</span>
+          <span class="chip">PJM · Grid Operator</span>
+          <span class="chip">Hydro-Québec · Utility</span>
+          <span class="chip">LA DWP · Municipal</span>
+          <span class="chip">Power Electronics · PCS</span>
+          <span class="chip">SMA · PCS</span>
+          <span class="chip">Sungrow · PCS</span>
         </div>
       </div>
-      <div class="prog-prose">
-        <p>Our programs span the SDG&amp;E service territory, ERCOT, PJM, and the Hydro-Québec grid interconnection zone — alongside EPC-led deployments for Fortune 500 industrial operators and major Los Angeles utility infrastructure.</p>
-        <p>We work directly with <strong>large engineering, procurement, and construction firms</strong> across North America on long-cycle infrastructure programs where reliability, documentation, and long-term operational stability are non-negotiable.</p>
-        <p>Our delivery model is program-based: controlled scope, engineered submittals, documented interfaces, and active commissioning support from hardware delivery through final acceptance.</p>
+      <div class="prog-right">
+        <div class="prog-numbers">
+          <div class="prog-num">
+            <div class="prog-num-n">500<em>+</em></div>
+            <div class="prog-num-l">MW Deployed</div>
+          </div>
+          <div class="prog-num">
+            <div class="prog-num-n">20<em>+</em></div>
+            <div class="prog-num-l">Programs / Year</div>
+          </div>
+          <div class="prog-num">
+            <div class="prog-num-n">4</div>
+            <div class="prog-num-l">Grid Markets</div>
+          </div>
+          <div class="prog-num">
+            <div class="prog-num-n">2019</div>
+            <div class="prog-num-l">Founded</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARKETS -->
+<section class="markets-sec" id="markets">
+  <div class="w">
+    <p class="sec-label">Markets Served</p>
+    <p class="sec-title">Four verticals.<br>All B2B. All infrastructure.</p>
+    <div class="markets-grid">
+      <div class="market-card">
+        <div class="market-icon"></div>
+        <div class="market-title">Utilities &amp; Grid Operators</div>
+        <div class="market-body">Active programs with SDG&amp;E, ERCOT, PJM, Hydro-Québec, and LA DWP. EMS platforms and BESS hardware for regulated grid interconnection environments under CA Rule 21 and IEEE 1547-2018.</div>
+        <div class="market-tags"><span class="market-tag">CA Rule 21</span><span class="market-tag">IEEE 1547</span><span class="market-tag">ERCOT</span><span class="market-tag">PJM</span></div>
+      </div>
+      <div class="market-card">
+        <div class="market-icon"></div>
+        <div class="market-title">Commercial &amp; Industrial</div>
+        <div class="market-body">Energy storage and power infrastructure for Fortune 500 C&amp;I operators. Active programs with PepsiCo. Demand charge reduction, backup power, and grid services applications.</div>
+        <div class="market-tags"><span class="market-tag">BESS</span><span class="market-tag">EMS</span><span class="market-tag">Fortune 500</span></div>
+      </div>
+      <div class="market-card">
+        <div class="market-icon"></div>
+        <div class="market-title">Engineering &amp; EPC</div>
+        <div class="market-body">Long-term supply framework programs for power transformers (EHV/HV/MV/LV), fiber optic cable, and BESS hardware. FAT-certified, engineered submittals, schedule-committed delivery.</div>
+        <div class="market-tags"><span class="market-tag">Transformers</span><span class="market-tag">Fiber Optic</span><span class="market-tag">FAT Certified</span></div>
+      </div>
+      <div class="market-card">
+        <div class="market-icon"></div>
+        <div class="market-title">Hyperscale &amp; Data Centers</div>
+        <div class="market-body">Power interconnect hardware and infrastructure supply for hyperscale and AI data center operators across North America. Density, long-cycle reliability, and mission-critical uptime.</div>
+        <div class="market-tags"><span class="market-tag">Hyperscale</span><span class="market-tag">AI Infrastructure</span><span class="market-tag">Mission Critical</span></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- DOCS CTA -->
-<section class="docs-cta" id="about">
+<section class="docs-cta">
   <div class="w">
     <div class="docs-inner">
-      <div class="docs-left">
-        <h2>Technical Documentation</h2>
-        <p>Product specifications, standard contracts, certifications, and engineering submittals available through our document portal.</p>
+      <div>
+        <h2>Technical Documentation &amp; Resources</h2>
+        <p>Product specifications, engineering submittals, standard contracts, and certifications. All documents current and authorized for distribution.</p>
       </div>
       <a href="https://docs.energizeos.com" target="_blank" rel="noopener" class="btn-primary">Open Document Portal →</a>
     </div>
@@ -376,16 +467,18 @@ a{color:inherit;text-decoration:none}
         <span class="foot-brand-name">EnergizeOS</span>
       </div>
       <div class="foot-entity">Energize Solutions Inc. · Texas, United States</div>
-      <div class="foot-entity" style="margin-top:4px">info@energizeos.com</div>
-      <div class="foot-parent" style="margin-top:12px">A subsidiary of <a href="https://agim.ca" target="_blank" rel="noopener">AGI&amp;M ASSETS INC.</a></div>
+      <div class="foot-entity">A subsidiary of AGI&amp;M ASSETS INC. (Canada)</div>
+      <div class="foot-contact">info@energizeos.com · energizeos.com</div>
+      <div class="foot-parent" style="margin-top:12px">Parent company: <a href="https://agim.ca" target="_blank" rel="noopener">agim.ca</a></div>
     </div>
     <div class="foot-links">
       <a href="https://docs.energizeos.com" target="_blank" rel="noopener">Documents</a>
       <a href="https://www.linkedin.com/in/gongtiejing" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://agim.ca" target="_blank" rel="noopener">AGI&amp;M</a>
+      <a href="https://ref.arcbos.com" target="_blank" rel="noopener">ARCBOS</a>
     </div>
-    <div class="foot-copy">© 2019–<span id="yr"></span> Energize Solutions Inc. All rights reserved.</div>
   </div>
+  <div class="w foot-copy">© 2019–<span id="yr"></span> Energize Solutions Inc. All rights reserved.</div>
 </footer>
 
 <script>
