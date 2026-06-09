@@ -113,15 +113,16 @@ a{color:inherit;text-decoration:none}
 .docs-inner h2{font-size:32px;font-weight:300;letter-spacing:-.02em;color:var(--slate);margin-bottom:6px}
 .docs-inner p{font-size:14px;color:var(--muted)}
 
-/* FOOTER — clean, no corporate hierarchy */
-.foot{padding:40px 0;border-top:1px solid var(--rule)}
-.foot-inner{max-width:1200px;margin:0 auto;padding:0 48px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
-.foot-brand{display:flex;align-items:center;gap:10px}
-.foot-name{font-size:13px;font-weight:700;letter-spacing:.02em;color:var(--slate)}
-.foot-copy{font-size:11px;color:#b0b8c4;letter-spacing:.04em}
+/* FOOTER — dark, layered */
+.foot{background:var(--slate);position:relative}
+.foot::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--volt)}
+.foot-inner{max-width:1200px;margin:0 auto;padding:40px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.foot-brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.foot-name{font-size:13px;font-weight:700;letter-spacing:.02em;color:#fff}
+.foot-copy{font-size:11px;color:rgba(255,255,255,.3);letter-spacing:.04em}
 .foot-links{display:flex;gap:32px;list-style:none}
-.foot-links a{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#b0b8c4;transition:color .15s}
-.foot-links a:hover{color:var(--slate)}
+.foot-links a{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.35);transition:color .15s}
+.foot-links a:hover{color:#fff}
 
 /* TABLET */
 @media(max-width:900px){
@@ -147,7 +148,7 @@ a{color:inherit;text-decoration:none}
   .market:not(:first-child){padding-left:0}
   .nav-links,.nav-cta{display:none}
   .nav-toggle{display:flex}
-  .foot-inner{flex-direction:column;align-items:flex-start;gap:20px}
+  .foot-inner{padding-left:24px;padding-right:24px;flex-direction:column;align-items:flex-start;gap:16px}
   .docs-inner{flex-direction:column;align-items:flex-start;gap:24px}
 }
 @media(max-width:480px){
@@ -167,6 +168,7 @@ a{color:inherit;text-decoration:none}
   .prog-n{font-size:32px}
   .programs-grid{grid-template-columns:1fr 1fr}
   .docs-inner h2{font-size:24px}
+  .foot-inner{padding-left:16px;padding-right:16px}
   .foot-links{gap:20px}
 }
 </style>
@@ -335,10 +337,10 @@ a{color:inherit;text-decoration:none}
   <div class="foot-inner">
     <div class="foot-brand">
       <svg width="22" height="22" viewBox="0 0 48 48" fill="none">
-        <rect x="0" y="0" width="21" height="21" fill="#1A2B3C"/>
-        <rect x="27" y="0" width="21" height="21" fill="#D4840A"/>
-        <rect x="0" y="27" width="21" height="21" fill="#D4840A"/>
-        <rect x="27" y="27" width="21" height="21" fill="#1A2B3C"/>
+        <rect x="0" y="0" width="21" height="21" fill="#fff"/>
+        <rect x="27" y="0" width="21" height="21" fill="rgba(255,255,255,.4)"/>
+        <rect x="0" y="27" width="21" height="21" fill="rgba(255,255,255,.4)"/>
+        <rect x="27" y="27" width="21" height="21" fill="#fff"/>
       </svg>
       <span class="foot-name">EnergizeOS</span>
     </div>
