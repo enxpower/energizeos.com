@@ -169,8 +169,46 @@ img,svg{display:block;max-width:100%}
 .docs-row p{font-size:13.5px;color:var(--muted);max-width:500px}
 @media(max-width:600px){.docs-row{flex-direction:column;align-items:flex-start}.docs-row .btn-solid{width:100%;text-align:center}}
 
-/* FOOTER */
-.foot{background:var(--slate);position:relative}
+.dlv-more{display:inline-flex;align-items:center;gap:6px;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--volt);margin-top:var(--sp3);transition:opacity .15s}
+.dlv-more:hover{opacity:.75}
+
+/* NAV EMS HIGHLIGHT */
+.nav-ems{color:var(--volt) !important;font-weight:500}
+.nav-ems:hover{color:var(--slate) !important}
+
+/* EMS CHANNEL */
+.ems-channel{background:#fff;border-bottom:1px solid var(--rule);position:relative}
+.ems-channel::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--volt)}
+.ems-layout{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp7);align-items:start}
+.ems-kicker{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--volt);margin-bottom:var(--sp2);display:flex;align-items:center;gap:12px}
+.ems-kicker::before{content:"";display:inline-block;width:22px;height:1px;background:var(--volt);flex-shrink:0}
+.ems-h{font-size:clamp(27px,3.5vw,42px);font-weight:300;letter-spacing:-.03em;line-height:1.1;color:var(--slate);margin-bottom:var(--sp4)}
+.ems-h strong{font-weight:650}
+.ems-body{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:var(--sp3)}
+.ems-body:last-of-type{margin-bottom:var(--sp5)}
+.ems-cta{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--slate);color:#fff;padding:14px 28px;font-weight:500;transition:opacity .15s}
+.ems-cta:hover{opacity:.84}
+.ems-cta svg{flex-shrink:0;transition:transform .15s}
+.ems-cta:hover svg{transform:translateX(3px)}
+/* spec table */
+.ems-specs{border:1px solid var(--rule);background:#FAFBFC}
+.ems-spec-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp3);padding:15px 22px;border-bottom:1px solid var(--rule);align-items:center}
+.ems-spec-row:last-child{border-bottom:none}
+.esr-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.esr-val{font-size:12.5px;color:var(--slate);font-weight:500;text-align:right}
+.esr-link{color:var(--volt);transition:opacity .15s}
+.esr-link:hover{opacity:.75}
+@media(max-width:900px){
+  .ems-layout{grid-template-columns:1fr;gap:var(--sp5)}
+  .ems-specs{order:2}
+  .ems-main{order:1}
+}
+@media(max-width:480px){
+  .ems-h{font-size:27px}
+  .ems-cta{width:100%;text-align:center;justify-content:center}
+  .ems-spec-row{grid-template-columns:1fr;gap:4px;padding:13px 16px}
+  .esr-val{text-align:left;color:var(--muted)}
+}
 .foot::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--volt)}
 .foot .wrap{padding-block:var(--sp5);display:flex;align-items:center;justify-content:space-between;gap:var(--sp3);flex-wrap:wrap}
 .foot-brand{display:flex;align-items:center;gap:11px;flex-shrink:0}
@@ -192,6 +230,7 @@ img,svg{display:block;max-width:100%}
     </a>
     <ul class="nav-links" role="list">
       <li><a href="#delivery">What We Deliver</a></li>
+      <li><a href="#ems" class="nav-ems">EMS Platform</a></li>
       <li><a href="#method">How We Work</a></li>
       <li><a href="#markets">Markets</a></li>
     </ul>
@@ -201,6 +240,7 @@ img,svg{display:block;max-width:100%}
 </nav>
 <div class="nav-drawer" id="drawer" aria-label="Mobile">
   <a href="#delivery" onclick="toggleNav()">What We Deliver</a>
+  <a href="#ems" onclick="toggleNav()">EMS Platform</a>
   <a href="#method" onclick="toggleNav()">How We Work</a>
   <a href="#markets" onclick="toggleNav()">Markets</a>
   <a href="https://docs.energizeos.com" target="_blank" rel="noopener">Documents</a>
@@ -212,7 +252,7 @@ img,svg{display:block;max-width:100%}
     <h1>Engineering and delivery for <strong>energy infrastructure.</strong></h1>
     <p class="hero-sub">EnergizeOS provides control systems, battery energy storage, and power equipment delivery for utility, commercial, and industrial projects — with interconnection compliance and commissioning responsibility built into every engagement.</p>
     <div class="hero-actions">
-      <a href="#delivery" class="btn-solid">What We Deliver</a>
+      <a href="#ems" class="btn-solid">EMS Platform</a>
       <a href="https://docs.energizeos.com" target="_blank" rel="noopener" class="btn-ghost">Engineering Documents</a>
     </div>
   </div>
@@ -252,6 +292,7 @@ img,svg{display:block;max-width:100%}
           <li>Grid-tie, island, and transition control</li>
           <li>Modbus TCP · DNP3 · IEC 61850</li>
         </ul>
+        <a href="#ems" class="dlv-more">Full specification →</a>
       </div>
       <div class="dlv-col">
         <p class="dlv-n">02</p>
@@ -287,6 +328,58 @@ img,svg{display:block;max-width:100%}
           <li>OTDR-traceable documentation</li>
           <li>North American standards compliant</li>
         </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec ems-channel" id="ems">
+  <div class="wrap sec-pad">
+    <p class="label">EMS Platform</p>
+    <div class="ems-layout">
+      <div class="ems-main">
+        <p class="ems-kicker">EnergizeOS™</p>
+        <h2 class="ems-h">The control system<br>behind the storage.</h2>
+        <p class="ems-body">A commercial-grade Energy Management System built for BESS, microgrid, and grid-interconnection — with a C1–C7 hardware interlock chain, 15 production strategy modules, and IEEE 1547-2018 compliance built in. Factory pre-configured and FAT-tested. Ships ready to commission.</p>
+        <p class="ems-body">In service at a Fortune 500 industrial site in the SDG&amp;E territory under CA Rule 21.</p>
+        <a href="https://docs.energizeos.com/ems/" target="_blank" rel="noopener" class="ems-cta">
+          View Full EMS Specification
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="ems-specs">
+        <div class="ems-spec-row">
+          <span class="esr-label">Strategy Modules</span>
+          <span class="esr-val">15 in production</span>
+        </div>
+        <div class="ems-spec-row">
+          <span class="esr-label">Safety Architecture</span>
+          <span class="esr-val">C1–C7 hardware interlock</span>
+        </div>
+        <div class="ems-spec-row">
+          <span class="esr-label">Operating Modes</span>
+          <span class="esr-val">Grid-tie · Island · Transition</span>
+        </div>
+        <div class="ems-spec-row">
+          <span class="esr-label">Protocols</span>
+          <span class="esr-val">Modbus TCP · DNP3 · IEC 61850</span>
+        </div>
+        <div class="ems-spec-row">
+          <span class="esr-label">Standards</span>
+          <span class="esr-val">IEEE 1547-2018 · CA Rule 21</span>
+        </div>
+        <div class="ems-spec-row">
+          <span class="esr-label">PCS Compatible</span>
+          <span class="esr-val">Power Electronics · SMA · Sungrow</span>
+        </div>
+        <div class="ems-spec-row">
+          <span class="esr-label">Delivery</span>
+          <span class="esr-val">Factory pre-configured, FAT-tested</span>
+        </div>
+        <div class="ems-spec-row">
+          <span class="esr-label">Documentation</span>
+          <span class="esr-val"><a href="https://docs.energizeos.com/ems/manual/" target="_blank" rel="noopener" class="esr-link">Developer Manual →</a></span>
+        </div>
       </div>
     </div>
   </div>
