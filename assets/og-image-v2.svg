@@ -1,0 +1,38 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F7F9FB"/>
+  <rect x="842" width="358" height="630" fill="#1A2B3C"/>
+  <rect x="0" y="622" width="1200" height="8" fill="#D4840A"/>
+
+  <!-- Approved Energize primary mark: A/D Slate, B/C Volt, fixed 0.25x gap. -->
+  <g transform="translate(76 68)">
+    <rect width="48" height="48" fill="#1A2B3C"/>
+    <rect x="60" width="48" height="48" fill="#D4840A"/>
+    <rect y="60" width="48" height="48" fill="#D4840A"/>
+    <rect x="60" y="60" width="48" height="48" fill="#1A2B3C"/>
+  </g>
+  <text x="212" y="123" fill="#1A2B3C" font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="700" letter-spacing="1">EnergizeOS</text>
+  <text x="214" y="157" fill="#D4840A" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="3">ENERGIZE SOLUTIONS INC.</text>
+
+  <rect x="76" y="213" width="72" height="4" fill="#D4840A"/>
+  <text x="76" y="293" fill="#1A2B3C" font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="400">Energy Infrastructure</text>
+  <text x="76" y="353" fill="#1A2B3C" font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="700">Engineering &amp; Delivery</text>
+  <text x="76" y="420" fill="#64788D" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400">Control Systems · BESS · Power Equipment</text>
+
+  <line x1="76" y1="505" x2="748" y2="505" stroke="#D9E0E7" stroke-width="2"/>
+  <text x="76" y="548" fill="#64788D" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400">Interconnection compliance and commissioning responsibility built in.</text>
+
+  <!-- Abstract system grid derived from the approved 2×2 brand architecture. -->
+  <g opacity="0.96">
+    <rect x="918" y="112" width="76" height="76" fill="#FFFFFF"/>
+    <rect x="1013" y="112" width="76" height="76" fill="#FFFFFF" fill-opacity="0.35"/>
+    <rect x="918" y="207" width="76" height="76" fill="#FFFFFF" fill-opacity="0.35"/>
+    <rect x="1013" y="207" width="76" height="76" fill="#FFFFFF"/>
+  </g>
+  <line x1="897" y1="354" x2="1110" y2="354" stroke="#D4840A" stroke-width="3"/>
+  <circle cx="897" cy="354" r="6" fill="#D4840A"/>
+  <circle cx="1110" cy="354" r="6" fill="#D4840A"/>
+  <text x="897" y="408" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="1.5">CONTROL SYSTEMS</text>
+  <text x="897" y="449" fill="#FFFFFF" fill-opacity="0.72" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" letter-spacing="1.5">BATTERY STORAGE</text>
+  <text x="897" y="490" fill="#FFFFFF" fill-opacity="0.72" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" letter-spacing="1.5">POWER EQUIPMENT</text>
+  <text x="897" y="557" fill="#FFFFFF" fill-opacity="0.45" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" letter-spacing="1">ENERGIZEOS.COM</text>
+</svg>

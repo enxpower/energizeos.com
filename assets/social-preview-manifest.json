@@ -1,0 +1,12 @@
+{
+  "title_html": "EnergizeOS — Energy Infrastructure",
+  "description": "Control systems, BESS, and power equipment delivery with interconnection compliance and commissioning responsibility built in.",
+  "image_path": "assets/og-image-v2.png",
+  "image_url": "https://energizeos.com/assets/og-image-v2.png",
+  "image_sha256": "190f4ec8ebc28c9a2ccc919521a250b03b258019c34f6b91a2b10f01df576576",
+  "brand_icon_path": "assets/brand-icon-512.png",
+  "brand_icon_url": "https://energizeos.com/assets/brand-icon-512.png",
+  "brand_icon_sha256": "b04af3fbbd945690364378549baf94331becab69e6b735292ca7fe4808436a7d",
+  "apple_touch_icon_path": "assets/apple-touch-icon.png",
+  "apple_touch_icon_sha256": "51be05c24d8885bbbd155eaabe4ec28594d323a8df20f72b24137edb2fa0ba3b"
+}
