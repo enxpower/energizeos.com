@@ -29,3 +29,7 @@ Use required checks and repository-local review. Do not pause for a ceremonial O
 - Only externally verified facts enter VWS Completed.
 
 Older repository wording that requires separate Owner approval for routine PR creation, merge, deployment, publication, or already-approved scheduled execution is superseded by the standing policy. True R3 business/authority exceptions remain Owner decisions.
+
+## Global Objective Lock — ENX Power only
+
+For project engineering work, apply `enxpower/group-governance/docs/GLOBAL_OBJECTIVE_LOCK.md` if available; this local summary remains authoritative when private central access is unavailable. Re-read the approved authoritative Issue, final acceptance criteria, local instructions, current branch/open PR/CI, single designated VWS and actual operating evidence. Pick the **highest-value unmet final acceptance criterion** and do only the smallest safe authorized R0–R2 change or verification that directly advances it. Avoid unbounded diagnostics, speculative code, tests, documents and superficial progress. Follow **Action → Observation → Verification → VWS update**, then continue the next necessary action within the available session without ceremonial Owner “continue” requests. All existing repository-specific product, financial, security, privacy, operational, review, rollback and R3 Owner-decision boundaries remain intact. CI success and merge are not proof of deployment or acceptance. Do not modify any `arcbos/*` organization repository.
