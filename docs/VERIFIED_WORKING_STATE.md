@@ -3,7 +3,7 @@
 Project: `enxpower/energizeos.com`
 Authoritative workstream: AdSense readiness — Issue #5
 Checkpoint: 2026-10-25
-Progress pointer: **G0 PARTIAL / G1 VERIFIED COMPLETE / G2 VERIFIED COMPLETE / G3 PARTIAL (ENGLISH OFFICIAL-INDICATOR RESEARCH LIVE; AUTOMATED SAFE INGESTION OPEN) / G4 IN PROGRESS (PUBLIC COPY, CONTACT AND SITEWIDE TECHNICAL PREFLIGHT VERIFIED; PRIVACY LEGAL/CMP AND CLAIM EVIDENCE OPEN) / G5 EXTERNAL**
+Progress pointer: **G0 PARTIAL / G1 VERIFIED COMPLETE / G2 VERIFIED COMPLETE / G3 PARTIAL (ENGLISH OFFICIAL-INDICATOR RESEARCH LIVE; AUTOMATED SAFE INGESTION OPEN) / G4 IN PROGRESS (PUBLIC COPY, CONTACT AND SITEWIDE TECHNICAL PREFLIGHT VERIFIED; PRIVACY LEGAL/CMP AND CLAIM EVIDENCE OPEN) / G5 EXTERNAL (HISTORICAL ACCOUNT IDENTIFIED; LIVE STATUS UNVERIFIED)**
 
 ## Objective
 Operate a premium, English-only ESI corporate website and original `/insights/` engineering content with independently working calculation tools, safe automation and a separately eligible organizational AdSense application. Actual provider approval is the final external gate.
@@ -32,6 +32,8 @@ Operate a premium, English-only ESI corporate website and original `/insights/` 
 
 - G4 technical preflight completed: PR #32 merged as `54edf0f52052c39530013fa9fba0b4eb31daee82`; sitewide policy-readiness script verifies each generated/published English HTML page, exact root-domain canonical, metadata, sitemap coverage, in-domain navigation/anchors and unique Contact footer links. PR-head CI #40185482915 passed; post-merge source/Pages run #40185482825 and independently fetched HTTPS smoke #40185482996 passed. This establishes a technical site-quality baseline, not Google's AdSense approval.
 - A separate English company-specific Privacy Notice review draft was prepared at `docs/ADSENSE_PRIVACY_NOTICE_REVIEW.md` based on code-grounded practices and official Google publisher disclosures. It explicitly marks hosting, logs, retention, data processors, mailbox responsibility, actual advertising/CMP and legal jurisdiction as unverified. The draft **is not public, not legally approved, and is NOT permission to run ads or collect new data**.
+
+- G4/G5 account and business-contact reconnaissance (2026-10-25): The published info@energizeos.com business address was observed receiving inbound mail accessible from a connected company Gmail account. This supports inbound routing only, not mailbox administration, response readiness, retention or legally assigned privacy-request handling. Historical 2025 AdSense review emails exist for energizeos.com, including unresolved 'site not ready' notices. A February 27, 2026 Google notice states the account was deactivated because setup was not finished within six months, and explicitly says it can be reactivated. This is NOT evidence of a permanent policy suspension, and is NOT proof of the account's current 2026-10-25 status. Use original account and inspect the live Sites/Policy center before considering any account creation. The contemporaneous AdSense console was **not accessible through this investigation**; no site ownership, policy reason, account legality or actual approval is claimed. Source review is captured in `docs/ADSENSE_PRIVACY_NOTICE_REVIEW.md` and the company's existing G4 Issue #15.
 
 ## Remaining
 - G0 [PARTIAL]: independently confirm business/certification/performance statements, language inventory, legacy public-route provenance, privacy footprint and release rollback evidence.
@@ -67,7 +69,7 @@ Operate a premium, English-only ESI corporate website and original `/insights/` 
 5. The real Google AdSense review of each corporate domain is recorded; there is no engineering shortcut to provider approval.
 
 ## Next Action
-Owner/legal factual signoff for the English Privacy Notice and site/email handling matrix in `docs/ADSENSE_PRIVACY_NOTICE_REVIEW.md`; confirm real `info@energizeos.com` handling and hosting/service-provider logs. Do not publish the draft until verified. Then release a branded public `/privacy/` page under CI/HTTPS checks and perform Google site/account verification; the privately sold microgrid API service stays outside website engineering scope.
+Prioritize reuse and verification of the existing AdSense account through the authorized company sign-in and Sites/Policy center; check true registered entity, current account/site status, and original issue category. Separately complete the one-time factual/privacy signoff for the staged public Privacy PR #33, which MUST remain unmerged until accurate; verify mailbox handling, records/retention and relevant hosting. No duplicate registration, ad snippet or guessed ads.txt publisher ID. All unrelated company/AI projects remain out of scope.
 
 ## Operating Rule
 **Action → Observation → Verification → State Update.** Only verified outcomes enter Completed. G0, G3, G4 and G5 remain unclosed. Optimize for the next required acceptance gate, not cosmetic changes or document counts.
