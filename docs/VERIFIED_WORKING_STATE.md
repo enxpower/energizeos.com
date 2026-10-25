@@ -1,10 +1,16 @@
 # English Intelligence — Current Verified Working State (2026-10-26)
 
+## 2026-10-26 — ESI production ruleset activated and checked
+- Verified from GitHub Ruleset API: `ESI Production Release Gate`, rule id `25827638`, enforcement `active`, target `~DEFAULT_BRANCH`; GitHub `main.protected=true`. Rule list includes PR-only merges (one independent approval), mandatory successful checks `social-preview` and `verify-public-route` (GitHub Actions integration id 15368), strict up-to-date branch, restricted deletion and non-fast-forward updates, and **no bypass actors**.
+- PR #61 merged as `1414dffefd840e6cc83c7705f093ec1a0f216780`, removing the limited pull-request paths on the live-acceptance workflow so BOTH required jobs now run on any ordinary PR. Premerge PR check runs `40212197949` and `40212198028` SUCCESS; postmerge main validation `40212313293`, public HTTPS verification `40212313315`, GitHub Pages deployment `40212313364` all SUCCESS.
+- ESI current main `1414dffefd840e6cc83c7705f093ec1a0f216780` and approved Week 43/reference pages preserved; no new issue released. PR #33 is a DO-NOT-MERGE privacy/legal draft pending factual approval; PR #38 is an older handoff note, not an approved new article. Neither may be conflated with Week 44 publishing.
+- Real weekly source-review `schedule` execution and source-backed subsequent English articles still unverified/open. Publication remains evidence-led; third-party destinations can decay after publication and should be rechecked.
+
 ## 2026-10-26 — Publication quality gate checkpoint (verified)
 - Exact release-source main baseline: `58ee9ff39fbd5a7aa555067f7cf01f510e250fc8`; narrowly scoped quality PR #59 merged with checked head. PR validation 40211316791 SUCCESS, deployment 40211448619 SUCCESS, public HTTPS smoke 40211449018 SUCCESS.
 - Source validation rejects duplicate primary URL entries within a single edition. Editorial manifest validation rejects repeated or near-identical issue headlines, summaries, briefings and development fact text; source-review/editorial-approval and append-only archive rules remain mandatory.
 - Website publication audit now resolves and verifies all first-party image, script, stylesheet and preload asset targets, alongside existing anchor, sitemap, canonical, English-copy, no-CJK and route checks.
-- ESI still uses GitHub Pages automatic main-branch deployment in parallel with Validate site. PR-level quality checks passed before merge, but this architecture does NOT prove deploy-blocking for a direct push; branch protection requiring CI and controlled Pages deployment are the outstanding infrastructure enforcement gate. Do not claim zero-risk automatic publishing.
+- ESI GitHub Pages still builds after a main update, but GitHub Ruleset `25827638` now actively protects default branch `main`: PR required; two required checks (`social-preview`, `verify-public-route`); strict up-to-date checks; force-push/deletion prevented; no bypass actors. PR merge review count is 1. This enforces the PR path but is not a guarantee against an external link becoming stale after publication.
 - Week 44 is not automatically accepted or published. Source candidate gathering and editorial packets do not grant publication; no valid new-source review means preserve the current English edition. A genuine first scheduled Monday run and newly reviewed issue remain P5/P6 open.
 
 ## Objective
