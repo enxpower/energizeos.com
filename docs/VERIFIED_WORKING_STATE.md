@@ -1,39 +1,39 @@
-# English Intelligence Reconstruction — Current Working State (2026-10-25)
+# English Intelligence Reconstruction — Verified Working State (2026-10-25)
 
 ## Objective
-Deliver an independent English Intelligence publication for North American customers, with real dated articles, immutable history, source review, weekly qualification and verified production.
+Publish independent, source-backed North American English Intelligence on the two corporate sites, preserve durable article history and qualify new issues weekly without importing Chinese reports.
 
 ## Verified Current State
-- P0 emergency PR #46 merged at `78523bf10cb8d502eb235c94ccf32c1303f44956` after successful current-head CI `40204215715` and independent code review. Deployment `40204318626` completed successfully.
-- Independent public HTTPS reads returned 200 for both /insights/ and /insights/intelligence/ on both domains. No Chinese characters, unresolved templates or Chinese research reading links remained in those four deployed HTML responses.
-- Permanent boundary fixtures reject raw, encoded, dot-segment and trailing-dot variations of isolated research links. The old metadata sync is retired; scheduled Chinese-publisher propagation is disabled.
-- Local manifest-driven English rendering currently passes unit tests, English/public-copy gates, full route/anchor/canonical/sitemap audits and ESI deterministic regeneration. Feature CI, merge and live acceptance remain PENDING.
+- P0 isolation hotfix is merged on both sites; Chinese research links and the legacy metadata-only sync are excluded from the public English publication path.
+- ESI independent editorial feature PR #47 was squash-merged to main at `8ca220d21b7aacd450b59ed966dd0e5f7209ce5f`. Head CI 40205368297 passed including 390/768/1440 Chromium routes, archive, citations, language and SEO checks.
+- Production publication workflow 40205975775 completed SUCCESS. Verified published repository `enxpower/energizeos.com` contains the complete English 2026-w43 article, local archive, canonical pages and issues.json. Production HTTP confirmation for the newly added article routes is tracked separately from git/publish job success.
+- The latest live smoke script was found to lack independent article/manifest checks; AGI&M also contained a stale original page snapshot assertion. A focused repair is under review on `fix/live-english-edition-acceptance`.
 
 ## Completed
-- P0 emergency isolation merged, deployed and independently verified by public HTTPS; responsive premerge CI passed at 390/768/1440.
-- Reproduced the missing AGI&M anchor with the actual site build and full technical preflight.
-- Demonstrated two failing regression fixtures: unresolved template expressions and links to the isolated research publisher were not rejected by the old public-copy gate.
+- P0: English-only publication boundary and previous-broken-link repairs; merged, deployed and existing-route live-checked.
+- P1: old Chinese-portal metadata sync disabled; approved English issue manifest is now the only authority for issue routes.
+- P2: reviewed manifest, complete article HTML, latest/previous/watchlist and immutable source history gate are in main.
+- P3/P4: two optical editions dated October 25, 2026 have source-linked original English analysis. Publication and mobile/tablet/desktop CI passed.
+- Release job and published artifact inspected separately, not inferred from the PR merge alone.
 
 ## Remaining
-- P0 follow-through: expand live browser acceptance to the new article/manifest routes when the publication feature deploys.
-- P1: eliminate Chinese-publisher metadata propagation; freeze numeric research snapshots until independent source validation.
-- P2: local reviewed English issue manifest, independent article routes, sources, archive and honest publication dates.
-- P3/P4: source-verified AGI&M energy and ESI optical editions, preserving each brand.
-- P5: weekly public-source collection, editorial/evidence gate, publication/synchronization, failure retention and real controlled run.
-- P6: complete build/link/language/template/SEO/archive/browser/live/rollback acceptance.
+- P6 LIVE: merge the narrowly scoped live check correction, verify it against real HTTPS for every issue, latest/previous, archive and manifest. Preserve older independent engineering/metric checks.
+- P5: implement and test weekly public-source qualification, local editorial evidence review, approved-publication trigger and no-change/failure retention. Do not auto-approve unknown future sources or fabricate articles.
+- P6 FULL: complete end-to-end scheduled controlled execution, negative tests, failure retention and public read-after-deploy checks. Closure requires verified weekly pipeline, not an intention or a cron line.
 
 ## Constraints / Do Not Touch
-Preserve business pages, corporate brands, approved privacy and AdSense ownership tags, account configuration, independent Chinese research publishers and private reports. No fake dates/issues, unsafe automatic articles, new public AI API or billing.
+Do not change corporate brands, main business pages, Privacy, AdSense ownership/account, client configurations, independent Chinese research, private reports or any R3 legal/financial/credential settings. No fictional dates, unreviewed AI articles, public API signup or billing. English-only customer surfaces and source-controlled archive.
 
 ## Evidence
-P0: PR #46, merge `78523bf10cb8d502eb235c94ccf32c1303f44956`, CI `40204215715`, deployment `40204318626`; four independent public HTTPS HTML responses passed.
-Emergency PRs: https://github.com/enxpower/op-agim.ca/pull/44 and https://github.com/enxpower/energizeos.com/pull/46. GitHub Actions 40203619103 and 40203623080. Prior work below is historical evidence, not acceptance of the new Intelligence platform.
+- ESI feature: https://github.com/enxpower/energizeos.com/pull/47 ; CI https://github.com/enxpower/energizeos.com/actions/runs/40205368297 ; release https://github.com/enxpower/energizeos.com/actions/runs/40205975775.
+- Main SHA: `8ca220d21b7aacd450b59ed966dd0e5f7209ce5f`. Verified published file path: `enxpower/energizeos.com/insights/intelligence/2026-w43/index.html`.
+- Current follow-up branch: `fix/live-english-edition-acceptance`, with Python live verification and scoped live-smoke corrections. No production verification for this patch is claimed until the exact PR and main runs succeed.
 
 ## Success Criteria
-Both English sites expose latest/current/previous/watchlist/archive directly in Insights; complete source-backed local articles; reviewed English manifest is the only issue authority; real weekly qualification/publication run; failures preserve history; CI, responsive, link and public HTTPS checks pass. All ten owner acceptance conditions must be verified before completion.
+Both sites: source-vetted English articles on local URLs; latest/previous/watchlist/archive; immutable dated history; publisher separation; weekly qualified pipeline and actual controlled scheduled run; failure/no-change historical safety; green CI/browser, main deployment and independently fetched public HTTPS content. No Google AdSense approval inferred from technical publication.
 
 ## Next Action
-Finish independent source/editorial and code review of the manifest-driven publication feature, run CI including 390/768/1440 article navigation, merge/deploy, and verify exact public articles and archive. Then implement and genuinely exercise weekly qualification and scheduled editorial publishing. Reverify remote heads before writes.
+Run the new live-acceptance PR CI against actual public HTTPS; repair only observed failures; merge if green, reconfirm main results, then implement P5 weekly evidence collection and reviewed publication.
 
 ---
 
