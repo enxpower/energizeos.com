@@ -86,6 +86,9 @@ try {
     if (architecture.scroll > architecture.client + 1) throw new Error("Microgrid reference horizontal overflow at " + width);
     if (architecture.canonical !== "https://energizeos.com/insights/microgrid-ai/" || !architecture.logo || architecture.main !== 1) throw new Error("Microgrid brand or SEO structure invalid at " + width);
     if (!architecture.title.includes("Control remains deterministic") || architecture.rows !== 4 || architecture.tables !== 1) throw new Error("Microgrid engineering content incomplete at " + width);
+    if (!(await page.locator("body").innerText()).includes("Private API integration")) throw new Error("Commercial API integration explanation missing at " + width);
+    if (await page.locator('a[href^="/api/"], a[href*="api-key"], input[name*="api_key"]').count()) throw new Error("A prohibited public API onboarding control appeared");
+
     await page.evaluate(() => window.scrollTo(0, 0));
     await page.screenshot({path:"build/visual/esi-microgrid-ai-" + width + ".png",fullPage:true});
     await context.close();
