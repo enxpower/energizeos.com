@@ -64,3 +64,46 @@ jobs:
           else:
               raise SystemExit(f"PUBLIC_INSIGHTS_HTTP_NOT_VERIFIED: {last_error}")
           PY
+
+      - name: Verify live original engineering tools and script
+        env:
+          TOOL_URL: "https://energizeos.com/insights/tools/"
+          TOOL_ASSET: "https://energizeos.com/insights/assets/engineering-tools.js"
+          TOOL_MARKER: "Optical Link Budget Calculator"
+          SCRIPT_MARKER: 'connect("dispatch")'
+        run: |
+          python3 - <<'PY'
+          import os
+          import time
+          import urllib.request
+
+          def fetch(url):
+              last_error = None
+              for attempt in range(3):
+                  try:
+                      req = urllib.request.Request(url, headers={"User-Agent": "AGIM-ESI-Public-Engineering-Acceptance/1.0"})
+                      with urllib.request.urlopen(req, timeout=20) as response:
+                          if response.status != 200:
+                              raise AssertionError(f"Unexpected HTTP status {response.status}")
+                          if response.geturl().rstrip("/") != url.rstrip("/"):
+                              raise AssertionError("Unexpected redirect")
+                          return response.read(500000).decode("utf-8", errors="strict")
+                  except Exception as error:
+                      last_error = error
+                      if attempt < 2:
+                          time.sleep(5)
+              raise AssertionError(f"Live public resource unavailable: {url}: {last_error}")
+
+          page_url = os.environ["TOOL_URL"]
+          page = fetch(page_url)
+          script = fetch(os.environ["TOOL_ASSET"])
+          if '<html lang="en">' not in page or f'href="{page_url}"' not in page:
+              raise AssertionError("Missing English declaration or expected canonical")
+          if os.environ["TOOL_MARKER"] not in page:
+              raise AssertionError("Expected engineering calculator was not deployed")
+          if os.environ["SCRIPT_MARKER"] not in script:
+              raise AssertionError("Live calculation script does not match the tested tool")
+          if "adsbygoogle" in page.lower():
+              raise AssertionError("Unexpected advertising code")
+          print(f"PUBLIC_ENGINEERING_TOOL_VERIFIED URL={page_url} STATUS=200 SCRIPT=200")
+          PY
