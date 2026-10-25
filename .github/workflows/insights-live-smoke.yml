@@ -133,3 +133,50 @@ jobs:
           assert "action_hint" not in body
           print("PUBLIC_ESI_OPTICAL_RESEARCH_VERIFIED status=200 official_series=3")
           PY
+
+      - name: Check live customer-facing English copy for private process language
+        run: |
+          python3 - <<'PY'
+          import re
+          import time
+          import urllib.request
+
+          prohibited = re.compile(
+              r"advertising inventory|internal business-development|business-development instructions|"
+              r"internal sales leads|machine-generated brief|unreviewed weekly|ad-serving script|"
+              r"our editorial rule|editorial boundary|not republished news articles|"
+              r"handoff prompt|\bVWS\b|\bPR #[0-9]+\b|AdSense approval pending",
+              re.IGNORECASE,
+          )
+          urls = [
+              "https://energizeos.com/",
+              "https://energizeos.com/insights/",
+              "https://energizeos.com/insights/intelligence/",
+              "https://energizeos.com/insights/tools/",
+          ]
+          for url in urls:
+              last_error = None
+              for attempt in range(3):
+                  try:
+                      request = urllib.request.Request(url, headers={
+                          "User-Agent": "AGIM-ESI-Public-Content-Quality-Sentinel/1.0"
+                      })
+                      with urllib.request.urlopen(request, timeout=20) as response:
+                          if response.status != 200 or response.geturl().rstrip("/") != url.rstrip("/"):
+                              raise AssertionError("Unexpected status or redirect")
+                          page = response.read(800000).decode("utf-8")
+                      break
+                  except Exception as error:
+                      last_error = error
+                      if attempt < 2:
+                          time.sleep(4)
+              else:
+                  raise AssertionError(f"Public page fetch failed: {url}: {last_error}")
+              match = prohibited.search(page)
+              if match:
+                  raise AssertionError(f"Internal editorial wording leaked on {url}: {match.group(0)}")
+              if re.search(r"[\u3400-\u9fff]", page):
+                  raise AssertionError(f"Non-English public content on {url}")
+              print("PUBLIC_ENGLISH_COPY_VERIFIED " + url)
+          print("PUBLIC_COPY_GATE_LIVE=PASS pages=" + str(len(urls)))
+          PY
