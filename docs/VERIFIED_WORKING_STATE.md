@@ -1,5 +1,42 @@
 # English Intelligence — Current Verified Working State (2026-10-26)
 
+## 2026-10-26 — Owner handoff: AdSense approval objective / read-only continuity checkpoint
+
+### Objective
+Obtain Google's legitimate AdSense site approval for the existing root domain **https://energizeos.com/** without degrading original English corporate content or the source-reviewed Intelligence publication. The Owner reports that a review request was submitted; **no independent AdSense dashboard confirmation or final Google approval is available**. Existing Privacy/Contact and Intelligence launch pages are not an AdSense approval verdict.
+
+### Verified Current State
+- Current ESI source `main`: `a7cccf8c963615d5de90bd0c8819dde9c9aac303` (re-read before any further changes). Exact-main deployment 40217252673 SUCCESS; independent live English HTTPS acceptance 40217253097 SUCCESS; exact-main site CI 40217253081 SUCCESS.
+- Conditional Google advertising privacy/cookie and personalized-ad opt-out disclosure was merged in PR #65 (`a966e785f4503b05b1b51b80b948699926efb1a1`); matching HTML AdSense account meta marker exists in source, but the publisher ID/registered payee/Google Sites status has **not** been checked against the user's existing account.
+- Google policy mapping and precise outstanding company/account facts: `docs/ADSENSE_PREAPPROVAL_POLICY_AUDIT_20261026.md`. Existing detailed privacy-fact review: `docs/ADSENSE_PRIVACY_NOTICE_REVIEW.md` (internal unapproved facts, not an automatically approved public notice).
+- ESI default branch is protected by active ruleset ID `25827638`: PR required, zero human approvals, mandatory `social-preview` and `verify-public-route`, strict up-to-date checks and no bypass actors.
+- Existing live English issue manifest remains `2026-reference-01` plus `2026-w43`; neither publication date nor sourcing may be falsified.
+- Sibling AGI&M main was separately re-verified as `7d904db60793f2f7758ec371d7c59275605561ce`; its exact-main deployment `40220340887` and HTTPS `40220340927` both passed after the group anti-drift rules were added. See the canonical two-site takeover index in `enxpower/op-agim.ca/docs/ADSENSE_TWO_SITE_TAKEOVER.md`.
+
+### Completed
+- Separate corporate-domain English Intelligence, editorial deduplication/approval/append-only archive, internal link/asset and newly-cited external primary-link quality gates; CI and production HTTPS acceptance.
+- Published independent English Contact and Privacy pages; current privacy section transparently addresses **conditional future** advertising data use and links to Google's partner-site notice and ad preference controls; no speculative ad-serving script, fake banner or guessed `ads.txt` inserted.
+- DOE-like generic coverage is not permitted for ESI. Original optical sources CRTC/FCC, plus canonical NTIA BroadbandUSA RSS added in PR #67 (`c37477b072f3531d5ff3ee5462f10a1323b7c296`): source run `40216962131` succeeded, 3 official feeds, 0 relevant recent fresh candidates; unchanged source review reports `publication_permitted=false`. Do not fabricate Week 44 or republish CRTC/OIF duplicates. The first genuine Monday scheduled source-review run still lacks evidence.
+
+### Remaining / Unverified
+1. **External account gate (highest priority):** examine each existing legitimate AdSense account's **Sites**, **Policy center**, publisher-ID ownership/payee match and current review/rejection reason. Do not create duplicate accounts, request reviews again or assume pending/approved status solely from a site meta tag. If the review really remains pending, preserve the current site.
+2. **One-time factual/privacy check:** confirm actual operating legal entity, email/data processing, hosting/CDN logs, retention, third-party tracking, cross-border handling and privacy requests, plus material quantitative/customer/certification claims. Do not assert these company facts as independently verified without evidence.
+3. **Before activating ads** when applicable: reconcile `ads.txt` strictly against account's true publisher ID and Google diagnostic; configure Google's required certified TCF CMP/consent where regional rules apply. Do not invent ads.txt or install a cosmetic CMP as a shortcut to approval.
+4. **Editorial P5/P6:** true Monday `schedule`-event weekly source-review proof remains pending (other live-HTTPS scheduled events do not count); a newly approved three-development original English Week 44 issue, complete CI/live acceptance and no-evidence rollback behavior remain unverified. Do not publish filler.
+5. **Backlog:** PR #33 is an old unapproved Privacy draft (DO NOT MERGE); PR #38 is a historical handoff note; PR #69 is a separate governance proposal currently under CI. These are **not** pending Intelligence editions.
+
+### Constraints / Do Not Touch
+No account/password/token exposure; no AdSense payee or publisher-ID changes based on guesses; no external research publisher redirects, Chinese-language customer copy, invented sources, self-approved facts, marketing claims without support, unfinished Privacy draft merges, unrelated tools/architecture; do not touch business operations, production safety, money or brand identity. Only narrow, reversible GitHub PRs with evidence and exact-main CI/deploy/public HTTPS.
+
+### Evidence / Success Criteria / Next Action
+- Source: https://github.com/enxpower/energizeos.com/blob/main/docs/VERIFIED_WORKING_STATE.md
+- AdSense official-policy audit: https://github.com/enxpower/energizeos.com/blob/main/docs/ADSENSE_PREAPPROVAL_POLICY_AUDIT_20261026.md
+- Deployment: https://github.com/enxpower/energizeos.com/actions/runs/40217252673
+- Live production: https://github.com/enxpower/energizeos.com/actions/runs/40217253097
+- **Technical site-preapproval readiness** is accepted to the extent covered by existing checks; **Google approval remains unverified/external**. The next owner action is to recover the existing AdSense Sites/Policy center status and applicable legal/privacy facts, not to expand the site to manufacture page volume.
+- Observe review status and official feedback; only repair concrete failures. Report **evidence not known** separately from **actual failed policy compliance**. Preserve prior VWS history below.
+
+
 ## 2026-10-26 — P5 optical official-source expansion: verified main delivery
 - Scope: ESI optical Intelligence source intake only; no new customer article, existing issue manifest modification, approval bypass, AdSense/privacy edits or production architecture change.
 - PR #67 was squash-merged at `c37477b072f3531d5ff3ee5462f10a1323b7c296`. Official NTIA BroadbandUSA RSS uses canonical `https://broadbandusa.ntia.gov/rss.xml`, with exact host admitted only to the optical source allowlist. The earlier `broadbandusa.ntia.doc.gov` feed URL was rejected by the strict same-host redirect check; the observed rejection was kept as a negative test outcome rather than bypassed.
