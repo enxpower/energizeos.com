@@ -145,7 +145,7 @@ jobs:
               r"advertising inventory|internal business-development|business-development instructions|"
               r"internal sales leads|machine-generated brief|unreviewed weekly|ad-serving script|"
               r"our editorial rule|editorial boundary|not republished news articles|"
-              r"handoff prompt|\\bVWS\\b|\\bPR #[0-9]+\\b|AdSense approval pending",
+              r"handoff prompt|\bVWS\b|\bPR #[0-9]+\b|AdSense approval pending",
               re.IGNORECASE,
           )
           urls = [
