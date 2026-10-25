@@ -1,0 +1,43 @@
+name: Qualify weekly English Intelligence sources
+
+on:
+  schedule:
+    - cron: "32 16 * * 1"
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "scripts/weekly_source_review.py"
+      - "scripts/tests/test_weekly_source_review.py"
+      - ".github/workflows/weekly-intelligence-review.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: weekly-english-intelligence-source-review
+  cancel-in-progress: false
+
+jobs:
+  qualify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify evidence qualification and no-publish safety
+        run: python3 -m unittest discover -s scripts/tests -p "test_weekly_source_review.py" -v
+      - name: Qualify actual official sources without changing the website
+        run: python3 scripts/weekly_source_review.py --output build/intelligence-review/source-candidates.json
+      - name: Confirm reviewed articles and public routes remain untouched
+        if: always()
+        run: git diff --exit-code -- content/intelligence insights sitemap.xml
+      - name: Save reviewable source evidence, including feed errors
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: english-intelligence-source-review
+          path: build/intelligence-review/source-candidates.json
+          if-no-files-found: warn
+          retention-days: 30
