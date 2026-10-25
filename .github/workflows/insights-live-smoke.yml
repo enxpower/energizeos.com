@@ -180,3 +180,44 @@ jobs:
               print("PUBLIC_ENGLISH_COPY_VERIFIED " + url)
           print("PUBLIC_COPY_GATE_LIVE=PASS pages=" + str(len(urls)))
           PY
+
+      - name: Verify original engineering reference on live HTTPS
+        env:
+          REFERENCE_URL: "https://energizeos.com/insights/microgrid-ai/"
+          CONTENT_MARKERS: '["Control remains deterministic","CONTROL AUTHORIZATION BOUNDARY","not live API endpoints"]'
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import re
+          import time
+          import urllib.request
+
+          url = os.environ["REFERENCE_URL"]
+          markers = json.loads(os.environ["CONTENT_MARKERS"])
+          last = None
+          for attempt in range(3):
+              try:
+                  req = urllib.request.Request(url, headers={"User-Agent": "Corporate-Original-Engineering-Reference-Smoke/1.0"})
+                  with urllib.request.urlopen(req, timeout=20) as response:
+                      if response.status != 200 or response.geturl().rstrip("/") != url.rstrip("/"):
+                          raise AssertionError("Unexpected HTTP status or redirect")
+                      page = response.read(700000).decode("utf-8", errors="strict")
+                  if '<html lang="en">' not in page or f'href="{url}"' not in page:
+                      raise AssertionError("English/canonical mismatch")
+                  if not all(marker in page for marker in markers):
+                      raise AssertionError("Original engineering content missing")
+                  if re.search(r"[\u3400-\u9fff]", page):
+                      raise AssertionError("Non-English content is present")
+                  if "adsbygoogle" in page.lower() or "recommended_action" in page:
+                      raise AssertionError("Unexpected ad code or internal business action")
+                  print("PUBLIC_ORIGINAL_ENGINEERING_REFERENCE=PASS " + url)
+                  break
+              except Exception as error:
+                  last = error
+                  print(f"Reference check attempt {attempt + 1}: {type(error).__name__}: {error}")
+                  if attempt < 2:
+                      time.sleep(5)
+          else:
+              raise AssertionError(f"Production reference not verified: {last}")
+          PY
