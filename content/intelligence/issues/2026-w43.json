@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "issue": "2026-w43",
+  "label": "2026 · Week 43",
+  "language": "en",
+  "published_at": "2026-10-25T14:45:00Z",
+  "headline": "Fiber investment, a closed funding window and the next coherent interface",
+  "summary": "North American optical procurement must distinguish announced factory investment, broadband program milestones and interface specifications.",
+  "briefing": "Fiber infrastructure is shaped by factory capacity, funded routes and optical-system acceptance. Those signals rarely move together. This edition follows a Wilmington manufacturing announcement, Canada’s now-closed Broadband Fund intake and OIF’s new 1600ZR agreement. Each is a dated primary-source signal; none alone proves that a customer can buy an available, fully qualified end-to-end network.",
+  "developments": [
+    {
+      "headline": "Wilmington fiber investment is announced capacity expansion",
+      "status": "Announced",
+      "fact": "Wilmington Business Development announced on October 21 that Corning plans to invest $585 million at its Wilmington campus and add 414 jobs. The local development organization describes performance-based incentives and job additions over the next five years.",
+      "why_it_matters": "The announcement is a manufacturing commitment signal. It does not establish immediate incremental fiber output, delivery availability or market-wide price relief.",
+      "implications": "ESI analysis: keep announced capital investment separate from qualified production and quoted lead time. Procurement teams should ask for the particular fiber type, cable construction, approved manufacturing site, release schedule and order-specific delivery commitment. Do not substitute an expansion headline for an executable supply plan.",
+      "uncertainty": "The release does not provide added annual fiber volume, a complete commissioning schedule or a specific customer’s allocation.",
+      "sources": [
+        "fiber-expansion"
+      ]
+    },
+    {
+      "headline": "Canada’s Broadband Fund Call 4 intake has closed",
+      "status": "Application window closed",
+      "fact": "The CRTC Broadband Fund page states that Call 4 closed on October 15, 2026 and that new applications are no longer being accepted. The page was modified on that date. This is an intake-status observation, not a list of newly awarded projects.",
+      "why_it_matters": "The next useful commercial evidence is an award decision and a recipient’s delivery scope, not another reminder to apply to a closed window.",
+      "implications": "ESI analysis: monitor project decisions and route-level requirements. Confirm whether a delivery package includes outside plant, optical transport, power, resilience or operations. Match the bill of materials to the funded scope and current procurement documents before treating public program funding as an equipment opportunity.",
+      "uncertainty": "No Call 4 award, construction start, route selection or operational date is inferred from the intake page.",
+      "sources": [
+        "crtc-call"
+      ]
+    },
+    {
+      "headline": "1600ZR defines an interface target; system qualification remains",
+      "status": "Specification published",
+      "fact": "OIF announced its 1600ZR implementation agreement on September 9. The announcement describes a 1.6T coherent line interface for single-span, amplified, point-to-point DWDM links up to 120 km. This is an interface scope, not a universal reach guarantee.",
+      "why_it_matters": "Standards progress can support procurement planning while leaving host support, optical line-system conditions and management compatibility unresolved.",
+      "implications": "ESI analysis: specify the implementation agreement revision, host software, module power and cooling, optical channel plan and acceptance test. Treat the advertised reach as conditional on the engineered link. A new coherent interface does not by itself validate every DWDM or OTN service mapping used by the customer.",
+      "uncertainty": "The announcement does not prove availability of a particular module, qualified host combination, OTN interoperability or performance on a customer’s installed fiber.",
+      "sources": [
+        "oif-1600"
+      ]
+    }
+  ],
+  "takeaways": [
+    "Maintain separate gates for factory qualification, project funding and end-to-end network acceptance. A positive signal in one gate cannot close the other two.",
+    "For optical procurement, require an explicit interface-and-management matrix alongside route loss, service mapping, spares and support responsibilities."
+  ],
+  "uncertainties": [
+    "No fiber spot-price, market-wide lead-time or cable-order quantity is established by these sources.",
+    "Vendor announcements and standards publications are not independent field-performance measurements."
+  ],
+  "watchlist": [
+    "Look for manufacturing commissioning or qualified-output updates following the Wilmington announcement.",
+    "Track CRTC project decisions and recipient-level procurement after the closed intake.",
+    "Review new 1600ZR product evidence for host support, management behavior and tested optical conditions."
+  ],
+  "sources": [
+    {
+      "id": "fiber-expansion",
+      "publisher": "Wilmington Business Development",
+      "title": "Corning Wilmington fiber plant expansion announcement",
+      "url": "https://wilmingtonbusinessdevelopment.com/corning-expansion-brings-585-million-investment-to-wilmington-fiber-plant/",
+      "published_on": "2026-10-21",
+      "verified_on": "2026-10-25",
+      "kind": "primary",
+      "verified_fact": "The local development organization announced a planned $585 million Corning investment and 414 additional jobs."
+    },
+    {
+      "id": "crtc-call",
+      "publisher": "Canadian Radio-television and Telecommunications Commission",
+      "title": "Broadband Fund Call 4 status",
+      "url": "https://crtc.gc.ca/eng/internet/fnd/index.htm",
+      "published_on": "2026-10-15",
+      "verified_on": "2026-10-25",
+      "kind": "primary",
+      "verified_fact": "Call 4 closed on October 15, 2026; new applications are no longer being accepted."
+    },
+    {
+      "id": "oif-1600",
+      "publisher": "Optical Internetworking Forum",
+      "title": "1600ZR coherent-interface implementation agreement announcement",
+      "url": "https://www.oiforum.com/oif-releases-critical-1600zr-coherent-interface-ia-doubling-capacity-per-wavelength-for-data-center-interconnects/",
+      "published_on": "2026-09-09",
+      "verified_on": "2026-10-25",
+      "kind": "primary",
+      "verified_fact": "OIF announced an implementation agreement for a 1.6T coherent line interface for single-span amplified DWDM links up to 120 km."
+    }
+  ],
+  "approval": {
+    "status": "approved",
+    "reviewed_on": "2026-10-25",
+    "reviewer": "Codex primary-source and English editorial review",
+    "content_sha256": "2fb2ae0ed3a1c4e22131dd77a174aef8ae0bcc44d7c30339585f500766e395bc"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "kind": "optical",
+  "title": "Optical Intelligence",
+  "domain": "energizeos.com",
+  "brand": "EnergizeOS",
+  "allowed_source_hosts": [
+    "wilmingtonbusinessdevelopment.com",
+    "crtc.gc.ca",
+    "www.canada.ca",
+    "www.oiforum.com",
+    "www.commerce.gov",
+    "www.ntia.gov"
+  ]
+}

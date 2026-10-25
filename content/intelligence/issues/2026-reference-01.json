@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "issue": "2026-reference-01",
+  "label": "Launch Reference 01",
+  "language": "en",
+  "published_at": "2026-10-25T14:44:00Z",
+  "headline": "From optical compatibility to a deliverable broadband network",
+  "summary": "A launch reference on interoperability evidence, U.S. sourcing compliance and Canadian network resilience.",
+  "briefing": "First published October 25, 2026, this reference edition establishes three procurement checks for the optical series. A connected transmitter and receiver do not establish every network service. A domestic sourcing statement does not replace program-specific compliance. A funded route still needs a measurable resilience design. These are complementary checks for engineers and buying teams, rather than a prediction about equipment sales.",
+  "developments": [
+    {
+      "headline": "Interpret an 800ZR plugfest within its tested conditions",
+      "status": "Tested demonstration",
+      "fact": "OIF’s March 2026 white paper reports a cross-vendor 800ZR interoperability study. It describes a noise-loaded short link, a 150 GHz channel grid and specific transmitter/receiver combinations. Those conditions are part of the result, not incidental details.",
+      "why_it_matters": "Multi-vendor testing is useful evidence, but a short-link test does not reproduce every installed route or operational failure mode.",
+      "implications": "ESI analysis: request the actual module pair, host firmware and optical conditions. Extend acceptance to error performance over a defined interval, restart behavior, alarms and management telemetry. Specify OTN mapping separately where applicable. Preserve enough link margin for measured connector and splice loss instead of assuming demonstration results transfer unchanged.",
+      "uncertainty": "The paper does not certify every vendor combination, long-term field availability or an arbitrary end-to-end transport service. Its source date is March 2026; no exact publication day is asserted.",
+      "sources": [
+        "oif-800"
+      ]
+    },
+    {
+      "headline": "Read domestic-sourcing requirements by product category",
+      "status": "Published policy document",
+      "fact": "The Commerce Department’s February 22, 2024 BEAD BABA waiver is a limited document with category-specific treatment. It is a primary reference for checking sourcing conditions, not a blanket statement that all equipment is exempt or all U.S.-sold cable is compliant.",
+      "why_it_matters": "A bill of materials can combine fiber, cable, electronics and other products with different compliance evidence. A supplier’s general corporate location cannot settle those distinctions.",
+      "implications": "ESI analysis: map every line item to the controlling program documents and current award conditions. Request product-level manufacturing declarations, retain the applicable waiver version and check later changes before issuing a compliance claim. Treat ambiguous categories as unresolved until the recipient’s responsible reviewer confirms the interpretation.",
+      "uncertainty": "This reference does not establish the current compliance of any named supplier or replace award-specific review.",
+      "sources": [
+        "bead-waiver"
+      ]
+    },
+    {
+      "headline": "Resilience funding objectives need an engineering acceptance boundary",
+      "status": "Announced program change",
+      "fact": "The CRTC’s September 16 release announces Broadband Fund improvements aimed at protecting Canadians from Internet and cellphone service outages. It identifies resilience as a program concern, rather than proving that a specific route has redundant service.",
+      "why_it_matters": "A network can carry the required traffic while still failing a customer’s restoration or availability expectation. The design boundary should be established before equipment is ordered.",
+      "implications": "ESI analysis: define failure scenarios and responsibility for route diversity, power continuity, transport protection and recovery tests. Ask how common ducts, common power and shared optical amplification affect the claimed redundancy. Accept the resilience function through a documented test, with operational ownership assigned after handover.",
+      "uncertainty": "The release does not establish a particular project award, its equipment scope or achieved service availability.",
+      "sources": [
+        "crtc-resilience"
+      ]
+    }
+  ],
+  "takeaways": [
+    "Procurement should connect three records: tested interface combinations, product-specific sourcing evidence and the service acceptance plan.",
+    "Keep optical-layer compatibility, OTN/service mapping and operational management as separate acceptance lines, with a named party responsible for each."
+  ],
+  "uncertainties": [
+    "No universal reach, uptime guarantee or product certification is inferred.",
+    "Program conditions and implementation agreements can change; use the controlling revision for the actual procurement."
+  ],
+  "watchlist": [
+    "Check newer interoperability results against the same test conditions.",
+    "Monitor official BEAD updates for changes to sourcing and award requirements.",
+    "Review funded-route announcements for explicit resilience scope and delivery milestones."
+  ],
+  "sources": [
+    {
+      "id": "oif-800",
+      "publisher": "Optical Internetworking Forum",
+      "title": "OFC 2026 800ZR plugfest measurements",
+      "url": "https://www.oiforum.com/wp-content/uploads/OFC-2026-800ZR-Plugfest-White-Paper-Final.pdf",
+      "published_on": "2026-03-01",
+      "verified_on": "2026-10-25",
+      "kind": "primary",
+      "verified_fact": "The March 2026 white paper describes cross-vendor 800ZR tests using a noise-loaded short optical link and a 150 GHz grid; source date precision is month only.",
+      "date_label": "March 2026 (month only)"
+    },
+    {
+      "id": "bead-waiver",
+      "publisher": "U.S. Department of Commerce",
+      "title": "BEAD limited general applicability BABA waiver",
+      "url": "https://www.commerce.gov/sites/default/files/2024-02/BABA%20Waiver%20Signed.pdf",
+      "published_on": "2024-02-22",
+      "verified_on": "2026-10-25",
+      "kind": "primary",
+      "verified_fact": "Commerce published a product-specific limited BABA waiver; the exact categories and conditions must be consulted."
+    },
+    {
+      "id": "crtc-resilience",
+      "publisher": "CRTC",
+      "title": "Broadband Fund resilience improvements",
+      "url": "https://www.canada.ca/en/radio-television-telecommunications/news/2026/09/crtc-improves-broadband-fund-to-help-protect-canadians-from-service-outages.html",
+      "published_on": "2026-09-16",
+      "verified_on": "2026-10-25",
+      "kind": "primary",
+      "verified_fact": "CRTC announced Broadband Fund changes intended to help protect against Internet and cellphone service outages."
+    }
+  ],
+  "approval": {
+    "status": "approved",
+    "reviewed_on": "2026-10-25",
+    "reviewer": "Codex primary-source and English editorial review",
+    "content_sha256": "fcd3c7422a8b45d8d8540bd203e220570be096d278ab6387e3cff123daf011c9"
+  }
+}
