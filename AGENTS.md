@@ -1,3 +1,15 @@
+## AI Delivery Contract v1 — ENX Power mandatory local execution (2026-10-26)
+
+This is the repository-local application of the existing canonical policy in `enxpower/group-governance/docs/AI_DELIVERY_CONTRACT.md`. It applies to **all new, resumed, coding, documentation, deployment and maintenance tasks** in this repository. This self-contained section works without access to the private central file. Existing project-specific business, safety, security, finance, confidentiality, assessment, publishing, branch and R3/Owner controls remain fully authoritative; this grants no new write or merge permission.
+
+**Six non-negotiable rules:** **business outcome** before technology; **scope freeze** (no unauthorized extras); **mature reuse** before reinvention; **bounded task** with stop/retry budget; **independent verification** of actual acceptance; **release seal** and STOP when authorized gates pass.
+
+### ANTI-DRIFT STOP GATE
+Before each substantive action: **original approved goal → one unmet original acceptance criterion → smallest necessary action → affected/Do Not Touch boundary → independent evidence**. No direct causal link: do not execute. If Owner reports drift, stop unrelated work immediately and return to the original goal, not more plans, tool installation, refactoring or parallel projects. Two evidence-free retries trigger re-triage. `commit != CI != merged != deployed != user verified != accepted`; VWS Completed records externally verified results only.
+
+### Documentation fast lane / GitHub Actions proportionality
+For ordinary R0 non-executable/non-authoritative notes, typos or explanations: **one permitted edit + readback**, without creating ceremonial Issue→PR→CI→Actions→deployment→VWS loops. This never bypasses existing protected branches, required checks or publication controls. A Markdown change affecting contracts, approved specifications, legal/accounting truth, public publishing input, security, CI or governance is **not** automatically R0. Code uses relevant tests/mandatory checks; production changes and R3 decisions retain their actual protections. Do not introduce or disable Workflows merely to satisfy an adoption marker.
+
 # AGENTS.md
 
 These rules apply to the entire `enxpower/energizeos.com` repository.
