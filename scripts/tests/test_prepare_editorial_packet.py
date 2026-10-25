@@ -34,6 +34,12 @@ class EditorialIntakeTests(unittest.TestCase):
         self.assertFalse(result["uncited_candidates"][0]["fact_verified"])
         self.assertEqual(result["uncited_candidates"][0]["proposed_claims"],[])
 
+    def test_duplicate_feed_items_deduplicated(self):
+        first = BASE["candidates"][0]
+        result = stage(dict(BASE, candidates=[first, dict(first)]))
+        self.assertEqual(len(result["uncited_candidates"]), 1)
+        self.assertFalse(result["publication_permitted"])
+
     def test_cited_source_not_recycled(self):
         result=stage(BASE,cited=("https://crtc.gc.ca/eng/example",))
         self.assertEqual(result["status"],"no_new_evidence")
