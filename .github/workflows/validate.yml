@@ -20,6 +20,10 @@ jobs:
         run: python scripts/validate_social_preview.py
       - name: Validate English Insights and publishing isolation
         run: python scripts/validate_insights.py
+      - name: Audit the complete official website against technical AdSense preflight
+        run: |
+          python3 scripts/audit_adsense_preflight.py --self-test
+          python scripts/audit_adsense_preflight.py . --domain energizeos.com
       - name: Reject internal editorial process language in public site
         run: |
           python scripts/public_copy_gate.py --self-test
