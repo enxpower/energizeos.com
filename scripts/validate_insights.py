@@ -95,6 +95,14 @@ def main():
     for term in ("L5", "L4", "L2", "CONTROL AUTHORIZATION BOUNDARY", "Deterministic energy management", "Site &amp; permissions"):
         check(term in microgrid, f"Microgrid architectural detail missing: {term}")
     check("not live API endpoints" in microgrid, "Do not imply an available customer API")
+    home = (ROOT / "index.html").read_text(encoding="utf-8")
+    for claim in ("In-house Microgrid Intelligence Engine", "private API-based delivery", "Explore the Microgrid Intelligence Engine"):
+        check(claim in home, f"Enterprise homepage positioning missing: {claim}")
+    for claim in ("Private API integration", "project-specific, paid integration", "EMS retains control authority", "Discuss an Enterprise Integration"):
+        check(claim in microgrid, f"Microgrid commercial framing incomplete: {claim}")
+    check("mailto:info@energizeos.com" in microgrid, "Existing published business contact missing")
+    check("api-key" not in microgrid.lower() and "api console" not in microgrid.lower(), "Unexpected public API onboarding")
+
     check("adsbygoogle" not in microgrid.lower(), "Do not add ads in architectural reference")
     check(CJK.search(microgrid) is None, "Microgrid research must be English")
     check("copilot-ph2/" not in microgrid, "Paused Copilot must not be linked from public site")
