@@ -88,6 +88,18 @@ try {
     if (!architecture.title.includes("Control remains deterministic") || architecture.rows !== 4 || architecture.tables !== 1) throw new Error("Microgrid engineering content incomplete at " + width);
     await page.evaluate(() => window.scrollTo(0, 0));
     await page.screenshot({path:"build/visual/esi-microgrid-ai-" + width + ".png",fullPage:true});
+    const contactResponse = await page.goto(origin + "/contact/", {waitUntil:"domcontentloaded"});
+    if (!contactResponse || contactResponse.status() !== 200) throw new Error("ESI Contact unavailable at " + width);
+    const businessContact = await page.evaluate(() => ({
+      scroll:document.documentElement.scrollWidth,
+      client:document.documentElement.clientWidth,
+      canonical:document.querySelector('link[rel="canonical"]')?.getAttribute("href"),
+      mark:Boolean(document.querySelector('.brand svg[viewBox="0 0 48 48"]')),
+      email:Boolean(document.querySelector('a[href^="mailto:info@energizeos.com"]'))
+    }));
+    if (businessContact.scroll > businessContact.client + 1 || businessContact.canonical !== "https://energizeos.com/contact/" || !businessContact.mark || !businessContact.email) throw new Error("ESI Contact/brand failed at " + width);
+    await page.evaluate(() => window.scrollTo(0,0));
+    await page.screenshot({path:"build/visual/esi-business-contact-" + width + ".png",fullPage:true});
     await context.close();
   }
   console.log("EnergizeOS Insights Chromium tests PASS at 390 / 768 / 1440 px");
