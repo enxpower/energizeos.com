@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Engineering Insights | EnergizeOS</title>
+<meta name="description" content="Original energy-control and optical-network engineering references, with transparent assumptions and useful technical context from Energize Solutions Inc.">
+<link rel="canonical" href="https://energizeos.com/insights/">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<meta name="theme-color" content="#1A2B3C">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EnergizeOS">
+<meta property="og:title" content="Engineering Insights | EnergizeOS">
+<meta property="og:description" content="Evidence-led EMS and optical infrastructure engineering references from Energize Solutions Inc.">
+<meta property="og:url" content="https://energizeos.com/insights/">
+<meta property="og:image" content="https://energizeos.com/assets/og-image-v2.png">
+<meta name="robots" content="index,follow">
+<style>
+:root{--slate:#1A2B3C;--volt:#D4840A;--muted:#64788D;--rule:#DEE4E9;--paper:#F4F6F8;--width:1160px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--slate);font:16px/1.7 "Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}a:focus-visible{outline:3px solid var(--volt);outline-offset:3px}
+.wrap{width:min(var(--width),calc(100% - 64px));margin-inline:auto}
+.site-head{background:#fff;border-bottom:1px solid var(--rule);position:sticky;top:0;z-index:5}
+.site-nav{display:flex;align-items:center;justify-content:space-between;min-height:78px;gap:25px}
+.brand{display:inline-flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.01em;text-decoration:none;white-space:nowrap}
+.brand img{width:30px;height:30px}
+.navlinks{display:flex;align-items:center;gap:30px;flex-wrap:wrap}
+.navlinks a{font-size:12px;font-weight:700;letter-spacing:.08em;text-decoration:none;text-transform:uppercase}
+.navlinks a[aria-current="page"]{color:#965300}
+.hero{background:var(--slate);color:#fff;position:relative;overflow:hidden;padding:110px 0 105px}
+.hero:after{content:"";position:absolute;width:500px;height:500px;right:-270px;top:-200px;border:1px solid rgba(255,255,255,.15);border-radius:50%;box-shadow:0 0 0 90px rgba(255,255,255,.025),0 0 0 180px rgba(255,255,255,.02)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--volt)}
+.hero .eyebrow{color:#F5B65A}
+h1{font-weight:500;letter-spacing:-.04em;font-size:clamp(42px,6vw,76px);line-height:1.07;margin:24px 0;max-width:900px}
+h1 strong{font-weight:700}
+.hero p{max-width:700px;color:#CDD9E2;font-size:18px;line-height:1.8;margin:0}
+.hero .meta{margin-top:45px;display:flex;gap:20px;flex-wrap:wrap;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#B7C7D4}
+.hero .meta span{border-top:1px solid rgba(255,255,255,.28);padding-top:14px;min-width:160px}
+.section{padding:86px 0}
+.section.tint{background:var(--paper)}
+.section h2{font-size:clamp(28px,4vw,44px);line-height:1.18;letter-spacing:-.035em;margin:12px 0 22px;font-weight:600}
+.intro{max-width:760px;color:#526A7F;line-height:1.85}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:42px}
+.card{background:#fff;border:1px solid var(--rule);padding:34px;min-width:0}
+.card .number{font:700 11px/1.4 ui-monospace,Consolas,monospace;color:#965300;letter-spacing:.12em}
+.card h3{font-size:22px;font-weight:600;line-height:1.3;letter-spacing:-.02em;margin:22px 0 14px}
+.card p{color:#587084;font-size:14px;line-height:1.8;margin:0}
+.research{display:grid;grid-template-columns:1.08fr .92fr;gap:70px;align-items:start;margin-top:30px}
+.formula{background:var(--slate);color:#fff;padding:36px;margin:18px 0}
+.formula strong{display:block;font:600 clamp(16px,2vw,23px)/1.6 ui-monospace,Consolas,monospace;overflow-wrap:anywhere}
+.formula small{display:block;color:#C9D9E4;margin-top:16px}
+.evidence{border-left:3px solid var(--volt);padding:12px 0 12px 24px;color:#536B7E;line-height:1.8}
+.research h3{font-size:22px;margin:0 0 16px}
+.research p{color:#536B7E;line-height:1.85}
+.footer{background:var(--slate);padding:36px 0;color:#C9D6E1}
+.footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.footer a{color:#fff;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}.research{grid-template-columns:1fr;gap:35px}.hero{padding:82px 0}}
+@media(max-width:600px){.wrap{width:min(var(--width),calc(100% - 36px))}.site-nav{align-items:flex-start;padding:17px 0;flex-direction:column}.navlinks{gap:18px}.navlinks a{font-size:11px}.hero{padding:65px 0}.hero p{font-size:16px}.hero .meta span{min-width:120px}.section{padding:60px 0}.card{padding:26px}.formula{padding:24px}}
+</style>
+</head>
+<body>
+<header class="site-head"><nav class="wrap site-nav" aria-label="Main navigation">
+  <a class="brand" href="/" aria-label="EnergizeOS corporate homepage"><img src="/assets/favicon.svg" alt=""><span>EnergizeOS</span></a>
+  <div class="navlinks"><a href="/">Company</a><a href="/#ems">EMS Platform</a><a href="/insights/" aria-current="page">Insights</a><a href="https://docs.energizeos.com/">Documents</a></div>
+</nav></header>
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">Energize Solutions Inc. / Engineering Knowledge</span>
+  <h1>Systems thinking.<br><strong>Evidence-led engineering.</strong></h1>
+  <p>Research notes and engineering references for energy management software, reliable power infrastructure, and the optical networks that connect critical systems.</p>
+  <div class="meta"><span>Original analysis</span><span>Explicit assumptions</span><span>Independent technical context</span></div>
+</div></section>
+<section class="section tint" aria-labelledby="areas-title"><div class="wrap">
+  <div class="eyebrow">Knowledge Focus</div>
+  <h2 id="areas-title">Practical questions, clear answers.</h2>
+  <p class="intro">The objective is to explain engineering trade-offs with enough context to be useful—not to republish headlines or mistake equipment datasheets for field-proven results.</p>
+  <div class="grid">
+    <article class="card"><div class="number">01 / ENERGY CONTROL</div><h3>EMS design and dispatch logic</h3><p>Learn how supervisory controls balance site constraints, energy objectives, communication quality and interlocks. Separate a control architecture from its field commissioning evidence.</p></article>
+    <article class="card"><div class="number">02 / OPTICAL NETWORKS</div><h3>Fiber transmission engineering</h3><p>Understand optical power budgets, connector and splice losses, fiber attenuation, design margin and the difference between a transceiver's nominal reach and a feasible installed link.</p></article>
+    <article class="card"><div class="number">03 / SYSTEM INTEGRATION</div><h3>Reliability and acceptance</h3><p>Use explicit assumptions and measurable boundaries when comparing options. Document what has been calculated, independently tested, vendor-declared or left unresolved.</p></article>
+  </div>
+</div></section>
+<section class="section" aria-labelledby="reference-title"><div class="wrap">
+  <div class="eyebrow">Original Engineering Reference / Optical 01</div>
+  <h2 id="reference-title">What does an optical link budget actually tell you?</h2>
+  <p class="intro">A link is viable only when the optical losses and reserved operating margin are within the available transmitter-to-receiver power budget, subject to the relevant equipment specifications. Distance alone cannot establish whether a path will work.</p>
+  <div class="research">
+    <div>
+      <div class="formula"><strong>Required budget = fiber loss + connector loss + splice loss + reserved margin</strong><small>All terms must use consistent units, commonly decibels.</small></div>
+      <p>For an illustrative 20 km path with assumed attenuation of 0.30 dB/km, two connector interfaces at 0.50 dB each, no modeled splices and a 3.0 dB reserve, the required budget is <strong>10.0 dB</strong>: (20 × 0.30) + (2 × 0.50) + 0 + 3.0.</p>
+      <p>This is a teaching calculation, not a vendor compatibility recommendation. Actual engineering must use the specified wavelength, fiber type, optic transmit power and receive threshold, measured connections, aging reserve, and applicable installation standards.</p>
+    </div>
+    <aside>
+      <h3>Method and limitations</h3>
+      <p class="evidence">Inputs in this example are explicitly assumed, not field measurements. Optical transceivers may also impose maximum receive-power constraints; excessive power and attenuation are different failure modes.</p>
+      <p>Our editorial rule is to distinguish quoted vendor specifications, measured field results and theoretical calculations. A claim that an equipment platform is certified or deployed requires separate supporting evidence.</p>
+    </aside>
+  </div>
+</div></section>
+<section class="section tint" aria-labelledby="standards-title"><div class="wrap">
+  <div class="eyebrow">Editorial Standard</div><h2 id="standards-title">Technical integrity is the product.</h2>
+  <p class="intro">Research here is designed for independent reading. Each quantitative example states its assumptions and limitations. New automated market briefs are managed as a separate publication stream and are not silently inserted into advertising inventory.</p>
+</div></section>
+</main>
+<footer class="footer"><div class="wrap"><span>EnergizeOS · Energize Solutions Inc.</span><a href="/">Corporate Website</a></div></footer>
+</body>
+</html>
