@@ -3,7 +3,7 @@
 Project: `enxpower/energizeos.com`
 Workstream: AdSense readiness — Issue #5
 Checkpoint: 2026-10-25 (GitHub source and policy audit; not a deployed-feature acceptance)
-Progress pointer: **G0 IN PROGRESS / G1–G4 NOT STARTED / G5 EXTERNAL**
+Progress pointer: **G0 IN PROGRESS / G1 IN PROGRESS / G2–G4 NOT STARTED / G5 EXTERNAL**
 
 ## Objective
 Deliver a premium English-only ESI corporate website with a useful, original `/insights/` center and tools, fully unattended regular operations within Google's publisher policies, and a separately verifiable organization AdSense application.
@@ -18,11 +18,12 @@ Deliver a premium English-only ESI corporate website with a useful, original `/i
 ## Completed
 - Read and mapped the actual website and intelligence repository responsibilities from connected GitHub.
 - Independently located authoritative Issue #5 and the relevant source/automation boundaries.
-- Verified an isolated G0 work branch and staged the local six-rule delivery contract for review. **Not yet merged, deployed, or accepted.**
+- Governance PR #6 was squash-merged into `main` as `2f3e832e8918adbc3c32026a7f46eca5526b46cd`; local Six Rules are now on the default branch.
+- The G1 feature branch contains an English-only Insights page, two-way corporate links, a sitemap addition and a validator integrated with existing social-preview CI; these changes are not deployed or live-verified.
 
 ## Remaining
 - G0 [IN PROGRESS] — verify current public Pages route, rollback, legacy optical URL, English and policy/claim inventory.
-- G1 [NOT STARTED] — create premium English-only `/insights/` focused on EMS and a distinct ESI-only optical channel.
+- G1 [IN PROGRESS] — create premium English-only `/insights/` focused on EMS and a distinct ESI-only optical channel.
 - G2 [NOT STARTED] — implement independently tested optical link budget and EMS engineering tools.
 - G3 [NOT STARTED] — integrate limited public-safe English intelligence without exposing internal BD action hints and with ad-free defaults on automated reports.
 - G4 [NOT STARTED] — test privacy/CMP/ads.txt prerequisites, SEO, accessibility, mobile and live browser flows.
@@ -49,7 +50,7 @@ Deliver a premium English-only ESI corporate website with a useful, original `/i
 5. Actual Google site-approval decision is observed. Never represent a pre-submission checklist as Google approval.
 
 ## Next Action
-Complete G0 live-route, origin and content-boundary checks, then deliver a narrowly scoped `/insights/` implementation PR in the website repository.
+Review exact G1 diff and independent CI, verify optical calculations and responsive layout, and establish safe live routing/rollback before considering any merge or deployment.
 
 ## Operating Rule
 **Action → Observation → Verification → State Update**. Report the actual G0–G5 gate, observable output, blocker, and exact next action. Avoid fictional percentages and progress from code changes alone. Historical releases remain accessible in Git history; this file represents the current active workstream only.
