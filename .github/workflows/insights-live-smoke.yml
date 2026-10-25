@@ -2,9 +2,6 @@ name: Verify live English Insights
 
 on:
   pull_request:
-    paths:
-      - ".github/workflows/insights-live-smoke.yml"
-      - "docs/VERIFIED_WORKING_STATE.md"
   push:
     branches: [main]
   schedule:
