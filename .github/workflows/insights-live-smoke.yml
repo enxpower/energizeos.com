@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      - uses: actions/checkout@v4
       - name: Verify HTTPS, page identity, English and canonical
         env:
           INSIGHTS_URL: "https://energizeos.com/insights/"
@@ -133,6 +134,9 @@ jobs:
           assert "action_hint" not in body
           print("PUBLIC_ESI_OPTICAL_RESEARCH_VERIFIED status=200 official_series=3")
           PY
+
+      - name: Verify deployed English editions, archive and latest issue manifest
+        run: python3 scripts/verify_live_english_editions.py energizeos.com
 
       - name: Check live customer-facing English copy for private process language
         run: |
