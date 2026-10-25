@@ -18,7 +18,7 @@ try {
       heading: document.querySelector("h1")?.textContent || "",
       mainCount: document.querySelectorAll("main").length,
       canonical: document.querySelector('link[rel="canonical"]')?.getAttribute("href") || "",
-      logoOk: Boolean(document.querySelector(".brand img")?.naturalWidth)
+      logoOk: Boolean(document.querySelector(".brand svg[viewBox=\"0 0 48 48\"]"))
     }));
     if (state.scrollWidth > state.clientWidth + 1) throw new Error("Horizontal overflow at " + width);
     if (!state.logoOk) throw new Error("Official ESI mark failed to load at " + width);
