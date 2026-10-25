@@ -71,6 +71,23 @@ try {
     if (research.canonical !== "https://energizeos.com/insights/intelligence/") throw new Error("Optical research canonical missing");
     await page.evaluate(() => window.scrollTo(0, 0));
     await page.screenshot({path:"build/visual/esi-optical-intelligence-" + width + ".png",fullPage:true});
+    const microgridResponse = await page.goto(origin + "/insights/microgrid-ai/", { waitUntil: "domcontentloaded" });
+    if (!microgridResponse || microgridResponse.status() !== 200) throw new Error("Microgrid AI reference unavailable at " + width);
+    const architecture = await page.evaluate(() => ({
+      scroll: document.documentElement.scrollWidth,
+      client: document.documentElement.clientWidth,
+      canonical: document.querySelector('link[rel="canonical"]')?.getAttribute("href") || "",
+      title: document.querySelector("h1")?.textContent || "",
+      logo: Boolean(document.querySelector('.brand svg[viewBox="0 0 48 48"]')),
+      rows: document.querySelectorAll(".architecture-row").length,
+      tables: document.querySelectorAll(".reference-table").length,
+      main: document.querySelectorAll("main").length
+    }));
+    if (architecture.scroll > architecture.client + 1) throw new Error("Microgrid reference horizontal overflow at " + width);
+    if (architecture.canonical !== "https://energizeos.com/insights/microgrid-ai/" || !architecture.logo || architecture.main !== 1) throw new Error("Microgrid brand or SEO structure invalid at " + width);
+    if (!architecture.title.includes("Control remains deterministic") || architecture.rows !== 4 || architecture.tables !== 1) throw new Error("Microgrid engineering content incomplete at " + width);
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await page.screenshot({path:"build/visual/esi-microgrid-ai-" + width + ".png",fullPage:true});
     await context.close();
   }
   console.log("EnergizeOS Insights Chromium tests PASS at 390 / 768 / 1440 px");
