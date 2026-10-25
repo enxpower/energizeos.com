@@ -1,5 +1,13 @@
 # English Intelligence — Current Verified Working State (2026-10-26)
 
+## 2026-10-26 — AdSense preapproval website audit: shipped / external approval pending
+- **Exact website baseline:** `a966e785f4503b05b1b51b80b948699926efb1a1`; privacy disclosure correction PR #65 merged after PR CI 40215520199 PASS and HTTPS read 40215520201 PASS. The exact-main publication / Pages run 40216111969 SUCCESS and public HTTPS check 40216112196 SUCCESS; exact-main complete site validation 40216112170 SUCCESS.
+- Both corporate sites have original English Insights/Intelligence, navigable Contact + existing public Privacy, canonical/sitemap and site health controls. Both source homepages include Google AdSense account meta verification markers; **that does not prove active account ownership/payee match or Google's Getting ready/Ready verdict**.
+- Existing Privacy section now conditionally explains third-party advertising cookies, web beacons/IP identifiers and links to Google's personalized-ad opt-out. Google policy URLs, structural evidence and remaining requirements: `docs/ADSENSE_PREAPPROVAL_POLICY_AUDIT_20261026.md`. Public pages did NOT receive any advertising scripts, publisher identity substitutions, fake consent banners or fabricated `ads.txt`.
+- **Remaining owner/account gate (not engineering blockers to the existing site):** inspect both rows in the existing Google AdSense Sites/Policy center plus account/payee matching; confirm privacy operations/retention/providers/recipient legal entity with authorized company reviewer; substantiate material quantitative/customer commercial statements. Configure Google-certified CMP for applicable personalized ad serving before activating advertising. Google approval is not asserted and submitted reviews should not be unnecessarily resubmitted.
+- **Decision:** site-technical AdSense preapproval remediation sealed; end-to-end AdSense provider approval remains **EXTERNAL PENDING**, not completed. Maintain current official English content, avoid filler publications and monitor periodic domain/CI/Google-policy changes.
+
+
 ## 2026-10-26 — Google AdSense official-policy preapproval review (staged)
 - Objective remains Google site approval for the existing corporate root domain, not more unapproved site features. See `docs/ADSENSE_PREAPPROVAL_POLICY_AUDIT_20261026.md` for direct official Google policy URLs, source audit, and specific remaining owner-side facts.
 - Repo source already contains an `google-adsense-account` verification meta marker and public English Privacy and Contact pages; no account-side approval, current Sites row or actual Google consent/payout status was independently verified. Google states meta verification is acceptable; the ID must match the existing correct account.
