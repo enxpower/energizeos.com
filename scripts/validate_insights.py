@@ -121,6 +121,17 @@ def main():
     check("/contact/" in ip.links, "Insights footer must include Contact")
     check(CJK.search(contact) is None and "adsbygoogle" not in contact.lower(), "English business contact is ad-free")
 
+    privacy = (ROOT / "privacy" / "index.html").read_text(encoding="utf-8")
+    privacy_doc = DocumentParser()
+    privacy_doc.feed(privacy)
+    check(privacy_doc.lang == "en" and privacy_doc.main_count == 1, "Privacy HTML English landmark missing")
+    check('href="https://energizeos.com/privacy/"' in privacy, "Privacy canonical missing")
+    check("https://energizeos.com/privacy/" in urls, "Privacy missing from public sitemap draft")
+    check("mailto:info@energizeos.com" in privacy, "Privacy email source must remain company contact")
+    check('viewBox="0 0 48 48"' in privacy, "Privacy page must use existing brand mark")
+    check("/privacy/" in ip.links, "Privacy must be in Insights footer")
+    check(CJK.search(privacy) is None and "adsbygoogle" not in privacy.lower(), "Privacy must be English and ad-free")
+
     for href in ip.links:
         check(not href.startswith("javascript:"), "Disallowed JavaScript hyperlink")
         if href.startswith("#"):
