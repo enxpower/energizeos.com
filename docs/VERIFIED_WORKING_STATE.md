@@ -3,7 +3,7 @@
 Project: `enxpower/energizeos.com`
 Authoritative workstream: AdSense readiness — Issue #5
 Checkpoint: 2026-10-25
-Progress pointer: **G0 PARTIAL / G1 VERIFIED COMPLETE / G2 VERIFIED COMPLETE / G3 PARTIAL (ENGLISH OFFICIAL-INDICATOR RESEARCH LIVE; AUTOMATED SAFE INGESTION OPEN) / G4 IN PROGRESS (SITE INVENTORY; LEGAL/CMP OPEN) / G5 EXTERNAL**
+Progress pointer: **G0 PARTIAL / G1 VERIFIED COMPLETE / G2 VERIFIED COMPLETE / G3 PARTIAL (ENGLISH OFFICIAL-INDICATOR RESEARCH LIVE; AUTOMATED SAFE INGESTION OPEN) / G4 IN PROGRESS (PUBLIC COPY VERIFIED; SITE INVENTORY; LEGAL/CMP OPEN) / G5 EXTERNAL**
 
 ## Objective
 Operate a premium, English-only ESI corporate website and original `/insights/` engineering content with independently working calculation tools, safe automation and a separately eligible organizational AdSense application. Actual provider approval is the final external gate.
@@ -23,6 +23,8 @@ Operate a premium, English-only ESI corporate website and original `/insights/` 
 - G3-A ESI Optical Market Intelligence: original English page at `https://energizeos.com/insights/intelligence/` released under PR #14, merged `c8d6ebbe9b294e728d1bf62efd7fc6bcb34991fc`. Source checks use the exact June 2025 fiber-cable PPI 86.6 (stale), August 2026 broad cable-manufacturing PPI 295.7, and August 2026 Federal Reserve industrial production 71.3379. Public source links and evidence boundaries were independently verified. Existing site CI with 390/768/1440 Chromium screenshots and visual review passed in run #40173284517; feature Pages deployment #40173434728 passed. PR #16 added exact public HTTPS checks; public site verification succeeded in PR run #40173481964 and in the main-branch smoke run #40173559216. Main Pages deployment #40173558977 succeeded.
 - G4 initial code/tree audit: no dedicated Privacy, Cookie/Consent, Terms or ads.txt files were identified in the main corporate site. No analytics/ad-tracking scripts were found in inspected homepage/Insights HTML, but hosting logs and external systems are not audited. Policy task #15 opened; no legal/privacy document has been publicly asserted or Google ad code enabled.
 
+- G4 public-facing editorial quality: English corporate/Insights passages were corrected to remove internal publisher operations, automation, monetization and BD-team discussion language while retaining reader-useful engineering/source limitations. Feature PR #19 merged `cb28b94f3f47077fdc0233142a002683dcf44cc9`; existing site CI run #40174812038 passed with the new visible-text/metadata/HTML-comment copy gate and 390/768/1440 browser tests. Public-domain read-only monitoring PR #20 merged `fcd334f3d396ecc37f66cf7fdb9095ac497ef215`, verified on the PR in run #40175180345 and again on `main` in #40175285030. Site deployment evidence includes run #40174984340 and Pages #40175284815. The public-copy requirement is verified; this is not a statement of Google publisher-policy or privacy-law approval.
+
 ## Remaining
 - G0 [PARTIAL]: independently confirm business/certification/performance statements, language inventory, legacy public-route provenance, privacy footprint and release rollback evidence.
 - G3 [PARTIAL]: an original, English-only indicator/methodology research page is live and HTTPS-verified. Unattended public-data refresh, safe article-level English optical research/history and legacy Chinese publication isolation remain open; the independent governed publisher was not changed.
@@ -37,6 +39,7 @@ Operate a premium, English-only ESI corporate website and original `/insights/` 
 - Routine R0–R2 implementation follows the group Six Rules and Global Objective Lock. Genuine R3 payment, legal, credentials, new unauthorized communications and material scope remain Owner-controlled.
 
 ## Evidence
+- Public editorial quality Issue #18; source-copy PR #19, production-monitor PR #20; independently passed public smoke #40175285030.
 - ESI Energy/Optical Intelligence acceptance: https://github.com/enxpower/energizeos.com/issues/13 ; PR #14 + PR #16; browser run #40173284517; public smoke #40173559216; Pages #40173558977.
 - AdSense trust/privacy audit: https://github.com/enxpower/energizeos.com/issues/15.
 - Authoritative scope: https://github.com/enxpower/energizeos.com/issues/5
