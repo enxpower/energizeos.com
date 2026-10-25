@@ -103,6 +103,18 @@ try {
     if (contactState.scroll > contactState.client + 1 || contactState.canonical !== "https://energizeos.com/contact/" || !contactState.mark || !contactState.email) throw new Error("ESI Contact acceptance failed at " + width);
     await page.evaluate(() => window.scrollTo(0,0));
     await page.screenshot({path:"build/visual/esi-business-contact-" + width + ".png",fullPage:true});
+    const draftPrivacyResponse = await page.goto(origin + "/privacy/", {waitUntil:"domcontentloaded"});
+    if (!draftPrivacyResponse || draftPrivacyResponse.status() !== 200) throw new Error("Privacy draft unavailable in branch at " + width);
+    const draftPrivacyLayout = await page.evaluate(() => ({
+      client:document.documentElement.clientWidth,
+      scroll:document.documentElement.scrollWidth,
+      canonical:document.querySelector('link[rel="canonical"]')?.getAttribute("href") || "",
+      logo:Boolean(document.querySelector('.brand svg[viewBox="0 0 48 48"]')),
+      sections:document.querySelectorAll(".privacy-block h2").length
+    }));
+    if (draftPrivacyLayout.scroll > draftPrivacyLayout.client + 1 || !draftPrivacyLayout.logo || draftPrivacyLayout.sections !== 7 || draftPrivacyLayout.canonical !== "https://energizeos.com/privacy/") throw new Error("Privacy draft responsive quality failed at " + width);
+    await page.evaluate(() => window.scrollTo(0,0));
+    await page.screenshot({path:"build/visual/esi-privacy-draft-" + width + ".png",fullPage:true});
     await context.close();
   }
   console.log("EnergizeOS Insights Chromium tests PASS at 390 / 768 / 1440 px");
