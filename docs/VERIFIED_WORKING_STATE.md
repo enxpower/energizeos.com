@@ -1,11 +1,12 @@
 # English Intelligence — Current Verified Working State (2026-10-26)
 
-## 2026-10-26 — Fresh editorial intake and strict source-link preflight (in verification)
+## 2026-10-26 — Fresh editorial intake and strict source-link preflight (verified)
 - Evidence-only Week 44 intake is recorded in `docs/INTELLIGENCE_2026_W44_SOURCE_INTAKE.md`. The CRTC October 19 broadband/fibre competition speech is a distinct candidate; the October 23 CRTC administrative cost orders are unrelated and previous CRTC/OIF source announcements are repeats. No three credible fresh developments identified.
 - New prepublication gate: `scripts/verify_new_source_links.py` probes **each primary-source URL in newly added English issues** with real HTTPS GET, allowed final host, HTTP 200, supported response type and rejection of common error/login pages; network or soft-404 errors fail the publication check. Unit tests cover valid responses, offsite redirect, 404/challenge title, invalid host and unavailable source.
 - PR validation checks source links against `origin/main`; ESI requires `social-preview` and `verify-public-route` at PR merge via active ruleset 25827638, so this additional validation becomes a mandatory premerge barrier. Existing published issues are append-only and not re-published due to temporary historical third-party outages.
 - **Publication status: HOLD.** As checked at 2026-10-26 00:48 China time, UTC was October 25 (Week 43); no future-dated Week 44 issue is admissible. Only one distinct relevant ESI source was identified. No article or manifest modified. Genuine weekly schedule-event evidence and later approved issue remain outstanding.
-- This checkpoint documents staged code; merge status, exact CI and production evidence must be checked separately before marking this source-link upgrade complete.
+- **Verified production checkpoint:** PR #63 merged as `6d053d0189d9eccda72b428239b4b72a435f1417`; exact PR site validation run 40214048134 and live-read run 40214048172 both SUCCESS. Exact-main deployment 40214168735 and live HTTPS acceptance 40214168699 SUCCESS, with full main site CI 40214168703 SUCCESS. The new-source link preflight and its negative tests are on `main`, not only in a draft branch.
+- **Remaining:** initial real Monday `schedule` event, independent Week 44 source editorial validation, three distinct developments and newly approved release still open; no auto-published article is asserted.
 
 
 ## 2026-10-26 — ESI production ruleset activated and checked
