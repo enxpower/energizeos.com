@@ -102,6 +102,17 @@ def main():
         if href.startswith("#"):
             check(href[1:] in mp.ids, "Broken microgrid page anchor")
 
+    contact = (ROOT / "contact" / "index.html").read_text(encoding="utf-8")
+    contact_doc = DocumentParser()
+    contact_doc.feed(contact)
+    check(contact_doc.lang == "en" and contact_doc.main_count == 1, "Contact page must be English and accessible")
+    check('href="https://energizeos.com/contact/"' in contact, "Contact canonical missing")
+    check("https://energizeos.com/contact/" in urls, "Contact URL missing from sitemap")
+    check("mailto:info@energizeos.com" in contact, "Current corporate contact email missing")
+    check('viewBox="0 0 48 48"' in contact, "Contact must show the exact ESI corporate mark")
+    check("/contact/" in ip.links, "Insights footer must provide Contact navigation")
+    check(CJK.search(contact) is None and "adsbygoogle" not in contact.lower(), "English trust page must not include ads")
+
     for href in ip.links:
         check(not href.startswith("javascript:"), "Disallowed JavaScript hyperlink")
         if href.startswith("#"):
