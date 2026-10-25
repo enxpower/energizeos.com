@@ -84,6 +84,24 @@ def main():
     check("adsbygoogle" not in intelligence.lower(), "Unreviewed intelligence must not include ad-serving code")
     check("action_hint" not in intelligence and "recommended_action" not in intelligence, "Private BD content leaked")
 
+    microgrid = (ROOT / "insights" / "microgrid-ai" / "index.html").read_text(encoding="utf-8")
+    mp = DocumentParser()
+    mp.feed(microgrid)
+    check(mp.lang == "en" and mp.main_count == 1, "Microgrid architecture requires an English main landmark")
+    check('href="https://energizeos.com/insights/microgrid-ai/"' in microgrid, "Microgrid canonical missing")
+    check("https://energizeos.com/insights/microgrid-ai/" in urls, "Microgrid missing from sitemap")
+    check("/insights/microgrid-ai/" in ip.links, "Microgrid research missing from Insights")
+    check('viewBox="0 0 48 48"' in microgrid, "Corporate ESI brand mark is required")
+    for term in ("L5", "L4", "L2", "CONTROL AUTHORIZATION BOUNDARY", "Deterministic energy management", "Site &amp; permissions"):
+        check(term in microgrid, f"Microgrid architectural detail missing: {term}")
+    check("not live API endpoints" in microgrid, "Do not imply an available customer API")
+    check("adsbygoogle" not in microgrid.lower(), "Do not add ads in architectural reference")
+    check(CJK.search(microgrid) is None, "Microgrid research must be English")
+    check("copilot-ph2/" not in microgrid, "Paused Copilot must not be linked from public site")
+    for href in mp.links:
+        if href.startswith("#"):
+            check(href[1:] in mp.ids, "Broken microgrid page anchor")
+
     for href in ip.links:
         check(not href.startswith("javascript:"), "Disallowed JavaScript hyperlink")
         if href.startswith("#"):
