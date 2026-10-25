@@ -96,3 +96,7 @@ Current live statuses: https://support.google.com/adsense/answer/12170222?hl=en
 ## Implementation Instruction After Factual Approval
 
 Only after the factual/legal review is resolved: publish a concise, brand-matched `/privacy/` page within the existing static website; add exactly one Privacy link to sitewide footer/navigation and Sitemap; verify public-policy text matches actual infrastructure; run sitewide canonical/link/English gates, 390/768/1440 Chromium, Pages deployment and independent HTTPS smoke. Do not enable Google ad technology, publish guessed publisher IDs or add an uncertified CMP as part of that change.
+
+## Owner Decision — Privacy Request Routing (2026-10-25)
+
+The Owner authorizes the existing public address `info@energizeos.com` to receive website privacy requests for this company. The company is responsible for handling those requests. This decision confirms the designated intake channel and company-level responsibility only; it does **not** verify mailbox outbound delivery, assigned individual access, response deadlines, retention schedules, processors, international transfers, or legal sufficiency. Those remain open verification items. This internal decision does not authorize publication of the proposed notice, merging Draft PR #33, or enabling advertising technology.
