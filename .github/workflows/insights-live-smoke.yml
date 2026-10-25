@@ -70,7 +70,7 @@ jobs:
           TOOL_URL: "https://energizeos.com/insights/tools/"
           TOOL_ASSET: "https://energizeos.com/insights/assets/engineering-tools.js"
           TOOL_MARKER: "Optical Link Budget Calculator"
-          SCRIPT_MARKER: 'connect("dispatch")'
+          SCRIPT_MARKER: 'connect("dispatch", dispatch)'
         run: |
           python3 - <<'PY'
           import os
