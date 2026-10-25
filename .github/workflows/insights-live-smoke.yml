@@ -107,3 +107,29 @@ jobs:
               raise AssertionError("Unexpected advertising code")
           print(f"PUBLIC_ENGINEERING_TOOL_VERIFIED URL={page_url} STATUS=200 SCRIPT=200")
           PY
+
+      - name: Verify public English optical market research and exact source IDs
+        run: |
+          python3 - <<'PY'
+          import re
+          import urllib.request
+
+          url = "https://energizeos.com/insights/intelligence/"
+          request = urllib.request.Request(
+              url, headers={"User-Agent":"ESI-Public-Optical-Research-Check/1.0"}
+          )
+          with urllib.request.urlopen(request, timeout=25) as response:
+              assert response.status == 200
+              assert response.geturl().rstrip("/") == url.rstrip("/")
+              body = response.read(600000).decode("utf-8", errors="strict")
+          assert '<html lang="en">' in body
+          assert 'href="https://energizeos.com/insights/intelligence/"' in body
+          assert 'viewBox="0 0 48 48"' in body
+          assert "86.6" in body and "295.7" in body and "71.3379" in body
+          assert "June 2025" in body and "August 2026" in body
+          assert body.count("fred.stlouisfed.org/series/") == 3
+          assert not re.search(r"[\u3400-\u9fff]", body)
+          assert "adsbygoogle" not in body.lower()
+          assert "action_hint" not in body
+          print("PUBLIC_ESI_OPTICAL_RESEARCH_VERIFIED status=200 official_series=3")
+          PY
