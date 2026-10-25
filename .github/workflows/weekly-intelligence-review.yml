@@ -55,6 +55,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: english-intelligence-source-review
-          path: build/intelligence-review/source-candidates.json
+          path: |
+            build/intelligence-review/source-candidates.json
+            build/intelligence-review/editorial-packet.json
           if-no-files-found: warn
           retention-days: 30
