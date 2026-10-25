@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Optical and EMS Engineering Calculators | EnergizeOS</title>
+<meta name="description" content="Two original engineering calculators: optical link losses and margin, and battery EMS dispatch energy and power feasibility.">
+<link rel="canonical" href="https://energizeos.com/insights/tools/">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<meta name="theme-color" content="#1A2B3C">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EnergizeOS">
+<meta property="og:title" content="Engineering Insights | EnergizeOS">
+<meta property="og:description" content="Evidence-led EMS and optical infrastructure engineering references from Energize Solutions Inc.">
+<meta property="og:url" content="https://energizeos.com/insights/tools/">
+<meta property="og:image" content="https://energizeos.com/assets/og-image-v2.png">
+<meta name="robots" content="index,follow">
+<style>
+:root{--slate:#1A2B3C;--volt:#D4840A;--muted:#64788D;--rule:#DEE4E9;--paper:#F4F6F8;--width:1160px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--slate);font:16px/1.7 "Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}a:focus-visible{outline:3px solid var(--volt);outline-offset:3px}
+.wrap{width:min(var(--width),calc(100% - 64px));margin-inline:auto}
+.site-head{background:#fff;border-bottom:1px solid var(--rule);position:sticky;top:0;z-index:5}
+.site-nav{display:flex;align-items:center;justify-content:space-between;min-height:78px;gap:25px}
+.brand{display:inline-flex;align-items:center;gap:11px;font-weight:700;text-decoration:none;white-space:nowrap}
+.brand svg{width:24px;height:24px;display:block;flex-shrink:0}
+.brand-name{font-size:13px;font-weight:700;letter-spacing:.02em;color:var(--slate)}
+.navlinks{display:flex;align-items:center;gap:30px;flex-wrap:wrap}
+.navlinks a{font-size:12px;font-weight:700;letter-spacing:.08em;text-decoration:none;text-transform:uppercase}
+.navlinks a[aria-current="page"]{color:#965300}
+.hero{background:var(--slate);color:#fff;position:relative;overflow:hidden;padding:110px 0 105px}
+.hero:after{content:"";position:absolute;width:500px;height:500px;right:-270px;top:-200px;border:1px solid rgba(255,255,255,.15);border-radius:50%;box-shadow:0 0 0 90px rgba(255,255,255,.025),0 0 0 180px rgba(255,255,255,.02)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--volt)}
+.hero .eyebrow{color:#F5B65A}
+h1{font-weight:500;letter-spacing:-.04em;font-size:clamp(42px,6vw,76px);line-height:1.07;margin:24px 0;max-width:900px}
+h1 strong{font-weight:700}
+.hero p{max-width:700px;color:#CDD9E2;font-size:18px;line-height:1.8;margin:0}
+.hero .meta{margin-top:45px;display:flex;gap:20px;flex-wrap:wrap;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#B7C7D4}
+.hero .meta span{border-top:1px solid rgba(255,255,255,.28);padding-top:14px;min-width:160px}
+.section{padding:86px 0}
+.section.tint{background:var(--paper)}
+.section h2{font-size:clamp(28px,4vw,44px);line-height:1.18;letter-spacing:-.035em;margin:12px 0 22px;font-weight:600}
+.intro{max-width:760px;color:#526A7F;line-height:1.85}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:42px}
+.card{background:#fff;border:1px solid var(--rule);padding:34px;min-width:0}
+.card .number{font:700 11px/1.4 ui-monospace,Consolas,monospace;color:#965300;letter-spacing:.12em}
+.card h3{font-size:22px;font-weight:600;line-height:1.3;letter-spacing:-.02em;margin:22px 0 14px}
+.card p{color:#587084;font-size:14px;line-height:1.8;margin:0}
+.research{display:grid;grid-template-columns:1.08fr .92fr;gap:70px;align-items:start;margin-top:30px}
+.formula{background:var(--slate);color:#fff;padding:36px;margin:18px 0}
+.formula strong{display:block;font:600 clamp(16px,2vw,23px)/1.6 ui-monospace,Consolas,monospace;overflow-wrap:anywhere}
+.formula small{display:block;color:#C9D9E4;margin-top:16px}
+.evidence{border-left:3px solid var(--volt);padding:12px 0 12px 24px;color:#536B7E;line-height:1.8}
+.research h3{font-size:22px;margin:0 0 16px}
+.research p{color:#536B7E;line-height:1.85}
+.footer{background:var(--slate);padding:36px 0;color:#C9D6E1}
+.footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.footer a{color:#fff;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}.research{grid-template-columns:1fr;gap:35px}.hero{padding:82px 0}}
+@media(max-width:600px){.wrap{width:min(var(--width),calc(100% - 36px))}.site-nav{align-items:flex-start;padding:17px 0;flex-direction:column}.navlinks{gap:18px}.navlinks a{font-size:11px}.hero{padding:65px 0}.hero p{font-size:16px}.hero .meta span{min-width:120px}.section{padding:60px 0}.card{padding:26px}.formula{padding:24px}}
+</style>
+<style>
+.calc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:38px;align-items:start}
+.calc-card{min-width:0;border:1px solid #DEE4E9;background:#fff;padding:33px}
+.calc-card h3{font-size:25px;letter-spacing:-.025em;line-height:1.3;margin:12px 0}
+.calc-card p{color:#587084;line-height:1.8;font-size:14px}
+.calc-index{font:700 11px/1.5 ui-monospace,Consolas,monospace;letter-spacing:.1em;color:#965300!important}
+.field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:24px}
+.field-grid label{font-size:12px;font-weight:600;color:var(--slate)}
+.field-grid input{display:block;width:100%;min-width:0;font:inherit;color:var(--slate);margin-top:7px;padding:11px;border:1px solid #B7C4D0;background:#fff;border-radius:0}
+.field-grid input:focus-visible{outline:3px solid var(--volt);outline-offset:1px}
+.calc-action{cursor:pointer;border:none;background:var(--slate);color:#fff;letter-spacing:.045em;font:700 12px/1.4 "Helvetica Neue",Arial,sans-serif;padding:16px 18px;margin-top:24px;width:100%}
+.calc-action:focus-visible{outline:3px solid var(--volt);outline-offset:3px}
+.calc-result{background:#F3F5F7;border-left:4px solid #D4840A;padding:20px;margin-top:23px;min-height:94px;line-height:1.75;overflow-wrap:anywhere}
+.calc-result strong{display:block;font-size:22px;margin-bottom:6px}
+.calc-result[data-invalid="true"]{border-left-color:#BB4B4B;color:#863030}
+.calc-result small{display:block;margin-top:8px;color:#597086}
+.calc-method{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px}
+.calc-method h3{font-size:23px;margin:10px 0}
+.calc-method p,.calc-disclosure{font-size:14px;color:#587084;line-height:1.85}
+.calc-disclosure{border-top:1px solid #DEE4E9;padding-top:24px;margin:30px 0}
+@media(max-width:900px){.calc-grid,.calc-method{grid-template-columns:1fr}}
+@media(max-width:500px){.calc-card{padding:22px}.field-grid{grid-template-columns:1fr}.calc-result strong{font-size:19px}}
+</style>
+<script src="/insights/assets/engineering-tools.js" defer></script>
+</head>
+<body>
+<header class="site-head"><nav class="wrap site-nav" aria-label="Main navigation">
+  <a class="brand" href="/" aria-label="EnergizeOS corporate homepage"><svg width="24" height="24" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="0" y="0" width="21" height="21" fill="#1A2B3C"/><rect x="27" y="0" width="21" height="21" fill="#D4840A"/><rect x="0" y="27" width="21" height="21" fill="#D4840A"/><rect x="27" y="27" width="21" height="21" fill="#1A2B3C"/></svg><span class="brand-name">EnergizeOS</span></a>
+  <div class="navlinks"><a href="/">Company</a><a href="/#ems">EMS Platform</a><a href="/insights/" aria-current="page">Insights</a><a href="https://docs.energizeos.com/">Documents</a></div>
+</nav></header>
+<main>
+<section class="hero"><div class="wrap">
+<span class="eyebrow">Energize Solutions Inc. / Original Engineering Tools</span>
+<h1>Design decisions.<br><strong>Numbers you can inspect.</strong></h1>
+<p>Two browser-based, scenario-level engineering calculators for optical fiber paths and energy management dispatch. Every result exposes its assumptions and operating limitations.</p>
+<div class="meta"><span>Original calculations</span><span>No account needed</span><span>Inputs stay in your browser</span></div>
+</div></section>
+<section class="section tint" aria-labelledby="tools-heading"><div class="wrap">
+<div class="eyebrow">Engineering Workbench</div><h2 id="tools-heading">Quantify what the assumptions permit.</h2>
+<div class="calc-grid">
+<article class="calc-card">
+<p class="calc-index">01 / Optical Transport</p><h3>Optical Link Budget Calculator</h3>
+<p>Estimate the one-way link-loss budget including wavelength-dependent fiber attenuation, connection losses, splice losses and reserved engineering margin. Available optical power budget must come from compatible transceiver documentation.</p>
+<form id="optical-form" novalidate>
+<div class="field-grid">
+<label>Fiber length (km)<input type="number" name="length" value="20" min="0" max="10000" step="any" required></label>
+<label>Fiber attenuation (dB/km)<input type="number" name="attenuation" value="0.30" min="0" max="10" step="any" required></label>
+<label>Connector interfaces (count)<input type="number" name="connectors" value="2" min="0" max="10000" step="1" required></label>
+<label>Loss per interface (dB)<input type="number" name="connectorLoss" value="0.5" min="0" max="10" step="any" required></label>
+<label>Splices (count)<input type="number" name="splices" value="0" min="0" max="10000" step="1" required></label>
+<label>Loss per splice (dB)<input type="number" name="spliceLoss" value="0.1" min="0" max="10" step="any" required></label>
+<label>Engineering margin (dB)<input type="number" name="margin" value="3" min="0" max="100" step="any" required></label>
+<label>Available optical budget (dB)<input type="number" name="available" value="12" min="0" max="200" step="any" required></label>
+</div>
+<button class="calc-action" type="submit">Calculate Optical Margin</button>
+</form>
+<div class="calc-result" id="optical-result" role="status" aria-live="polite">Enter measured or assumed component losses to estimate link budget.</div>
+</article>
+<article class="calc-card">
+<p class="calc-index">02 / EMS Control</p><h3>Dispatch Feasibility Calculator</h3>
+<p>Screen a constant-power battery dispatch request against usable AC energy and a declared continuous inverter power ceiling. Results are simplified energy-balance estimates, not grid dispatch authorization.</p>
+<form id="dispatch-form" novalidate>
+<div class="field-grid">
+<label>Nominal DC storage (MWh)<input type="number" name="storage" value="2.5" min="0.01" max="100000" step="any" required></label>
+<label>Usable depth of discharge (%)<input type="number" name="dod" value="90" min="1" max="100" step="any" required></label>
+<label>One-way discharge efficiency (%)<input type="number" name="efficiency" value="90" min="1" max="100" step="any" required></label>
+<label>Continuous inverter ceiling (MW AC)<input type="number" name="ceiling" value="1.5" min="0.01" max="100000" step="any" required></label>
+<label>Requested dispatch power (MW AC)<input type="number" name="power" value="1" min="0.01" max="100000" step="any" required></label>
+<label>Requested duration (hours)<input type="number" name="hours" value="2" min="0.01" max="100000" step="any" required></label>
+</div>
+<button class="calc-action" type="submit">Check Dispatch Feasibility</button>
+</form>
+<div class="calc-result" id="dispatch-result" role="status" aria-live="polite">Enter project assumptions to screen the constant-power schedule.</div>
+</article>
+</div>
+</div></section>
+<section class="section" aria-labelledby="methodology"><div class="wrap">
+<div class="eyebrow">Engineering Methodology</div><h2 id="methodology">What these models calculate—and what they do not.</h2>
+<div class="calc-method">
+<div><h3>Optical budget</h3><p>Required loss = length × fiber attenuation + connector count × loss per interface + splice count × loss per splice + reserved margin. Headroom = available transceiver power budget − required loss. A nonnegative value indicates only that the simplified loss-budget comparison passes.</p><p>Wavelength, fiber type, connector cleanliness, wavelength-dependent receiver sensitivity, dispersion, nonlinear impairments, receive overload, optical safety and field measurement require separate engineering review. A successful power budget does not certify link functionality.</p></div>
+<div><h3>EMS dispatch screening</h3><p>Usable AC energy = nominal DC energy × usable DoD × one-way discharge efficiency. Requested AC energy = requested power × requested duration. Energy reserve = usable AC energy − requested energy. Power also must not exceed the stated inverter ceiling.</p><p>This simplified screen omits ramping, state of charge, inverter curves, auxiliary demand, grid constraints, aging, temperature, reserve obligations, telemetry failures, tariff rules and safety interlocks. EMS control and commissioning remain subject to site and utility requirements.</p></div>
+</div>
+<p class="calc-disclosure">Research policy: inputs are user-supplied assumptions, not independently verified equipment specifications. The calculations run locally, transmit no form values and make no vendor claims, operational guarantees, certification assertions or product quotations.</p>
+<p><a href="/insights/">Return to Engineering Insights</a></p>
+</div></section>
+</main>
+<footer class="footer"><div class="wrap"><span>EnergizeOS · Energize Solutions Inc.</span><a href="/">Corporate Website</a></div></footer>
+</body>
+</html>
