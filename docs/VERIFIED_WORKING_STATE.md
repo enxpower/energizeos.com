@@ -90,3 +90,8 @@ Operate a premium, English-only ESI corporate website and original `/insights/` 
 
 ## Operating Rule
 **Action → Observation → Verification → State Update.** Only verified outcomes enter Completed. G0, G3, G4 and G5 remain unclosed. Optimize for the next required acceptance gate, not cosmetic changes or document counts.
+
+## G4 Owner Factual Confirmation — 2026-10-25
+
+- Owner confirms ESI receives and processes corporate website inquiries and privacy requests via `info@energizeos.com` and retains relevant email according to business and legal requirements. Owner also confirms no Google Analytics, Meta Pixel, advertising-serving scripts or other third-party visitor tracking currently enabled on the ESI website. Recorded in `docs/ADSENSE_PRIVACY_NOTICE_REVIEW.md` at `e2ed822e8af08650861d63dcf1115e090d24b7ac`.
+- Unverified boundaries remain provider-side hosting/DNS logs and retention, email processing terms/geography, future ad-consent requirements and current Google AdSense account/reactivation state. Privacy PR #33 remains DRAFT / NOT PUBLISHED pending exact release review and separate R3 legal-publication authorization. AGI&M unaffected.
