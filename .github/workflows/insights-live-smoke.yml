@@ -221,3 +221,37 @@ jobs:
           else:
               raise AssertionError(f"Production reference not verified: {last}")
           PY
+
+      - name: Verify deployed corporate contact and microgrid commercial content
+        run: |
+          python3 - <<'PY'
+          import re
+          import urllib.request
+          urls = [
+              "https://energizeos.com/contact/",
+              "https://energizeos.com/insights/microgrid-ai/",
+              "https://energizeos.com/",
+          ]
+          markers = [
+              "mailto:info@energizeos.com",
+              "Private API integration",
+              "In-house Microgrid Intelligence Engine.",
+          ]
+          bodies = []
+          for url in urls:
+              req = urllib.request.Request(url, headers={"User-Agent": "Corporate-AdSense-Site-Trust-Smoke/1.0"})
+              with urllib.request.urlopen(req, timeout=25) as response:
+                  assert response.status == 200, "Unexpected HTTP status"
+                  assert response.geturl().rstrip("/") == url.rstrip("/"), "Unexpected redirect"
+                  page = response.read(900000).decode("utf-8")
+              assert '<html lang="en">' in page, "Non-English page declaration"
+              assert 'href="' + url + '"' in page, "Canonical does not match the real page"
+              assert not re.search(r"[\u3400-\u9fff]", page), "Non-English public page"
+              assert "adsbygoogle" not in page.lower(), "Unapproved ads code"
+              bodies.append(page)
+              print("PUBLIC_BRAND_TRUST_PAGE=PASS " + url)
+          joined = "\n".join(bodies)
+          for marker in markers:
+              assert marker in joined, "Required business/trust evidence missing: " + marker
+          print("PUBLIC_SITE_TRUST_ACCEPTANCE=PASS pages=" + str(len(urls)))
+          PY
