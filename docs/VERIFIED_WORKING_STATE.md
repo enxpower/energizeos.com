@@ -2,8 +2,8 @@
 
 Project: `enxpower/energizeos.com`
 Workstream: AdSense readiness — Issue #5
-Checkpoint: 2026-10-25 (GitHub Pages reported deployment success; independent public-URL HTTP content check pending)
-Progress pointer: **G0 IN PROGRESS / G1 MERGED + PAGES PASS / LIVE HTTP PENDING / G2–G4 NOT STARTED / G5 EXTERNAL**
+Checkpoint: 2026-10-25 (G1 production route verified by independent HTTP smoke; G0/G2–G5 remain open)
+Progress pointer: **G0 IN PROGRESS / G1 VERIFIED COMPLETE / G2–G4 NOT STARTED / G5 EXTERNAL**
 
 ## Objective
 Deliver a premium English-only ESI corporate website with a useful, original `/insights/` center and tools, fully unattended regular operations within Google's publisher policies, and a separately verifiable organization AdSense application.
@@ -22,9 +22,11 @@ Deliver a premium English-only ESI corporate website with a useful, original `/i
 - G1 feature PR #7 merged as `227eeac8913ce7ea8b1dd86d8de803f7d8de421a`. Existing social-preview tests, new static content checks and real Chromium tests all passed; screenshots at 390/768/1440 px were visually inspected.
 - GitHub Pages build and deployment run #40168309514 reported SUCCESS for the merged revision. This does not prove external HTTPS content availability.
 
+- G1 LIVE VERIFIED: independent GitHub Actions run #40168516915 successfully fetched `https://energizeos.com/insights/` over HTTPS and verified HTTP 200, resolved URL, canonical URL, English HTML and the expected original engineering content. Production publication and site quality were separately supported by Pages success and reviewed Chromium screenshots. This completes G1 only, not broader AdSense acceptance.
+
 ## Remaining
-- G0 [IN PROGRESS] — verify current public Pages route, rollback, legacy optical URL, English and policy/claim inventory.
-- G1 [PAGES PASS / LIVE HTTP PENDING] — English EMS/optical Insights route merged and Pages build success observed; independent public-path HTTPS verification remains.
+- G0 [IN PROGRESS] — complete legacy optical-route checks, English history inventory, corporate claim audit and rollback documentation.
+
 - G2 [NOT STARTED] — implement independently tested optical link budget and EMS engineering tools.
 - G3 [NOT STARTED] — integrate limited public-safe English intelligence without exposing internal BD action hints and with ad-free defaults on automated reports.
 - G4 [NOT STARTED] — test privacy/CMP/ads.txt prerequisites, SEO, accessibility, mobile and live browser flows.
@@ -51,7 +53,7 @@ Deliver a premium English-only ESI corporate website with a useful, original `/i
 5. Actual Google site-approval decision is observed. Never represent a pre-submission checklist as Google approval.
 
 ## Next Action
-Run an independent fail-closed HTTPS content/canonical smoke for the new ESI Insights URL and reconcile G1; then prioritize G2 optical calculator, G0 legacy-route review, and G4 policy/privacy checks.
+Prioritize G2 original optical link-budget and EMS engineering calculators; in parallel verify legacy optical public-route ownership and G4 privacy/Google account requirements.
 
 ## Operating Rule
 **Action → Observation → Verification → State Update**. Report the actual G0–G5 gate, observable output, blocker, and exact next action. Avoid fictional percentages and progress from code changes alone. Historical releases remain accessible in Git history; this file represents the current active workstream only.
