@@ -25,6 +25,8 @@ Operate a premium, English-only ESI corporate website and original `/insights/` 
 
 - G4 public-facing editorial quality: English corporate/Insights passages were corrected to remove internal publisher operations, automation, monetization and BD-team discussion language while retaining reader-useful engineering/source limitations. Feature PR #19 merged `cb28b94f3f47077fdc0233142a002683dcf44cc9`; existing site CI run #40174812038 passed with the new visible-text/metadata/HTML-comment copy gate and 390/768/1440 browser tests. Public-domain read-only monitoring PR #20 merged `fcd334f3d396ecc37f66cf7fdb9095ac497ef215`, verified on the PR in run #40175180345 and again on `main` in #40175285030. Site deployment evidence includes run #40174984340 and Pages #40175284815. The public-copy requirement is verified; this is not a statement of Google publisher-policy or privacy-law approval.
 
+- Original business-aligned engineering reference: A premium English microgrid AI engineering reference that distinguishes operator/AI advisory analytics from deterministic EMS and independent protective-device operation, explains site isolation and future data-integration design, and explicitly does not offer a live customer API. Website source PR #23 merged as `72cdf4323fa0cb27e4256c500f4d166dbc83bcb8` after successful Chromium 390/768/1440 visual and site CI run #40176568368; GitHub Pages deployment #40176804249 succeeded. Independent bounded HTTPS monitoring PR #24 merged as `e28c2437600c0fa208d5adbc66fdf83ca53a83ed` and its `main` run #40177076672 verified `https://energizeos.com/insights/microgrid-ai/` with HTTP 200, canonical, English content markers, and advertising/internal-content isolation. This records public content acceptance, not any AdSense or API product approval.
+
 ## Remaining
 - G0 [PARTIAL]: independently confirm business/certification/performance statements, language inventory, legacy public-route provenance, privacy footprint and release rollback evidence.
 - G3 [PARTIAL]: an original, English-only indicator/methodology research page is live and HTTPS-verified. Unattended public-data refresh, safe article-level English optical research/history and legacy Chinese publication isolation remain open; the independent governed publisher was not changed.
@@ -39,6 +41,7 @@ Operate a premium, English-only ESI corporate website and original `/insights/` 
 - Routine R0–R2 implementation follows the group Six Rules and Global Objective Lock. Genuine R3 payment, legal, credentials, new unauthorized communications and material scope remain Owner-controlled.
 
 ## Evidence
+- Engineering reference Issue #22; feature PR #23, live monitor PR #24, HTTPS `main` run #40177076672.
 - Public editorial quality Issue #18; source-copy PR #19, production-monitor PR #20; independently passed public smoke #40175285030.
 - ESI Energy/Optical Intelligence acceptance: https://github.com/enxpower/energizeos.com/issues/13 ; PR #14 + PR #16; browser run #40173284517; public smoke #40173559216; Pages #40173558977.
 - AdSense trust/privacy audit: https://github.com/enxpower/energizeos.com/issues/15.
@@ -57,7 +60,7 @@ Operate a premium, English-only ESI corporate website and original `/insights/` 
 5. The real Google AdSense review of each corporate domain is recorded; there is no engineering shortcut to provider approval.
 
 ## Next Action
-Resolve G0 unsupported 500+ MW/Fortune 500/certification assertions with independent customer and equipment evidence or qualified copy; establish accurate English privacy/contact notices under G4 only after validating actual practices. For G3-B first verify a safe source-published JSON route and individual official data consistency; do not auto-syndicate Chinese weekly BD reports or assume Google AdSense approval.
+Keep ESI software-first, EMS core with microgrid AI architecture and optical supplemental. The older browser Copilot remains paused; future customer API requires separately verified secure backend, tenant authentication, site permissions and approved release. Prioritize accurate Privacy/CMP and commercial-claim evidence; G3 auto-ingestion remains open.
 
 ## Operating Rule
 **Action → Observation → Verification → State Update.** Only verified outcomes enter Completed. G0, G3, G4 and G5 remain unclosed. Optimize for the next required acceptance gate, not cosmetic changes or document counts.
