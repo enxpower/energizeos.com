@@ -1,39 +1,40 @@
 # English Intelligence Reconstruction — Verified Working State (2026-10-25)
 
 ## Objective
-Maintain independent, premium, English-only original Intelligence publishing for AGI&M energy and ESI optical, with reliable local articles, immutable history, live acceptance, weekly qualified source collection and safe editorial approval before future publication.
+Deliver a premium, fully English, local North American Intelligence publication for each corporate domain, with real source-backed articles, immutable dated history, verified live delivery and continuous weekly source qualification preceding editorial approval and publication.
 
 ## Verified Current State
-- Main publication and live-verification fixes are merged and released in both repositories. ESI main baseline: `ad84b4cb02e3502d2fc6d6e4865c21fe95db779d`.
-- Actual main production run 40206837362 succeeded. Main live HTTPS smoke 40206837098 succeeded and independently fetched /insights/, reviewed 2026-w43 and launch-reference pages, full local archive, canonical, source footnotes and live issues.json. Mobile/tablet/desktop browser CI passed at 390/768/1440 for both original editorial PRs.
-- Weekly reviewed-source collector is under review in PR #49; controlled PR runner 40207698441 PASSED with 0 editorial candidates, no public article published or manifest changed. Official CRTC news and broadband feeds returned HTTP 403; removed them rather than disguising the fault. The working CRTC daily source returned no fresh qualifying articles. This is an honest no-change result, not a weekly edition.
+- English-only P0 boundary is merged, deployed and live-tested; unrelated Chinese research publishers are not public English article destinations.
+- P1–P4 launch articles, source citations, reviewed SHA256 issue manifests, latest/previous/watchlist/archive, sitemap and mobile/tablet/desktop tests were merged and deployed. October 25, 2026 issue 2026-w43 and explicitly labelled launch reference remain published locally.
+- P6 exact-article live HTTPS verifier was merged before the P5 work, with independent article/manifest/history route checks on main.
+- P5 reviewed-source qualification workflow is **MERGED** in PR #49, squash commit `de10c3318398e2dae451e6f69d1106c49621870b`. Cron is `32 16 * * 1` (Mondays 16:32 UTC). Controlled PR source run 40207809951 PASSED and produced a review artifact; The CRTC Daily Releases primary feed was fetched successfully; 0 new qualifying optical sources were found, so the public edition stayed unchanged. Other official CRTC feeds returned 403 and were excluded rather than silently bypassed.
+- Exact post-P5-merge website deployment 40207913443 SUCCESS, live public HTTPS 40207913687 SUCCESS, and website validation 40207913669 SUCCESS. These verify site preservation, not future publication or Google AdSense approval.
 
 ## Completed
-- P0: Customer-facing Chinese publisher links isolated, invalid anchor/template repaired, previous metadata-only Chinese weekly sync disabled; emergency merged and live-verified.
-- P1–P4: Local approved English manifest and source-backed full October 25 editions, current/previous/watchlist/archive, citations, canonical/SEO, immutable approved content checks, editorial and visual browser CI, production release verified.
-- P6 delivery/live: Specific local article, archive and manifest route HTTP acceptance added and merged with PR 48; exact current-main run 40206837098 PASS. Original tools and corporate checks preserved.
-- P5 controlled source qualification: PR run 40207698441 showed real official-feed ingestion, bounded editorial candidates or honest no-new-evidence, and source-only artifact retention. Negative/unit tests passed. Publication history was not modified.
+- P0: Emergency HTML/customer English boundary and safe legacy research isolation with live acceptance.
+- P1–P4: Two locally rendered source-backed English editions per site, actual dates, citations and human-readable archive, append-only approval guard and responsive browser CI.
+- P6 current content release: source build, deployed HTML, main HTTPS link/article/manifest acceptance and pre-existing business/tool monitoring completed for current 2026-w43 release.
+- P5 source stage: Monday workflow definition in main, direct official-source qualification, review-only artifact retention, no-change/blocked-feed unit tests and non-mutating release gates. No unapproved site changes.
 
 ## Remaining
-- P5 deployment: Finish latest PR #49 review/CI, merge, confirm first main run and exact official Monday UTC scheduling. The first actual calendar-scheduled run after merging is still PENDING and must not be claimed.
-- P5 editorial publication: Qualified sources need independent fact checking, English editorial synthesis, approved content hashes and review before new issue JSON/manifest may be committed. No automatic publication of unreviewed RSS titles; continuous weekly article delivery is not yet verified.
-- P6 end-to-end: Demonstrate first later approved new-issue publication through immutable manifest, source validation, CI, production deployment, public HTTPS and archival preservation. A successful source scan or cron setting alone does not close this requirement.
+- P5 calendar verification: Actual first scheduled Monday execution on `main` has not happened yet. A pull-request workflow run and a cron declaration do not prove a future scheduled run.
+- P5 regular English publication: Source candidate review, original evidence-checked synthesis, explicit editorial approval, immutable manifest commit, full build/CI and automatic approved-commit deployment still require a new, real later-week end-to-end demonstration. There is no authorized auto-approval from scraped/RSS titles.
+- P5 source breadth: Additional reachable optical standards, DWDM and telecom primary sources must be qualified; unavailable CRTC RSS endpoints may not be represented as working.
+- P6 final closure: Verify historical retention, source success/no-change/failure behavior and public HTTPS after the first genuine *new approved* edition. Find a reliable additional optical-industry primary-source feed. Independent English full-article publication for later weeks has not been demonstrated.
 
 ## Constraints / Do Not Touch
-Keep corporate brands, company/product scope, prior engineering tools, Privacy and AdSense tags, AdSense review state, Chinese/legacy independent publishers, historic official numeric series, secrets, account settings, business transactions, DNS and other code untouched. No fabricated dates, claims or weekly editions, no unreviewed AI publications, new public API, billing, credentials or advertisements. Existing R3 decisions remain Owner controlled.
+No Chinese report redirects, fake dates, unsourced/automatically approved AI articles, unverified commercial claims or auto ads. Preserve corporate business pages/identity, ESI and AGI separate categories, Privacy and AdSense ownership, private publishers/reports, prior numerical research, tools, credentials, DNS, billing and R3 owner-only decisions. All active public and code content must remain English.
 
 ## Evidence
-- Release: https://github.com/enxpower/energizeos.com/actions/runs/40206837362
-- Current main true-HTTPS acceptance: https://github.com/enxpower/energizeos.com/actions/runs/40206837098
-- Weekly source collection (review-only): https://github.com/enxpower/energizeos.com/actions/runs/40207698441
-- Weekly scoped PR: https://github.com/enxpower/energizeos.com/pull/49
-- Latest available status: ESI collector #40207698441 PASS / no new evidence; site validation CI #40207698396 pending at checkpoint.
+- Weekly source collection PR #49: https://github.com/enxpower/energizeos.com/pull/49; controlled run: https://github.com/enxpower/energizeos.com/actions/runs/40207809951.
+- Post-merge release: https://github.com/enxpower/energizeos.com/actions/runs/40207913443 ; main HTTPS acceptance: https://github.com/enxpower/energizeos.com/actions/runs/40207913687 ; main/site or branch CI: https://github.com/enxpower/energizeos.com/actions/runs/40207913669.
+- P5 main baseline `de10c3318398e2dae451e6f69d1106c49621870b`; previous English publication release baseline `ad84b4cb02e3502d2fc6d6e4865c21fe95db779d`.
 
 ## Success Criteria
-Both sites have complete source-backed dated English articles on local paths, navigable latest/previous/watchlist/archive, immutable historic versions, no Chinese-publisher redirect, real weekly source qualification and editor-approved publication/retention, safe failed/no-change cycles, actual scheduled controlled run and CI/mobile/desktop/public HTTPS acceptance. Only actual Google review may establish AdSense approval, separately.
+Independent professionally written full English articles on both sites; honest source traceability; correct latest/previous/watchlist/archive; immutable historical editions; weekly official-source gathering; source/editorial approval for each issue; no-history-loss on failure/no change; controlled first scheduled run; later-week approved article publish→CI→deploy→public HTTPS acceptance. Actual Google AdSense approval is separate and solely provider-determined.
 
 ## Next Action
-Finish PR #49 current-head checks, review and squash merge. Confirm live deployed sites remain unchanged after source-only workflow, verify source-collector main status, then use first official weekly scheduled run and new editor-approved edition to close remaining P5/P6. Record evidence in this existing VWS.
+Observe and record the first Monday scheduled candidate scan after the rollout. Independently qualify sources, complete a new Week 44 original English issue with source-specific citations, approve/fingerprint it through existing manifest, and run the full editorial→main commit→CI→deploy→live article check before closing P5/P6. Maintain the designated VWS as verified new evidence arrives.
 
 ---
 
