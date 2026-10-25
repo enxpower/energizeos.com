@@ -18,6 +18,8 @@ jobs:
           python-version: "3.12"
       - name: Validate sharing metadata and assets
         run: python scripts/validate_social_preview.py
+      - name: Verify publication regression fixtures
+        run: python3 -m unittest discover -s scripts/tests -p "test_*.py"
       - name: Validate English Insights and publishing isolation
         run: python scripts/validate_insights.py
       - name: Audit the complete official website against technical AdSense preflight
@@ -51,3 +53,4 @@ jobs:
           path: build/visual/
           if-no-files-found: ignore
           retention-days: 7
+

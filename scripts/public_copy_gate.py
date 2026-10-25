@@ -5,6 +5,7 @@ import argparse
 from html.parser import HTMLParser
 from pathlib import Path
 import re
+from urllib.parse import unquote, urlsplit
 
 # These are high-confidence editorial leaks, not ordinary engineering terms.
 PRIVATE_PROCESS = [
@@ -28,6 +29,7 @@ class PublicText(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
         self.parts = []
+        self.links = []
         self.hidden_depth = 0
 
     def handle_starttag(self, tag, attrs):
@@ -35,6 +37,8 @@ class PublicText(HTMLParser):
             self.hidden_depth += 1
             return
         for key, value in attrs:
+            if key in ("href", "src") and value:
+                self.links.append(value)
             if key in ("alt", "aria-label", "title") and value:
                 self.parts.append(value)
             if tag == "meta" and key == "content" and value:
@@ -57,6 +61,12 @@ def check_markup(contents, label):
     parser = PublicText()
     parser.feed(contents)
     problems = []
+    if re.search(r"\$\{|%%[A-Z_]+%%|\{\{[^{}]+\}\}", contents):
+        problems.append("Unresolved template expression in public HTML")
+    for link in parser.links:
+        parsed = urlsplit(unquote(link))
+        if parsed.hostname in {"docs.agim.ca", "docs.energizeos.com"} and parsed.path.rstrip("/").lower().startswith("/intel"):
+            problems.append("Customer link to isolated research publisher")
     for part in parser.parts:
         match = PRIVATE_RE.search(part)
         if match:
@@ -115,3 +125,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
