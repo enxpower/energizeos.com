@@ -1,59 +1,55 @@
 # VERIFIED WORKING STATE
 
 Project: `enxpower/energizeos.com`
-Workstream: AdSense readiness — Issue #5
-Checkpoint: 2026-10-25 (G1 production route verified by independent HTTP smoke; G0/G2–G5 remain open)
-Progress pointer: **G0 IN PROGRESS / G1 VERIFIED COMPLETE / G2–G4 NOT STARTED / G5 EXTERNAL**
+Authoritative workstream: AdSense readiness — Issue #5
+Checkpoint: 2026-10-25
+Progress pointer: **G0 PARTIAL / G1 VERIFIED COMPLETE / G2 VERIFIED COMPLETE / G3 NOT STARTED / G4 NOT STARTED / G5 EXTERNAL**
 
 ## Objective
-Deliver a premium English-only ESI corporate website with a useful, original `/insights/` center and tools, fully unattended regular operations within Google's publisher policies, and a separately verifiable organization AdSense application.
+Operate a premium, English-only ESI corporate website and original `/insights/` engineering content with independently working calculation tools, safe automation and a separately eligible organizational AdSense application. Actual provider approval is the final external gate.
 
 ## Verified Current State
-- `enxpower/energizeos.com` is the current official static website repository. It includes the approved logo assets, social-preview validation, sitemap and robots rules.
-- `enxpower/docs-energize-v2/intel` contains the optical-market intelligence packages, including W43 dated 2026-10-19. Publication workflow success is not a current live-route test.
-- The current website default branch now contains `insights/index.html`, a homepage Insights link, sitemap entry, and English/content/SEO validation.
-- `docs-energize-v2` contains other independent products and unrelated open pull requests; this work must not modify those unrelated directories.
-- The 2026-10-25 AdSense governing Issue is #5. A scoped `agent/adsense-g0-control-plane` branch exists.
+- The website belongs to `enxpower/energizeos.com`; the independent `docs-energize-v2` governed optical/EMS intelligence products remain outside the scope of these website changes.
+- `/insights/` is part of the root corporate domain. The website and both calculation tools are present in the current website source and published repositories.
+- The homepage/Insights logo mismatch was repaired using the homepage's exact approved corporate SVG, PR #9 merged `899652f0b1da25f8afd75124ed5fcb0578365249` and Pages/browser checks passed. Legacy optical Intel public access and existing commercial/certification claims require further review.
+- Existing automatically generated or legacy intelligence is NOT certified all-English or ad-eligible; no publisher migration was completed in G1/G2.
 
 ## Completed
-- Read and mapped the actual website and intelligence repository responsibilities from connected GitHub.
-- Independently located authoritative Issue #5 and the relevant source/automation boundaries.
-- Governance PR #6 was squash-merged into `main` as `2f3e832e8918adbc3c32026a7f46eca5526b46cd`; local Six Rules are now on the default branch.
-- G1 feature PR #7 merged as `227eeac8913ce7ea8b1dd86d8de803f7d8de421a`. Existing social-preview tests, new static content checks and real Chromium tests all passed; screenshots at 390/768/1440 px were visually inspected.
-- GitHub Pages build and deployment run #40168309514 reported SUCCESS for the merged revision. This does not prove external HTTPS content availability.
-
-- G1 LIVE VERIFIED: independent GitHub Actions run #40168516915 successfully fetched `https://energizeos.com/insights/` over HTTPS and verified HTTP 200, resolved URL, canonical URL, English HTML and the expected original engineering content. Production publication and site quality were separately supported by Pages success and reviewed Chromium screenshots. This completes G1 only, not broader AdSense acceptance.
+- G1: Professional English Insights page, corporate navigation and sitemap were merged, rendered in Chromium at 390/768/1440 px, deployed, and checked over public HTTPS. Evidence is retained in preceding PRs and GitHub Actions.
+- G2: Two original engineering tools (optical link budget and EMS constant-power dispatch feasibility). Built with explicit assumptions and limitations, finite/range validation, independent example calculations and safe client-side rendering.
+- G2 acceptance evidence: PR #10; existing site validation, formula and 390/768/1440 Chromium CI run #40169925497; feature merged as `0901b1e25aadf22da5386ffc58c87c4919be6d04`. Public deployment/Pages run #40170277236 succeeded and main-branch read-only HTTPS tool-and-script smoke run #40170277808 succeeded for `https://energizeos.com/insights/tools/`.
+- The related smoke check was merged into the current main branch, so future public failures are actionable rather than treated as successful publication.
 
 ## Remaining
-- G0 [IN PROGRESS] — complete legacy optical-route checks, English history inventory, corporate claim audit and rollback documentation.
-
-- G2 [NOT STARTED] — implement independently tested optical link budget and EMS engineering tools.
-- G3 [NOT STARTED] — integrate limited public-safe English intelligence without exposing internal BD action hints and with ad-free defaults on automated reports.
-- G4 [NOT STARTED] — test privacy/CMP/ads.txt prerequisites, SEO, accessibility, mobile and live browser flows.
-- G5 [GOOGLE EXTERNAL GATE] — separate ESI organization AdSense eligibility, verification, review and observed decision.
+- G0 [PARTIAL]: independently confirm business/certification/performance statements, language inventory, legacy public-route provenance, privacy footprint and release rollback evidence.
+- G3 [NOT STARTED]: safely derive original, fact-checkable, English-only public intelligence from existing publishers; exclude internal business actions and preserve their own deployment and email pipelines.
+- G4 [NOT STARTED]: Google publisher-policy audit, data/privacy notices, consent/CMP assessment, crawling/site verification, ads.txt when publisher ID exists, accessibility and index quality; automated unreviewed/uncurated briefs remain outside advertising inventory.
+- G5 [EXTERNAL]: verify genuine ESI legal payee/account eligibility and submit `energizeos.com` for an actual Google AdSense decision; no approval has been observed.
 
 ## Constraints / Do Not Touch
-- All active implementation and public copy, comments, HTML, tests, metadata, automated email and new research must be English; preserve history for audit.
-- Maintain established EnergizeOS corporate brand/VI, EMS primary positioning, and optical intelligence only under ESI.
-- Never alter independent `docs-energize-v2` products, deployment, commercial confidences, secrets or publisher cadence as collateral work.
-- Automated, uncurated new reports default to ad-free; ads must never imply Google policy approval.
-- No unauthorized new public customer claim, billing or account action.
+- All new/current project code, comments, tools and public content must be English. Preserve historical commits and independently governed legacy assets until a safe migration is verified.
+- Preserve existing corporate identity, approved logos, original website architecture, unrelated sites/publishers, clients, secrets and mail subscriptions.
+- AGI&M: energy, BESS and grid equipment only. ESI: EMS as primary and optical networking as supplementary business. Do not cross-post ESI optical products to AGI&M.
+- No invented operating claims, customer identifications or certifications; no automatic ads on uncurated machine-generated articles; no provider policy circumvention.
+- Routine R0–R2 implementation follows the group Six Rules and Global Objective Lock. Genuine R3 payment, legal, credentials, new unauthorized communications and material scope remain Owner-controlled.
 
 ## Evidence
-- Authoritative issue: https://github.com/enxpower/energizeos.com/issues/5
-- Source repository: https://github.com/enxpower/energizeos.com
-- Group policies: `enxpower/group-governance/docs/GLOBAL_OBJECTIVE_LOCK.md`, `docs/AI_DELIVERY_CONTRACT.md`, `docs/STANDING_ENGINEERING_AUTHORITY.md`.
-- G1 merged SHA `227eeac8913ce7ea8b1dd86d8de803f7d8de421a`, GitHub Actions deployment/Pages run #40168309514 reported SUCCESS, and pre-merge Chromium screenshots were reviewed. Public URL `https://energizeos.com/insights/` is still pending independent content response.
+- Authoritative scope: https://github.com/enxpower/energizeos.com/issues/5
+- Source: https://github.com/enxpower/energizeos.com
+- G2 feature: https://github.com/enxpower/energizeos.com/pull/10
+- Real public tool: https://energizeos.com/insights/tools/
+- GitHub Actions build/deployment #40170277236; independent main-branch live tool verification #40170277808.
+- Canonical group governance: `enxpower/group-governance/docs/GLOBAL_OBJECTIVE_LOCK.md`, `docs/AI_DELIVERY_CONTRACT.md`, `docs/STANDING_ENGINEERING_AUTHORITY.md`.
 
 ## Success Criteria
-1. All active corporate and research outputs English only; business topics and brand ownership correct.
-2. High-quality, responsive `/insights/`, useful original calculators, source/methodology disclosures and robust safety gates work on live public URLs.
-3. Regular intelligence publishing and site updates run unattended with reliable fail-closed quality checks and no disallowed automatic advertising.
-4. Google publisher/privacy and technical site-ownership requirements are independently verified; the distinct organization account is eligible.
-5. Actual Google site-approval decision is observed. Never represent a pre-submission checklist as Google approval.
+1. English-only, premium and responsive corporate/Insights pages with ESI and AGI&M scope correctly separated.
+2. Original tools return reproducible, safe outputs under real mobile/desktop browser tests and public HTTPS acceptance.
+3. Automated publication is English-only, source-auditable, preserves independent legacy pipelines and fails closed on unsafe/unverified content.
+4. AdSense trust, policy, privacy, publisher account and technical readiness are confirmed using real site evidence.
+5. The real Google AdSense review of each corporate domain is recorded; there is no engineering shortcut to provider approval.
 
 ## Next Action
-Prioritize G2 original optical link-budget and EMS engineering calculators; in parallel verify legacy optical public-route ownership and G4 privacy/Google account requirements.
+Audit existing commercial/technical claims, privacy/cookie disclosures and legacy optical intelligence language; then establish a narrow, fail-closed public-safe English intelligence integration without modifying unrelated docs projects.
 
 ## Operating Rule
-**Action → Observation → Verification → State Update**. Report the actual G0–G5 gate, observable output, blocker, and exact next action. Avoid fictional percentages and progress from code changes alone. Historical releases remain accessible in Git history; this file represents the current active workstream only.
+**Action → Observation → Verification → State Update.** Only verified outcomes enter Completed. G0, G3, G4 and G5 remain unclosed. Optimize for the next required acceptance gate, not cosmetic changes or document counts.
