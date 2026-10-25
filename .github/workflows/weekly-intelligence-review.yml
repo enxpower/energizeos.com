@@ -8,6 +8,8 @@ on:
     paths:
       - "scripts/weekly_source_review.py"
       - "scripts/tests/test_weekly_source_review.py"
+      - "scripts/prepare_editorial_packet.py"
+      - "scripts/tests/test_prepare_editorial_packet.py"
       - ".github/workflows/weekly-intelligence-review.yml"
 
 permissions:
@@ -28,8 +30,13 @@ jobs:
           python-version: "3.12"
       - name: Verify evidence qualification and no-publish safety
         run: python3 -m unittest discover -s scripts/tests -p "test_weekly_source_review.py" -v
+      - name: Test editorial intake and fail-closed draft staging
+        run: python3 -m unittest discover -s scripts/tests -p "test_prepare_editorial_packet.py" -v
       - name: Qualify actual official sources without changing the website
         run: python3 scripts/weekly_source_review.py --output build/intelligence-review/source-candidates.json
+      - name: Prepare non-publishing editorial packet for independent review
+        if: always()
+        run: python3 scripts/prepare_editorial_packet.py --input build/intelligence-review/source-candidates.json --output build/intelligence-review/editorial-packet.json
       - name: Confirm reviewed articles and public routes remain untouched
         if: always()
         run: git diff --exit-code -- content/intelligence insights sitemap.xml
