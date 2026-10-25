@@ -22,8 +22,9 @@ a{color:inherit}a:focus-visible{outline:3px solid var(--volt);outline-offset:3px
 .wrap{width:min(var(--width),calc(100% - 64px));margin-inline:auto}
 .site-head{background:#fff;border-bottom:1px solid var(--rule);position:sticky;top:0;z-index:5}
 .site-nav{display:flex;align-items:center;justify-content:space-between;min-height:78px;gap:25px}
-.brand{display:inline-flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.01em;text-decoration:none;white-space:nowrap}
-.brand img{width:30px;height:30px}
+.brand{display:inline-flex;align-items:center;gap:11px;font-weight:700;text-decoration:none;white-space:nowrap}
+.brand svg{width:24px;height:24px;display:block;flex-shrink:0}
+.brand-name{font-size:13px;font-weight:700;letter-spacing:.02em;color:var(--slate)}
 .navlinks{display:flex;align-items:center;gap:30px;flex-wrap:wrap}
 .navlinks a{font-size:12px;font-weight:700;letter-spacing:.08em;text-decoration:none;text-transform:uppercase}
 .navlinks a[aria-current="page"]{color:#965300}
@@ -61,7 +62,7 @@ h1 strong{font-weight:700}
 </head>
 <body>
 <header class="site-head"><nav class="wrap site-nav" aria-label="Main navigation">
-  <a class="brand" href="/" aria-label="EnergizeOS corporate homepage"><img src="/assets/favicon.svg" alt=""><span>EnergizeOS</span></a>
+  <a class="brand" href="/" aria-label="EnergizeOS corporate homepage"><svg width="24" height="24" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="0" y="0" width="21" height="21" fill="#1A2B3C"/><rect x="27" y="0" width="21" height="21" fill="#D4840A"/><rect x="0" y="27" width="21" height="21" fill="#D4840A"/><rect x="27" y="27" width="21" height="21" fill="#1A2B3C"/></svg><span class="brand-name">EnergizeOS</span></a>
   <div class="navlinks"><a href="/">Company</a><a href="/#ems">EMS Platform</a><a href="/insights/" aria-current="page">Insights</a><a href="https://docs.energizeos.com/">Documents</a></div>
 </nav></header>
 <main>
