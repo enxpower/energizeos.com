@@ -20,7 +20,6 @@ FEEDS = {
     ),
     "optical": (
         ("CRTC Daily Releases", "https://crtc.gc.ca/eng/rss/daily.xml"),
-        ("CRTC Broadband Fund", "https://crtc.gc.ca/eng/rss/bbf.atom.xml"),
     ),
 }
 TOPICS = {
