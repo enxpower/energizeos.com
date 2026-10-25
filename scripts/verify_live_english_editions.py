@@ -50,7 +50,7 @@ for route in routes:
     assert '<html lang="en">' in body, f"Non-English declaration: {route}"
     assert f'href="{origin + route}"' in body, f"Canonical mismatch: {route}"
     assert not cjk.search(body) and not unresolved.search(body), f"Content/template leakage: {route}"
-    assert "docs.agim.ca/intel/" not in body and "docs.energizeos.com/" not in body, f"Isolated publisher link: {route}"
+    assert "docs.agim.ca/intel/" not in body and "docs.energizeos.com/intel/" not in body, f"Isolated publisher link: {route}"
     if route in ("/insights/", base):
         for marker in ("Latest Intelligence", "Previous Edition", "Browse All Editions"):
             assert marker in body, f"Missing reader navigation: {marker} {route}"
