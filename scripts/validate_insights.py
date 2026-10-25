@@ -71,6 +71,19 @@ def main():
     check('src="/insights/assets/engineering-tools.js"' in tools, "Original calculation script is not linked")
     check("adsbygoogle" not in tools.lower(), "Do not insert ads into unchecked content")
 
+    intelligence = (ROOT / "insights" / "intelligence" / "index.html").read_text(encoding="utf-8")
+    check(CJK.search(intelligence) is None, "Intelligence must be English only")
+    check('<html lang="en">' in intelligence, "Intelligence language declaration missing")
+    check('href="https://energizeos.com/insights/intelligence/"' in intelligence, "Intelligence canonical missing")
+    check("https://energizeos.com/insights/intelligence/" in urls, "Intelligence absent from sitemap")
+    check("/insights/intelligence/" in ip.links, "Corporate Insights must link to intelligence")
+    for series, value in (("PCU335921335921", "86.6"), ("PCU3359233592", "295.7"), ("IPN33592S", "71.3379")):
+        check(series in intelligence and value in intelligence, f"Official-source evidence missing for {series}")
+    check(intelligence.count("fred.stlouisfed.org/series/") == 3, "Three official source links required")
+    check("June 2025" in intelligence and "August 2026" in intelligence, "Dated historical observations required")
+    check("adsbygoogle" not in intelligence.lower(), "Unreviewed intelligence must not include ad-serving code")
+    check("action_hint" not in intelligence and "recommended_action" not in intelligence, "Private BD content leaked")
+
     for href in ip.links:
         check(not href.startswith("javascript:"), "Disallowed JavaScript hyperlink")
         if href.startswith("#"):

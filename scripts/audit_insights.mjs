@@ -58,6 +58,19 @@ try {
     await page.evaluate(() => window.scrollTo(0, 0));
     await page.waitForTimeout(100);
     await page.screenshot({ path: "build/visual/esi-tools-" + width + ".png", fullPage: true });
+    const sourceResponse = await page.goto(origin + "/insights/intelligence/", { waitUntil:"networkidle" });
+    if (!sourceResponse || sourceResponse.status() !== 200) throw new Error("Optical Intelligence not served at " + width);
+    const research = await page.evaluate(() => ({
+      width:document.documentElement.scrollWidth,
+      client:document.documentElement.clientWidth,
+      canonical:document.querySelector('link[rel="canonical"]')?.getAttribute("href") || "",
+      brand:Boolean(document.querySelector('.brand svg[viewBox="0 0 48 48"]')),
+      count:document.querySelectorAll(".indicator-card").length
+    }));
+    if (research.width > research.client + 1 || !research.brand || research.count !== 3) throw new Error("Optical research layout, brand or indicators invalid at " + width);
+    if (research.canonical !== "https://energizeos.com/insights/intelligence/") throw new Error("Optical research canonical missing");
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await page.screenshot({path:"build/visual/esi-optical-intelligence-" + width + ".png",fullPage:true});
     await context.close();
   }
   console.log("EnergizeOS Insights Chromium tests PASS at 390 / 768 / 1440 px");
