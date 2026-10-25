@@ -60,6 +60,17 @@ def main():
     urls = [el.text for el in root.findall(".//{*}loc")]
     check("https://energizeos.com/insights/" in urls, "Insights absent from sitemap")
     check("https://energizeos.com/" in urls, "Corporate homepage absent from sitemap")
+    tools = (ROOT / "insights" / "tools" / "index.html").read_text(encoding="utf-8")
+    script = (ROOT / "insights" / "assets" / "engineering-tools.js").read_text(encoding="utf-8")
+    check(CJK.search(tools) is None and CJK.search(script) is None, "English-only tool pages and scripts required")
+    check('<html lang="en">' in tools, "Tools HTML language missing")
+    check('href="https://energizeos.com/insights/tools/"' in tools, "Tools canonical missing")
+    check("https://energizeos.com/insights/tools/" in urls, "Tools absent from sitemap")
+    check("/insights/tools/" in ip.links, "Insights must link to the engineering tools")
+    check('id="optical-form"' in tools and 'id="dispatch-form"' in tools, "Two working forms are mandatory")
+    check('src="/insights/assets/engineering-tools.js"' in tools, "Original calculation script is not linked")
+    check("adsbygoogle" not in tools.lower(), "Do not insert ads into unchecked content")
+
     for href in ip.links:
         check(not href.startswith("javascript:"), "Disallowed JavaScript hyperlink")
         if href.startswith("#"):
