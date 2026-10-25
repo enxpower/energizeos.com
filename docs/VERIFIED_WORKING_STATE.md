@@ -1,39 +1,39 @@
 # English Intelligence Reconstruction — Verified Working State (2026-10-25)
 
 ## Objective
-Publish independent, source-backed North American English Intelligence on the two corporate sites, preserve durable article history and qualify new issues weekly without importing Chinese reports.
+Maintain independent, premium, English-only original Intelligence publishing for AGI&M energy and ESI optical, with reliable local articles, immutable history, live acceptance, weekly qualified source collection and safe editorial approval before future publication.
 
 ## Verified Current State
-- P0 isolation hotfix is merged on both sites; Chinese research links and the legacy metadata-only sync are excluded from the public English publication path.
-- ESI independent editorial feature PR #47 was squash-merged to main at `8ca220d21b7aacd450b59ed966dd0e5f7209ce5f`. Head CI 40205368297 passed including 390/768/1440 Chromium routes, archive, citations, language and SEO checks.
-- Production publication workflow 40205975775 completed SUCCESS. Verified published repository `enxpower/energizeos.com` contains the complete English 2026-w43 article, local archive, canonical pages and issues.json. Production HTTP confirmation for the newly added article routes is tracked separately from git/publish job success.
-- The latest live smoke script was found to lack independent article/manifest checks; AGI&M also contained a stale original page snapshot assertion. A focused repair is under review on `fix/live-english-edition-acceptance`.
+- Main publication and live-verification fixes are merged and released in both repositories. ESI main baseline: `ad84b4cb02e3502d2fc6d6e4865c21fe95db779d`.
+- Actual main production run 40206837362 succeeded. Main live HTTPS smoke 40206837098 succeeded and independently fetched /insights/, reviewed 2026-w43 and launch-reference pages, full local archive, canonical, source footnotes and live issues.json. Mobile/tablet/desktop browser CI passed at 390/768/1440 for both original editorial PRs.
+- Weekly reviewed-source collector is under review in PR #49; controlled PR runner 40207698441 PASSED with 0 editorial candidates, no public article published or manifest changed. Official CRTC news and broadband feeds returned HTTP 403; removed them rather than disguising the fault. The working CRTC daily source returned no fresh qualifying articles. This is an honest no-change result, not a weekly edition.
 
 ## Completed
-- P0: English-only publication boundary and previous-broken-link repairs; merged, deployed and existing-route live-checked.
-- P1: old Chinese-portal metadata sync disabled; approved English issue manifest is now the only authority for issue routes.
-- P2: reviewed manifest, complete article HTML, latest/previous/watchlist and immutable source history gate are in main.
-- P3/P4: two optical editions dated October 25, 2026 have source-linked original English analysis. Publication and mobile/tablet/desktop CI passed.
-- Release job and published artifact inspected separately, not inferred from the PR merge alone.
+- P0: Customer-facing Chinese publisher links isolated, invalid anchor/template repaired, previous metadata-only Chinese weekly sync disabled; emergency merged and live-verified.
+- P1–P4: Local approved English manifest and source-backed full October 25 editions, current/previous/watchlist/archive, citations, canonical/SEO, immutable approved content checks, editorial and visual browser CI, production release verified.
+- P6 delivery/live: Specific local article, archive and manifest route HTTP acceptance added and merged with PR 48; exact current-main run 40206837098 PASS. Original tools and corporate checks preserved.
+- P5 controlled source qualification: PR run 40207698441 showed real official-feed ingestion, bounded editorial candidates or honest no-new-evidence, and source-only artifact retention. Negative/unit tests passed. Publication history was not modified.
 
 ## Remaining
-- P6 LIVE: merge the narrowly scoped live check correction, verify it against real HTTPS for every issue, latest/previous, archive and manifest. Preserve older independent engineering/metric checks.
-- P5: implement and test weekly public-source qualification, local editorial evidence review, approved-publication trigger and no-change/failure retention. Do not auto-approve unknown future sources or fabricate articles.
-- P6 FULL: complete end-to-end scheduled controlled execution, negative tests, failure retention and public read-after-deploy checks. Closure requires verified weekly pipeline, not an intention or a cron line.
+- P5 deployment: Finish latest PR #49 review/CI, merge, confirm first main run and exact official Monday UTC scheduling. The first actual calendar-scheduled run after merging is still PENDING and must not be claimed.
+- P5 editorial publication: Qualified sources need independent fact checking, English editorial synthesis, approved content hashes and review before new issue JSON/manifest may be committed. No automatic publication of unreviewed RSS titles; continuous weekly article delivery is not yet verified.
+- P6 end-to-end: Demonstrate first later approved new-issue publication through immutable manifest, source validation, CI, production deployment, public HTTPS and archival preservation. A successful source scan or cron setting alone does not close this requirement.
 
 ## Constraints / Do Not Touch
-Do not change corporate brands, main business pages, Privacy, AdSense ownership/account, client configurations, independent Chinese research, private reports or any R3 legal/financial/credential settings. No fictional dates, unreviewed AI articles, public API signup or billing. English-only customer surfaces and source-controlled archive.
+Keep corporate brands, company/product scope, prior engineering tools, Privacy and AdSense tags, AdSense review state, Chinese/legacy independent publishers, historic official numeric series, secrets, account settings, business transactions, DNS and other code untouched. No fabricated dates, claims or weekly editions, no unreviewed AI publications, new public API, billing, credentials or advertisements. Existing R3 decisions remain Owner controlled.
 
 ## Evidence
-- ESI feature: https://github.com/enxpower/energizeos.com/pull/47 ; CI https://github.com/enxpower/energizeos.com/actions/runs/40205368297 ; release https://github.com/enxpower/energizeos.com/actions/runs/40205975775.
-- Main SHA: `8ca220d21b7aacd450b59ed966dd0e5f7209ce5f`. Verified published file path: `enxpower/energizeos.com/insights/intelligence/2026-w43/index.html`.
-- Current follow-up branch: `fix/live-english-edition-acceptance`, with Python live verification and scoped live-smoke corrections. No production verification for this patch is claimed until the exact PR and main runs succeed.
+- Release: https://github.com/enxpower/energizeos.com/actions/runs/40206837362
+- Current main true-HTTPS acceptance: https://github.com/enxpower/energizeos.com/actions/runs/40206837098
+- Weekly source collection (review-only): https://github.com/enxpower/energizeos.com/actions/runs/40207698441
+- Weekly scoped PR: https://github.com/enxpower/energizeos.com/pull/49
+- Latest available status: ESI collector #40207698441 PASS / no new evidence; site validation CI #40207698396 pending at checkpoint.
 
 ## Success Criteria
-Both sites: source-vetted English articles on local URLs; latest/previous/watchlist/archive; immutable dated history; publisher separation; weekly qualified pipeline and actual controlled scheduled run; failure/no-change historical safety; green CI/browser, main deployment and independently fetched public HTTPS content. No Google AdSense approval inferred from technical publication.
+Both sites have complete source-backed dated English articles on local paths, navigable latest/previous/watchlist/archive, immutable historic versions, no Chinese-publisher redirect, real weekly source qualification and editor-approved publication/retention, safe failed/no-change cycles, actual scheduled controlled run and CI/mobile/desktop/public HTTPS acceptance. Only actual Google review may establish AdSense approval, separately.
 
 ## Next Action
-Run the new live-acceptance PR CI against actual public HTTPS; repair only observed failures; merge if green, reconfirm main results, then implement P5 weekly evidence collection and reviewed publication.
+Finish PR #49 current-head checks, review and squash merge. Confirm live deployed sites remain unchanged after source-only workflow, verify source-collector main status, then use first official weekly scheduled run and new editor-approved edition to close remaining P5/P6. Record evidence in this existing VWS.
 
 ---
 
