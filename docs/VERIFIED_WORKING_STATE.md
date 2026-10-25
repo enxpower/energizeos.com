@@ -1,44 +1,43 @@
-# English Intelligence — Verified Working State (2026-10-25)
+# English Intelligence — Current Verified Working State (2026-10-26)
 
 ## Objective
-Operate a premium, English-only, source-backed North American optical infrastructure Intelligence publication under the corporate domain, with dated full articles, durable archives and weekly qualified editorial publication.
+Maintain independent, entirely English, source-backed weekly Intelligence publishing on `energizeos.com`; preserve existing history, source provenance, editorial control and exact production proof.
 
 ## Verified Current State
-- The current source repository main revision is `86f3866cf07e2e655d9c83cc7b23c21293b85584`. P0–P4 English-only site publication, standalone full articles, source references, latest/previous/watchlist/archive and metadata/sitemap already passed source build, responsive CI and live HTTPS on previous accepted releases.
-- The scoped English editorial intake PR #54 was merged to main. It automatically converts the existing official RSS candidate scan into a **review-only JSON packet** with source-domain/date checks, prior-citation de-duplication and explicit unapproved state.
-- On the exact main revision, source-review run 40209717163 SUCCESS and reported 0 new topic-qualified candidates from two reachable official feeds (CRTC and FCC). All packets record `publication_permitted=false`. Evidence is an uploaded CI artifact, not a published article.
-- Production deploy run 40209717457 SUCCESS and live existing-route verification 40209717222 SUCCESS for the same main revision. FCC primary source feed was additionally accepted in PR #55; two official feeds were fetched, but this produced no new qualifying content.
-- The Monday RSS workflow is configured for 16:32 UTC. A Monday `schedule` event has not yet been independently observed.
+- `enxpower/energizeos.com` main is `e2511d88d1b8e7f91694ac1ba1f6fd4e8c6f29f2` (source inspected). English Week 43 + a separately labelled launch reference, article routes, latest/previous/watchlist and archive are deployed. All new publication remains separate from Chinese legacy publishers.
+- Existing Monday source qualification runs at `32 16 * * 1` UTC. On this exact main, the controlled **push** run 40210173343 completed SUCCESS: CRTC Daily and FCC News Release official feeds; 0 recent topic-matched candidates; no publication. These are not automatically verified factual article claims.
+- The editorial packet is automatically produced with `publication_permitted=false`; only reviewed source content can become an immutable, full English edition. Scope PR #57 merged the two-file Artifact fix.
+- Exact-main source review run 40210173343 uploaded **two files** (`source-candidates.json` and `editorial-packet.json`) to Artifact 12605560437, with GitHub logs confirming `2 files uploaded`.
+- Exact-main production release 40210172941 and independent public HTTPS route check 40210173429 both completed SUCCESS. ESI PR #55 added the official FCC RSS; current live runner confirmed both CRTC and FCC endpoints can be fetched, but no relevant fresh optical issue was found.
 
 ## Completed
-- P0 English customer-facing isolation, no links to Chinese weekly reports as English publications.
-- P1–P4 approved source-backed on-domain editorial launch articles, honest October 25 dates, dated archive and append-only publication validation.
-- P5 source qualification and machine-readable unapproved editorial intake on the main branch, with controlled live official feed runs and no-change guarantees.
-- P6 current baseline build, responsive test, publish and exact live HTTPS checks; existing corporate/Privacy/AdSense ownership and engineering reference pages remain covered by existing checks.
+- P0: broken link / Chinese-language boundary isolation; approved content on corporate domains.
+- P1–P4: complete local English articles with source references, honest issue dates and append-only archive integrity; responsive, link, SEO and public-route acceptance.
+- P5-a: read-only scheduled source collection, official-source host screening, dated candidate review, safe failure/no-change tests, reviewer handoff and two-file retained artifacts.
+- P6-a: current launch issue deployed, site CI and live HTTPS acceptance verified on main.
 
 ## Remaining
-- Verify first actual Monday `schedule` event; workflow cron or branch/PR/push run alone does not demonstrate this.
-- Produce a genuinely new source-checked Week 44 English article in each company after that week starts, obtain explicit editorial approval, append without rewriting prior editions, merge through CI, deploy and fetch exact new article plus archive over public HTTPS.
-- Find useful optical-specific primary sources beyond general telecom regulatory news; FCC and CRTC connectivity alone does not prove adequate weekly editorial coverage.
-- Prove a no-new-evidence week and a source-failure week preserve the public archive and correctly surface the unapproved status. Do not report full weekly automatic publication as complete until those tests and a real later-week release succeed.
+- P5-b: independently read and substantiate fresh primary documents, write the first genuine subsequent-week English article, obtain explicit editorial review and issue fingerprint, append its manifest record and run CI/deploy/public HTTPS proof.
+- P5-c: observe the first true `schedule`-event Monday run; only controlled `push` and PR source-review runs have been observed so far. Do not mislabel them as scheduled execution.
+- P6-b: validate the first approved later-week publication, no-evidence week, feed-failure archive preservation and successful clean rollback. Full automatic article creation/publishing is **NOT COMPLETE**.
+- Optical source yield is the practical content bottleneck: 2 healthy feeds, 0 relevant candidates in last controlled scan. Do not invent an edition.
 
 ## Constraints / Do Not Touch
-Maintain separate AGI&M energy and ESI optical identities, full English customer copy, private/Chinese research isolation, approved branding, legal Privacy, AdSense ownership marker, prior BESS/microgrid references, DNS, credentials and payment controls. No invented articles or backdated publication, no automatic approval from feed metadata and no site-wide ads on unreviewed pages. R3 exceptions remain Owner-controlled.
+Preserve brands, business pages, approved Privacy/AdSense ownership, engineering tools, archive history, private/Chinese research publishers, secrets, DNS, finance and contractual controls. Customer-visible copy remains English. No fabricated dates or unreviewed AI material, ad serving or risky autonomous publication.
 
 ## Evidence
-- GitHub source: https://github.com/enxpower/energizeos.com/commit/86f3866cf07e2e655d9c83cc7b23c21293b85584
-- Editorial packet PR: https://github.com/enxpower/energizeos.com/pull/54
-- Additional source feed: https://github.com/enxpower/energizeos.com/pull/55
-- Main candidate + editorial intake: https://github.com/enxpower/energizeos.com/actions/runs/40209717163
-- Main release: https://github.com/enxpower/energizeos.com/actions/runs/40209717457
-- Main live English validation: https://github.com/enxpower/energizeos.com/actions/runs/40209717222
+- Main commit: https://github.com/enxpower/energizeos.com/commit/e2511d88d1b8e7f91694ac1ba1f6fd4e8c6f29f2
+- Exact-main source + editorial packet: https://github.com/enxpower/energizeos.com/actions/runs/40210173343
+- Production deployment: https://github.com/enxpower/energizeos.com/actions/runs/40210172941
+- Live site acceptance: https://github.com/enxpower/energizeos.com/actions/runs/40210173429
+- Two-file artifact PR: https://github.com/enxpower/energizeos.com/pull/57
+- FCC feed admission PR: https://github.com/enxpower/energizeos.com/pull/55
 
 ## Success Criteria
-A complete, professional source-audited English edition each qualifying week on both corporate websites; verified current/previous/watchlist/archive, immutable history, auditable reviewed-source authority, failing safely on no-evidence/error, green CI responsive/language/SEO tests, verified deployment and exact public HTTPS article checks. Google AdSense review is a separate external acceptance gate.
+A real newly approved English weekly issue per company, on-domain source-backed complete article, correct latest/previous/archive, append-only history, source/editorial approval, actual Monday scheduled run, CI/build, deployment and independently fetched public HTTPS; no-change/failure retention and rollback.
 
 ## Next Action
-Check first scheduled Monday run; qualify substantive primary-source candidates, independently review and publish the next actual weekly edition via existing manifest and deployment gates. Preserve this VWS and update only with externally verified results.
-
+Use the existing official-source artifact for verified Week 44 editorial research once the valid publication date starts; release only a genuinely sourced and reviewed issue through normal PR and immutable-history gates. Then capture the first scheduled run and verify the new issue on public HTTPS. Until these occur, P5/P6 remain PARTIAL.
 
 ---
 
