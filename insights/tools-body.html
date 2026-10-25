@@ -1,0 +1,56 @@
+<main>
+<section class="hero"><div class="wrap">
+<span class="eyebrow">Energize Solutions Inc. / Original Engineering Tools</span>
+<h1>Design decisions.<br><strong>Numbers you can inspect.</strong></h1>
+<p>Two browser-based, scenario-level engineering calculators for optical fiber paths and energy management dispatch. Every result exposes its assumptions and operating limitations.</p>
+<div class="meta"><span>Original calculations</span><span>No account needed</span><span>Inputs stay in your browser</span></div>
+</div></section>
+<section class="section tint" aria-labelledby="tools-heading"><div class="wrap">
+<div class="eyebrow">Engineering Workbench</div><h2 id="tools-heading">Quantify what the assumptions permit.</h2>
+<div class="calc-grid">
+<article class="calc-card">
+<p class="calc-index">01 / Optical Transport</p><h3>Optical Link Budget Calculator</h3>
+<p>Estimate the one-way link-loss budget including wavelength-dependent fiber attenuation, connection losses, splice losses and reserved engineering margin. Available optical power budget must come from compatible transceiver documentation.</p>
+<form id="optical-form" novalidate>
+<div class="field-grid">
+<label>Fiber length (km)<input type="number" name="length" value="20" min="0" max="10000" step="any" required></label>
+<label>Fiber attenuation (dB/km)<input type="number" name="attenuation" value="0.30" min="0" max="10" step="any" required></label>
+<label>Connector interfaces (count)<input type="number" name="connectors" value="2" min="0" max="10000" step="1" required></label>
+<label>Loss per interface (dB)<input type="number" name="connectorLoss" value="0.5" min="0" max="10" step="any" required></label>
+<label>Splices (count)<input type="number" name="splices" value="0" min="0" max="10000" step="1" required></label>
+<label>Loss per splice (dB)<input type="number" name="spliceLoss" value="0.1" min="0" max="10" step="any" required></label>
+<label>Engineering margin (dB)<input type="number" name="margin" value="3" min="0" max="100" step="any" required></label>
+<label>Available optical budget (dB)<input type="number" name="available" value="12" min="0" max="200" step="any" required></label>
+</div>
+<button class="calc-action" type="submit">Calculate Optical Margin</button>
+</form>
+<div class="calc-result" id="optical-result" role="status" aria-live="polite">Enter measured or assumed component losses to estimate link budget.</div>
+</article>
+<article class="calc-card">
+<p class="calc-index">02 / EMS Control</p><h3>Dispatch Feasibility Calculator</h3>
+<p>Screen a constant-power battery dispatch request against usable AC energy and a declared continuous inverter power ceiling. Results are simplified energy-balance estimates, not grid dispatch authorization.</p>
+<form id="dispatch-form" novalidate>
+<div class="field-grid">
+<label>Nominal DC storage (MWh)<input type="number" name="storage" value="2.5" min="0.01" max="100000" step="any" required></label>
+<label>Usable depth of discharge (%)<input type="number" name="dod" value="90" min="1" max="100" step="any" required></label>
+<label>One-way discharge efficiency (%)<input type="number" name="efficiency" value="90" min="1" max="100" step="any" required></label>
+<label>Continuous inverter ceiling (MW AC)<input type="number" name="ceiling" value="1.5" min="0.01" max="100000" step="any" required></label>
+<label>Requested dispatch power (MW AC)<input type="number" name="power" value="1" min="0.01" max="100000" step="any" required></label>
+<label>Requested duration (hours)<input type="number" name="hours" value="2" min="0.01" max="100000" step="any" required></label>
+</div>
+<button class="calc-action" type="submit">Check Dispatch Feasibility</button>
+</form>
+<div class="calc-result" id="dispatch-result" role="status" aria-live="polite">Enter project assumptions to screen the constant-power schedule.</div>
+</article>
+</div>
+</div></section>
+<section class="section" aria-labelledby="methodology"><div class="wrap">
+<div class="eyebrow">Engineering Methodology</div><h2 id="methodology">What these models calculate—and what they do not.</h2>
+<div class="calc-method">
+<div><h3>Optical budget</h3><p>Required loss = length × fiber attenuation + connector count × loss per interface + splice count × loss per splice + reserved margin. Headroom = available transceiver power budget − required loss. A nonnegative value indicates only that the simplified loss-budget comparison passes.</p><p>Wavelength, fiber type, connector cleanliness, wavelength-dependent receiver sensitivity, dispersion, nonlinear impairments, receive overload, optical safety and field measurement require separate engineering review. A successful power budget does not certify link functionality.</p></div>
+<div><h3>EMS dispatch screening</h3><p>Usable AC energy = nominal DC energy × usable DoD × one-way discharge efficiency. Requested AC energy = requested power × requested duration. Energy reserve = usable AC energy − requested energy. Power also must not exceed the stated inverter ceiling.</p><p>This simplified screen omits ramping, state of charge, inverter curves, auxiliary demand, grid constraints, aging, temperature, reserve obligations, telemetry failures, tariff rules and safety interlocks. EMS control and commissioning remain subject to site and utility requirements.</p></div>
+</div>
+<p class="calc-disclosure">Research policy: inputs are user-supplied assumptions, not independently verified equipment specifications. The calculations run locally, transmit no form values and make no vendor claims, operational guarantees, certification assertions or product quotations.</p>
+<p><a href="/insights/">Return to Engineering Insights</a></p>
+</div></section>
+</main>
