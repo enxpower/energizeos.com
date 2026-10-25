@@ -28,6 +28,31 @@ def digest(issue):
     return sha256(json.dumps(payload, sort_keys=True, ensure_ascii=False, separators=(',', ':')).encode()).hexdigest()
 
 
+
+def _editorial_fingerprint(value):
+    return re.sub(r'[^a-z0-9]+', ' ', value.casefold()).strip()
+
+
+def _reject_repeated_editorial(issues):
+    """Reject exact/near-copy editorial claims; shared primary sources may be cited again."""
+    from difflib import SequenceMatcher
+    seen = {"headline": [], "summary": [], "briefing": [], "development": []}
+    for issue in issues:
+        entries = [("headline", issue["headline"]), ("summary", issue["summary"]),
+                   ("briefing", issue["briefing"])]
+        entries += [("development", d["fact"]) for d in issue["developments"]]
+        for kind, value in entries:
+            fingerprint = _editorial_fingerprint(value)
+            require(bool(fingerprint), "Empty editorial fingerprint")
+            for previous_issue, previous in seen[kind]:
+                if fingerprint == previous:
+                    raise ValueError("Repeated " + kind + " in editions: " + issue["issue"] + " and " + previous_issue)
+                if len(fingerprint) >= 100 and len(previous) >= 100:
+                    length_ratio = min(len(fingerprint), len(previous)) / max(len(fingerprint), len(previous))
+                    if length_ratio > 0.94 and SequenceMatcher(None, fingerprint, previous, autojunk=False).ratio() >= 0.97:
+                        raise ValueError("Near-duplicate " + kind + " in editions: " + issue["issue"] + " and " + previous_issue)
+            seen[kind].append((issue["issue"], fingerprint))
+
 def validate_issue(x, config):
     require(isinstance(x, dict), 'Issue must be an object')
     require(x.get('schema_version') == 1 and x.get('language') == 'en', 'English issue schema required')
@@ -53,6 +78,7 @@ def validate_issue(x, config):
         require(isinstance(x.get(key), list) and bool(x[key]), 'Missing editorial section: ' + key)
     require(3 <= len(x['developments']) <= 5 and 3 <= len(x['sources']) <= 12, 'Three to five substantive developments and primary sources required')
     source_ids = set()
+    source_urls = set()
     for source in x['sources']:
         require(isinstance(source, dict), 'Invalid source')
         url = urlsplit(source.get('url', ''))
@@ -66,6 +92,9 @@ def validate_issue(x, config):
         except (KeyError, ValueError) as error:
             raise ValueError('Source dates missing') from error
         require(source_day <= verified <= reviewed, 'Unverified or future source')
+        canonical_source = (url.scheme.lower(), (url.hostname or "").lower(), url.path.rstrip("/") or "/", url.query)
+        require(canonical_source not in source_urls, "Duplicate primary-source URL in one issue")
+        source_urls.add(canonical_source)
         source_ids.add(source['id'])
     for development in x['developments']:
         require(isinstance(development, dict), 'Invalid development')
@@ -89,6 +118,7 @@ def load_issues(root=ROOT):
     issues = [validate_issue(json.loads((folder / 'issues' / (slug + '.json')).read_text()), config) for slug in slugs]
     require(all(x['issue'] == slug for x, slug in zip(issues, slugs)), 'Manifest and article identity mismatch')
     require(len({x['published_at'] for x in issues}) == len(issues), 'Ambiguous publication ordering')
+    _reject_repeated_editorial(issues)
     return sorted(issues, key=lambda x: x['published_at'], reverse=True)
 
 
