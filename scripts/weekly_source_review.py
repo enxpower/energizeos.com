@@ -20,6 +20,7 @@ FEEDS = {
     ),
     "optical": (
         ("CRTC Daily Releases", "https://crtc.gc.ca/eng/rss/daily.xml"),
+        ("U.S. FCC News Releases", "https://api2.fcc.gov/api/exp/v1.0.0/edocspublic/rss/docTypes/News_Release"),
     ),
 }
 TOPICS = {
