@@ -4,7 +4,7 @@
 **Website:** https://energizeos.com/
 **Company presented on website:** Energize Solutions Inc.
 **Draft date:** 2026-10-25
-**Proposed privacy contact:** info@energizeos.com (website-listed mailbox; delivery and privacy-request assignment NOT yet verified)
+**Proposed privacy contact:** info@energizeos.com (website-listed address; inbound messages observed in connected company mailbox; privacy-request responsibility and processing/retention NOT yet verified)
 **Source of technical scope:** current `main` website HTML, scripts and published Sitemap, inspected 2026-10-25.
 
 > This is proposed English notice language for counsel/authorized company review, not a statement that the data practices or legal basis below have already been verified. Do not deploy this file as `/privacy/` or represent it as effective until each open fact is confirmed. No advertising or analytics integration is authorized by this document.
@@ -19,7 +19,7 @@ This notice would apply to the public corporate website at https://energizeos.co
 
 If you contact us at info@energizeos.com, the information you choose to include—such as your name, organization, contact details, engineering questions and project context—may be used to read and respond to your inquiry and manage relevant business correspondence. The website's inspected public pages currently provide an email link rather than a built-in contact form.
 
-**VERIFY BEFORE PUBLICATION:** actual receiving mailbox, receiving legal entity, email provider and sub-processors, international transfers, administrative access, business-retention practices, and whether contact information is used for anything beyond responding to inquiries.
+**VERIFY BEFORE PUBLICATION:** responsible receiving legal entity, actual mail-system configuration and processors, international transfers, administrative access, assigned privacy-response handler, business-retention practices and any further use of contact information. Inbound routing alone does not prove these facts.
 
 ### 3. Hosting, security and technical data
 
@@ -66,7 +66,7 @@ The final notice should state an accurate effective date and be updated when the
 | Required fact | Observed state | Verification owner | Gate |
 |---|---|---|---|
 | Public corporate identity | Energize Solutions Inc. named in website content | Legal/company records | OPEN |
-| Privacy mailbox | info@energizeos.com included in public Contact and schema | Business email administrator | OPEN: delivery + request handling |
+| Privacy mailbox | info@energizeos.com listed publicly and observed receiving mail in a connected corporate mailbox | Business email administrator | PARTIAL: inbound observed; request handler, outbound response and retention OPEN |
 | Online contact forms | No built-in form identified in reviewed public pages | Website/production inspection | PARTIAL |
 | AdSense publisher script or ID | Not found in reviewed source | Actual AdSense account holder | OPEN |
 | Analytics/pixels and injected tags | Not found in reviewed source | DNS/CDN/hosting administrator | OPEN |
@@ -82,6 +82,16 @@ The final notice should state an accurate effective date and be updated when the
 - Certified CMP and TCF requirements: https://support.google.com/adsense/answer/13554116?hl=en
 - Website ownership connection and review: https://support.google.com/adsense/answer/7584263?hl=en
 - Site URL scope: https://support.google.com/adsense/answer/2784438?hl=en
+
+## Account Evidence — Internal Research, Not a Live AdSense Login
+
+Historical 2025 AdSense review emails exist for energizeos.com, including unresolved 'site not ready' notices. A February 27, 2026 Google notice states the account was deactivated because setup was not finished within six months, and explicitly says it can be reactivated. This is NOT evidence of a permanent policy suspension, and is NOT proof of the account's current 2026-10-25 status. Use original account and inspect the live Sites/Policy center before considering any account creation.
+
+Evidence boundaries: email notices show historical activity; they cannot establish the present advertiser/payee/legal entity, Google site diagnostics or current account approval. Do not insert a publisher ID, register a duplicate account, submit ads, or alter payment settings based on email history alone.
+
+Google reference: https://support.google.com/adsense/answer/9729?hl=en
+Reactivation guidance: https://support.google.com/adsense/answer/12290346?hl=en
+Current live statuses: https://support.google.com/adsense/answer/12170222?hl=en
 
 ## Implementation Instruction After Factual Approval
 
