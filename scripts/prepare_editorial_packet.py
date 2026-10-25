@@ -58,7 +58,7 @@ def make_packet(review, *, kind, allowed_hosts, cited_urls, manifest_sha, now):
         date = utc(candidate.get("source_published_at"))
         require(collected - timedelta(days=21) <= date <= collected + timedelta(hours=2),
                 "Unqualified source date")
-        if url in cited_urls or any(x["url"] == url for x in accepted):
+        if url in cited_urls or any(x["primary_url"] == url for x in accepted):
             continue
         accepted.append({
             "source": candidate["source"], "headline_for_review": title,
