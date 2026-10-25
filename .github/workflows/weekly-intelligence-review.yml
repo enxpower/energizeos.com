@@ -4,10 +4,18 @@ on:
   schedule:
     - cron: "32 16 * * 1"
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/weekly_source_review.py"
+      - "scripts/tests/test_weekly_source_review.py"
+      - "content/intelligence/config.json"
+      - ".github/workflows/weekly-intelligence-review.yml"
   pull_request:
     paths:
       - "scripts/weekly_source_review.py"
       - "scripts/tests/test_weekly_source_review.py"
+      - "content/intelligence/config.json"
       - ".github/workflows/weekly-intelligence-review.yml"
 
 permissions:
