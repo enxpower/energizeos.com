@@ -1,5 +1,12 @@
 # English Intelligence — Current Verified Working State (2026-10-26)
 
+## 2026-10-26 — Publication quality gate checkpoint (verified)
+- Exact release-source main baseline: `58ee9ff39fbd5a7aa555067f7cf01f510e250fc8`; narrowly scoped quality PR #59 merged with checked head. PR validation 40211316791 SUCCESS, deployment 40211448619 SUCCESS, public HTTPS smoke 40211449018 SUCCESS.
+- Source validation rejects duplicate primary URL entries within a single edition. Editorial manifest validation rejects repeated or near-identical issue headlines, summaries, briefings and development fact text; source-review/editorial-approval and append-only archive rules remain mandatory.
+- Website publication audit now resolves and verifies all first-party image, script, stylesheet and preload asset targets, alongside existing anchor, sitemap, canonical, English-copy, no-CJK and route checks.
+- ESI still uses GitHub Pages automatic main-branch deployment in parallel with Validate site. PR-level quality checks passed before merge, but this architecture does NOT prove deploy-blocking for a direct push; branch protection requiring CI and controlled Pages deployment are the outstanding infrastructure enforcement gate. Do not claim zero-risk automatic publishing.
+- Week 44 is not automatically accepted or published. Source candidate gathering and editorial packets do not grant publication; no valid new-source review means preserve the current English edition. A genuine first scheduled Monday run and newly reviewed issue remain P5/P6 open.
+
 ## Objective
 Maintain independent, entirely English, source-backed weekly Intelligence publishing on `energizeos.com`; preserve existing history, source provenance, editorial control and exact production proof.
 
