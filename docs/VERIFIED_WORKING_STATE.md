@@ -68,8 +68,16 @@ Operate a premium, English-only ESI corporate website and original `/insights/` 
 4. AdSense trust, policy, privacy, publisher account and technical readiness are confirmed using real site evidence.
 5. The real Google AdSense review of each corporate domain is recorded; there is no engineering shortcut to provider approval.
 
+## Cross-Site Takeover Checkpoint
+
+- The designated cross-site, fully English Owner handoff prompt is hosted in the AGI&M source repository: `enxpower/op-agim.ca/docs/ADSENSE_TWO_SITE_TAKEOVER.md` (direct: https://github.com/enxpower/op-agim.ca/blob/main/docs/ADSENSE_TWO_SITE_TAKEOVER.md). It covers both sites; this ESI VWS remains authoritative for ESI-specific runtime status.
+- Existing AdSense account reconnaissance PR #35 is **MERGED to main**. Historical 2025 `energizeos.com` account review indicated site not ready; Google's 2026-02-27 notice stated onboarding-incomplete account deactivation with a reactivation path. The live Google Sites/Policy status, payee and legal entity are **EXTERNAL / UNKNOWN**. Do not assume a permanent ban or register a duplicate account.
+- Draft Privacy PR #33 is **OPEN / DRAFT / HOLD**, regardless of green CI. `docs/ADSENSE_PRIVACY_NOTICE_REVIEW.md` is the single factual-review matrix; actual email/log/provider/retention processing and legal signoff remain pending.
+- The Microgrid Intelligence Engine is an in-house, private paid B2B API integration offering that may be **marketed**; no public API/client signup, online call console or billing functionality may be built under this AdSense workstream.
+
 ## Next Action
-Prioritize reuse and verification of the existing AdSense account through the authorized company sign-in and Sites/Policy center; check true registered entity, current account/site status, and original issue category. Separately complete the one-time factual/privacy signoff for the staged public Privacy PR #33, which MUST remain unmerged until accurate; verify mailbox handling, records/retention and relevant hosting. No duplicate registration, ad snippet or guessed ads.txt publisher ID. All unrelated company/AI projects remain out of scope.
+
+**P0 / READ-ONLY:** Use the **existing ESI AdSense account** and confirm live legal/payee owner, reactivation requirements, `energizeos.com` entry and Sites/Policy center diagnostics via authenticated Google UI. Do not infer suspension or current access from 2025–February 2026 email notices, and do not open a duplicate account. If provider access is unavailable, collect only the exact missing UI screenshots/fields in one combined Owner packet for AGI&M and ESI. **P1 / R3 HOLD:** complete the real privacy/email/log/retention facts and authorized legal approval, then reconcile existing Draft PR #33 and deploy the English public Privacy Notice only after CI and live HTTP verification. **G5 EXTERNAL:** perform Google domain review in the legitimate company account and record Google's outcome. Cross-site one-click handoff: `enxpower/op-agim.ca/docs/ADSENSE_TWO_SITE_TAKEOVER.md`.
 
 ## Operating Rule
 **Action → Observation → Verification → State Update.** Only verified outcomes enter Completed. G0, G3, G4 and G5 remain unclosed. Optimize for the next required acceptance gate, not cosmetic changes or document counts.
