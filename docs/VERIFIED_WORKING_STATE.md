@@ -1,41 +1,44 @@
-# English Intelligence Reconstruction — Verified Working State (2026-10-25)
+# English Intelligence — Verified Working State (2026-10-25)
 
 ## Objective
-Deliver a premium, fully English, local North American Intelligence publication for each corporate domain, with real source-backed articles, immutable dated history, verified live delivery and continuous weekly source qualification preceding editorial approval and publication.
+Operate a premium, English-only, source-backed North American optical infrastructure Intelligence publication under the corporate domain, with dated full articles, durable archives and weekly qualified editorial publication.
 
 ## Verified Current State
-- English-only P0 boundary is merged, deployed and live-tested; unrelated Chinese research publishers are not public English article destinations.
-- P1–P4 launch articles, source citations, reviewed SHA256 issue manifests, latest/previous/watchlist/archive, sitemap and mobile/tablet/desktop tests were merged and deployed. October 25, 2026 issue 2026-w43 and explicitly labelled launch reference remain published locally.
-- P6 exact-article live HTTPS verifier was merged before the P5 work, with independent article/manifest/history route checks on main.
-- P5 reviewed-source qualification workflow is **MERGED** in PR #49, squash commit `de10c3318398e2dae451e6f69d1106c49621870b`. Cron is `32 16 * * 1` (Mondays 16:32 UTC). Controlled PR source run 40207809951 PASSED and produced a review artifact; The CRTC Daily Releases primary feed was fetched successfully; 0 new qualifying optical sources were found, so the public edition stayed unchanged. Other official CRTC feeds returned 403 and were excluded rather than silently bypassed.
-- Source-coverage negative verification on 2026-10-25: a targeted unmerged experiment PR #51 was closed after the official CRTC Broadband Fund Atom and Fiber Broadband Association RSS sources each returned HTTP 403 from the GitHub runner (runs 40208641634 and 40208768310). Fail-closed behavior preserved the published English archive, existing CRTC Daily candidate source and AdSense/business configuration. No successful second optical feed or new weekly edition is claimed.
-- Exact post-P5-merge website deployment 40207913443 SUCCESS, live public HTTPS 40207913687 SUCCESS, and website validation 40207913669 SUCCESS. These verify site preservation, not future publication or Google AdSense approval.
+- The current source repository main revision is `86f3866cf07e2e655d9c83cc7b23c21293b85584`. P0–P4 English-only site publication, standalone full articles, source references, latest/previous/watchlist/archive and metadata/sitemap already passed source build, responsive CI and live HTTPS on previous accepted releases.
+- The scoped English editorial intake PR #54 was merged to main. It automatically converts the existing official RSS candidate scan into a **review-only JSON packet** with source-domain/date checks, prior-citation de-duplication and explicit unapproved state.
+- On the exact main revision, source-review run 40209717163 SUCCESS and reported 0 new topic-qualified candidates from two reachable official feeds (CRTC and FCC). All packets record `publication_permitted=false`. Evidence is an uploaded CI artifact, not a published article.
+- Production deploy run 40209717457 SUCCESS and live existing-route verification 40209717222 SUCCESS for the same main revision. FCC primary source feed was additionally accepted in PR #55; two official feeds were fetched, but this produced no new qualifying content.
+- The Monday RSS workflow is configured for 16:32 UTC. A Monday `schedule` event has not yet been independently observed.
 
 ## Completed
-- P0: Emergency HTML/customer English boundary and safe legacy research isolation with live acceptance.
-- P1–P4: Two locally rendered source-backed English editions per site, actual dates, citations and human-readable archive, append-only approval guard and responsive browser CI.
-- P6 current content release: source build, deployed HTML, main HTTPS link/article/manifest acceptance and pre-existing business/tool monitoring completed for current 2026-w43 release.
-- P5 source stage: Monday workflow definition in main, direct official-source qualification, review-only artifact retention, no-change/blocked-feed unit tests and non-mutating release gates. No unapproved site changes.
+- P0 English customer-facing isolation, no links to Chinese weekly reports as English publications.
+- P1–P4 approved source-backed on-domain editorial launch articles, honest October 25 dates, dated archive and append-only publication validation.
+- P5 source qualification and machine-readable unapproved editorial intake on the main branch, with controlled live official feed runs and no-change guarantees.
+- P6 current baseline build, responsive test, publish and exact live HTTPS checks; existing corporate/Privacy/AdSense ownership and engineering reference pages remain covered by existing checks.
 
 ## Remaining
-- P5 calendar verification: Actual first scheduled Monday execution on `main` has not happened yet. A pull-request workflow run and a cron declaration do not prove a future scheduled run.
-- P5 regular English publication: Source candidate review, original evidence-checked synthesis, explicit editorial approval, immutable manifest commit, full build/CI and automatic approved-commit deployment still require a new, real later-week end-to-end demonstration. There is no authorized auto-approval from scraped/RSS titles.
-- P5 source breadth: Additional reachable optical standards, DWDM and telecom primary sources must be qualified; unavailable CRTC RSS endpoints may not be represented as working.
-- P6 final closure: Verify historical retention, source success/no-change/failure behavior and public HTTPS after the first genuine *new approved* edition. Find a reliable additional optical-industry primary-source feed. Independent English full-article publication for later weeks has not been demonstrated.
+- Verify first actual Monday `schedule` event; workflow cron or branch/PR/push run alone does not demonstrate this.
+- Produce a genuinely new source-checked Week 44 English article in each company after that week starts, obtain explicit editorial approval, append without rewriting prior editions, merge through CI, deploy and fetch exact new article plus archive over public HTTPS.
+- Find useful optical-specific primary sources beyond general telecom regulatory news; FCC and CRTC connectivity alone does not prove adequate weekly editorial coverage.
+- Prove a no-new-evidence week and a source-failure week preserve the public archive and correctly surface the unapproved status. Do not report full weekly automatic publication as complete until those tests and a real later-week release succeed.
 
 ## Constraints / Do Not Touch
-No Chinese report redirects, fake dates, unsourced/automatically approved AI articles, unverified commercial claims or auto ads. Preserve corporate business pages/identity, ESI and AGI separate categories, Privacy and AdSense ownership, private publishers/reports, prior numerical research, tools, credentials, DNS, billing and R3 owner-only decisions. All active public and code content must remain English.
+Maintain separate AGI&M energy and ESI optical identities, full English customer copy, private/Chinese research isolation, approved branding, legal Privacy, AdSense ownership marker, prior BESS/microgrid references, DNS, credentials and payment controls. No invented articles or backdated publication, no automatic approval from feed metadata and no site-wide ads on unreviewed pages. R3 exceptions remain Owner-controlled.
 
 ## Evidence
-- Weekly source collection PR #49: https://github.com/enxpower/energizeos.com/pull/49; controlled run: https://github.com/enxpower/energizeos.com/actions/runs/40207809951.
-- Post-merge release: https://github.com/enxpower/energizeos.com/actions/runs/40207913443 ; main HTTPS acceptance: https://github.com/enxpower/energizeos.com/actions/runs/40207913687 ; main/site or branch CI: https://github.com/enxpower/energizeos.com/actions/runs/40207913669.
-- P5 main baseline `de10c3318398e2dae451e6f69d1106c49621870b`; previous English publication release baseline `ad84b4cb02e3502d2fc6d6e4865c21fe95db779d`.
+- GitHub source: https://github.com/enxpower/energizeos.com/commit/86f3866cf07e2e655d9c83cc7b23c21293b85584
+- Editorial packet PR: https://github.com/enxpower/energizeos.com/pull/54
+- Additional source feed: https://github.com/enxpower/energizeos.com/pull/55
+- Main candidate + editorial intake: https://github.com/enxpower/energizeos.com/actions/runs/40209717163
+- Main release: https://github.com/enxpower/energizeos.com/actions/runs/40209717457
+- Main live English validation: https://github.com/enxpower/energizeos.com/actions/runs/40209717222
 
 ## Success Criteria
-Independent professionally written full English articles on both sites; honest source traceability; correct latest/previous/watchlist/archive; immutable historical editions; weekly official-source gathering; source/editorial approval for each issue; no-history-loss on failure/no change; controlled first scheduled run; later-week approved article publish→CI→deploy→public HTTPS acceptance. Actual Google AdSense approval is separate and solely provider-determined.
+A complete, professional source-audited English edition each qualifying week on both corporate websites; verified current/previous/watchlist/archive, immutable history, auditable reviewed-source authority, failing safely on no-evidence/error, green CI responsive/language/SEO tests, verified deployment and exact public HTTPS article checks. Google AdSense review is a separate external acceptance gate.
 
 ## Next Action
-Observe and record the first Monday scheduled candidate scan after the rollout. Independently qualify sources, complete a new Week 44 original English issue with source-specific citations, approve/fingerprint it through existing manifest, and run the full editorial→main commit→CI→deploy→live article check before closing P5/P6. Maintain the designated VWS as verified new evidence arrives.
+Check first scheduled Monday run; qualify substantive primary-source candidates, independently review and publish the next actual weekly edition via existing manifest and deployment gates. Preserve this VWS and update only with externally verified results.
+
 
 ---
 
