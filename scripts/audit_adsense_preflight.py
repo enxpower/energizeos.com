@@ -25,6 +25,7 @@ class Page(HTMLParser):
         self.description = []
         self.canonicals = []
         self.anchors = []
+        self.asset_refs = []
         self.ids = set()
         self.footer_depth = 0
         self.footer_contact_links = 0
@@ -43,6 +44,12 @@ class Page(HTMLParser):
             self.footer_depth += 1
         if attr.get("id"):
             self.ids.add(attr["id"])
+        if tag in ("img", "script", "source", "video") and attr.get("src"):
+            self.asset_refs.append(attr["src"])
+        if tag == "video" and attr.get("poster"):
+            self.asset_refs.append(attr["poster"])
+        if tag == "link" and any(v in (attr.get("rel") or "").lower().split() for v in ("stylesheet", "icon", "preload", "modulepreload")) and attr.get("href"):
+            self.asset_refs.append(attr["href"])
         if tag == "a":
             href = attr.get("href", "")
             self.anchors.append(href)
@@ -153,11 +160,33 @@ def audit(root, host):
                 other = parsed.get(target_rel)
                 if other and unquote(url.fragment) not in other.ids:
                     problems.append(rel + ": missing target anchor: " + href)
+    checked_assets = 0
+    for rel, doc in parsed.items():
+        for href in doc.asset_refs:
+            if href.startswith(("data:", "blob:")):
+                continue
+            parsed_url = urlsplit(href)
+            if parsed_url.scheme not in ("", "https", "http"):
+                problems.append(rel + ": unsupported media scheme: " + href)
+                continue
+            if parsed_url.hostname and parsed_url.hostname.lower() != host.lower():
+                continue
+            if not parsed_url.path and parsed_url.hostname:
+                problems.append(rel + ": missing asset path: " + href)
+                continue
+            from urllib.parse import urljoin
+            address = urlsplit(urljoin(expected_url(host, rel), href))
+            if address.hostname and address.hostname.lower() != host.lower():
+                continue
+            target = (root / unquote(address.path).lstrip("/")).resolve()
+            if not target.is_relative_to(root.resolve()) or not target.is_file():
+                problems.append(rel + ": missing first-party asset: " + href)
+            checked_assets += 1
     if problems:
         for problem in sorted(set(problems)):
             print("ADSENSE_TECHNICAL_PREFLIGHT=FAIL " + problem)
         raise SystemExit(1)
-    print("ADSENSE_TECHNICAL_PREFLIGHT=PASS pages=%d internal_links=%d domain=%s" % (len(pages), checked_links, host))
+    print("ADSENSE_TECHNICAL_PREFLIGHT=PASS pages=%d internal_links=%d assets=%d domain=%s" % (len(pages), checked_links, checked_assets, host))
     print("AD_ACCOUNT_PRIVACY_AND_PROVIDER_APPROVAL=NOT_VERIFIED")
 
 
@@ -168,6 +197,9 @@ def self_test():
     p.feed('<html lang="en"><head><title>Example</title><link rel="canonical" href="https://example.com/"></head><body><footer><a href="/contact/">Contact</a></footer><section id="case"></section></body></html>')
     assert p.lang == "en" and p.footer_contact_links == 1
     assert p.canonicals == ["https://example.com/"] and "case" in p.ids
+    assets = Page()
+    assets.feed('<img src="/assets/example.svg"><script src="/assets/core.js"></script><link rel="stylesheet" href="/assets/base.css">')
+    assert assets.asset_refs == ["/assets/example.svg", "/assets/core.js", "/assets/base.css"]
     print("ADSENSE_TECHNICAL_PREFLIGHT_SELF_TEST=PASS")
 
 
