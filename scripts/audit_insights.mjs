@@ -49,6 +49,14 @@ try {
     await page.locator('#dispatch-form input[name="power"]').fill("2");
     await page.locator("#dispatch-form button").click();
     if (!(await page.locator("#dispatch-result").innerText()).includes("FAIL")) throw new Error("Inverter ceiling violation incorrectly accepted");
+    await page.locator('#optical-form input[name="connectors"]').fill("2");
+    await page.locator("#optical-form button").click();
+    await page.locator('#dispatch-form input[name="power"]').fill("1");
+    await page.locator("#dispatch-form button").click();
+    if (!(await page.locator("#optical-result").innerText()).includes("10.00 dB required")) throw new Error("Valid optical case failed after recovery");
+    if (!(await page.locator("#dispatch-result").innerText()).includes("PASS")) throw new Error("Valid EMS case failed after recovery");
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await page.waitForTimeout(100);
     await page.screenshot({ path: "build/visual/esi-tools-" + width + ".png", fullPage: true });
     await context.close();
   }
