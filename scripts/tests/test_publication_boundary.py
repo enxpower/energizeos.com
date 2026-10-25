@@ -11,8 +11,8 @@ class PublicationBoundary(unittest.TestCase):
             self.assertTrue(check_markup(body, "fixture"), body)
 
     def test_encoded_and_raw_chinese_research_links_are_rejected(self):
-        for host in ('docs.agim.ca', 'docs.energizeos.com'):
-            for path in ('/intel/', '/%69ntel/2026-w43/'):
+        for host in ('docs.agim.ca', 'docs.energizeos.com', 'docs.agim.ca.', 'docs.energizeos.com.'):
+            for path in ('/intel/', '/%69ntel/2026-w43/', '/foo/../intel/', '/%2e/intel/'):
                 body = '<a href="https://' + host + path + '">Read</a>'
                 self.assertTrue(check_markup(body, "fixture"), body)
 

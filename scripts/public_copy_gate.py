@@ -5,6 +5,7 @@ import argparse
 from html.parser import HTMLParser
 from pathlib import Path
 import re
+import posixpath
 from urllib.parse import unquote, urlsplit
 
 # These are high-confidence editorial leaks, not ordinary engineering terms.
@@ -64,8 +65,8 @@ def check_markup(contents, label):
     if re.search(r"\$\{|%%[A-Z_]+%%|\{\{[^{}]+\}\}", contents):
         problems.append("Unresolved template expression in public HTML")
     for link in parser.links:
-        parsed = urlsplit(unquote(link))
-        if parsed.hostname in {"docs.agim.ca", "docs.energizeos.com"} and parsed.path.rstrip("/").lower().startswith("/intel"):
+        parsed = urlsplit(unquote(link).replace(chr(92), "/"))
+        if (parsed.hostname or "").rstrip(".").lower() in {"docs.agim.ca", "docs.energizeos.com"} and posixpath.normpath(parsed.path).lower().startswith("/intel"):
             problems.append("Customer link to isolated research publisher")
     for part in parser.parts:
         match = PRIVATE_RE.search(part)
