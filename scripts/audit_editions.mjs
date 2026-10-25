@@ -33,7 +33,7 @@ try {
       if (route === '/insights/') {
         if (info.currentTop > 1000) throw Error('Latest Intelligence is buried below first viewport at '+width);
         for (const label of ['Latest Intelligence','Current Edition','Previous Edition','Next Week’s Watchlist','Browse All Editions']) {
-          if (!info.text.includes(label)) throw Error('Missing direct reading entry: '+label);
+          if (!info.text.toLowerCase().includes(label.toLowerCase())) throw Error('Missing direct reading entry: '+label);
         }
       }
       if (manifest.issues.some(x=>x.url === route)) {

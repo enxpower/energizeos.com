@@ -34,6 +34,7 @@ def validate_issue(x, config):
     require(bool(SLUG.fullmatch(x.get('issue', ''))), 'Invalid local issue slug')
     encoded = json.dumps(x, ensure_ascii=False)
     require(not CJK.search(encoded) and not re.search(r'\$\{|%%[A-Z_]+%%|\{\{', encoded), 'Non-English or template content')
+    require(bool(re.fullmatch(r'20\d{2}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z', x.get('published_at', ''))), 'Canonical UTC publication timestamp required')
     try:
         published = datetime.fromisoformat(x['published_at'].replace('Z', '+00:00'))
         require(published.tzinfo is not None and published <= datetime.now(timezone.utc), 'Future or undated publication')
@@ -89,6 +90,19 @@ def load_issues(root=ROOT):
     require(all(x['issue'] == slug for x, slug in zip(issues, slugs)), 'Manifest and article identity mismatch')
     require(len({x['published_at'] for x in issues}) == len(issues), 'Ambiguous publication ordering')
     return sorted(issues, key=lambda x: x['published_at'], reverse=True)
+
+
+def check_tracked_output(root):
+    pending = subprocess.check_output(['git', 'ls-files', '--others', '--exclude-standard', '--', 'insights', 'sitemap.xml'], cwd=root, text=True)
+    require(not pending.strip(), 'Generated publication output is untracked: ' + pending.strip())
+
+
+def check_route_inventory(site_root, issues):
+    allowed = {x['issue'] for x in issues}
+    folder = site_root / 'insights/intelligence'
+    for child in folder.iterdir() if folder.exists() else []:
+        if child.is_dir() and re.match(r'^20\d{2}-(?:w|reference-)', child.name):
+            require(child.name in allowed, 'Unreviewed public edition route: ' + child.name)
 
 
 def check_history(current, previous):
@@ -211,6 +225,7 @@ def shell(template, body, title, description, canonical, x=None, config=None):
 def render(root, site_root):
     issues = load_issues(root)
     config = json.loads((root / 'content/intelligence/config.json').read_text())
+    check_route_inventory(site_root, issues)
     domain = 'https://' + config['domain']
     css = (root / 'content/intelligence/publication.css').read_text()
     public = site_root / 'insights/intelligence'
@@ -219,7 +234,8 @@ def render(root, site_root):
     style = '<style id="edition-styles">' + css + '</style>'
     template = re.sub(r'<style id="edition-styles">.*?</style>', '', template, flags=re.S).replace('</head>', style + '</head>')
     hub = cards(issues, config, archive=True)
-    index = re.sub(r'<section class="(?:hero|edition-masthead)">.*?</section>', '<section class="edition-masthead"><div class="edition-wrap"><p class="edition-kicker">' + e(config['brand']) + ' / North America</p><h1>' + e(config['title']) + '</h1><p>Independent industry intelligence for engineering, procurement and project delivery.</p></div></section>' + hub, template, count=1, flags=re.S)
+    reference_link = '<p><a href="/insights/intelligence/history/">Historical Market Indicators →</a></p>' if config['kind'] == 'energy' else ''
+    index = re.sub(r'<section class="(?:hero|edition-masthead)">.*?</section>', '<section class="edition-masthead"><div class="edition-wrap"><p class="edition-kicker">' + e(config['brand']) + ' / North America</p><h1>' + e(config['title']) + '</h1><p>Independent industry intelligence for engineering, procurement and project delivery.</p>' + reference_link + '</div></section>' + hub, template, count=1, flags=re.S)
     require(index != template, 'Expected Intelligence hero missing')
     (public / 'index.html').write_text(index)
     home = site_root / 'insights/index.html'
@@ -258,12 +274,15 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--render', type=Path)
     parser.add_argument('--baseline')
+    parser.add_argument('--check-tracked', action='store_true')
     args = parser.parse_args()
     issues = load_issues()
     if args.baseline:
         check_git_history(ROOT, args.baseline)
     if args.render:
         render(ROOT, args.render)
+    if args.check_tracked:
+        check_tracked_output(ROOT)
     print('REVIEWED_ENGLISH_MANIFEST=PASS issues=' + str(len(issues)))
 
 

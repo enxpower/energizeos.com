@@ -20,7 +20,7 @@ jobs:
           python-version: "3.12"
       - name: Verify reviewed English editions and generated output
         run: |
-          python3 scripts/english_editions.py --baseline origin/main --render .
+          python3 scripts/english_editions.py --baseline origin/main --render . --check-tracked
           git diff --exit-code -- insights sitemap.xml
       - name: Validate sharing metadata and assets
         run: python scripts/validate_social_preview.py
