@@ -1,5 +1,13 @@
 # English Intelligence — Current Verified Working State (2026-10-26)
 
+## 2026-10-26 — P5 optical official-source expansion: verified main delivery
+- Scope: ESI optical Intelligence source intake only; no new customer article, existing issue manifest modification, approval bypass, AdSense/privacy edits or production architecture change.
+- PR #67 was squash-merged at `c37477b072f3531d5ff3ee5462f10a1323b7c296`. Official NTIA BroadbandUSA RSS uses canonical `https://broadbandusa.ntia.gov/rss.xml`, with exact host admitted only to the optical source allowlist. The earlier `broadbandusa.ntia.doc.gov` feed URL was rejected by the strict same-host redirect check; the observed rejection was kept as a negative test outcome rather than bypassed.
+- On the exact PR head, real official-source run 40216847228, full site CI 40216847238 and live-URL smoke 40216847232 completed SUCCESS. Source review outcome: `NO_NEW_EVIDENCE candidates=0 feeds=3 errors=0` and editorial intake outcome: `NO_NEW_EVIDENCE publication_permitted=false`.
+- Postmerge ESI main source run 40216962131, live HTTPS 40216962120, production Pages 40216962041 and complete website validation 40216962132 all completed SUCCESS. This validates source fetch, unchanged customer output and deployment safety; **it is not a verified weekly article or scheduled cron event**.
+- P5/P6 remaining: first actual Monday `schedule`-event source-review run, independently substantiated three-development Week 44 article, explicit editorial approval and digest, append-only manifest commit, PR/site CI, deployed article and archive HTTPS acceptance. Preserve existing Week 43 instead of publishing filler when primary evidence is insufficient.
+
+
 ## 2026-10-26 — AdSense preapproval website audit: shipped / external approval pending
 - **Exact website baseline:** `a966e785f4503b05b1b51b80b948699926efb1a1`; privacy disclosure correction PR #65 merged after PR CI 40215520199 PASS and HTTPS read 40215520201 PASS. The exact-main publication / Pages run 40216111969 SUCCESS and public HTTPS check 40216112196 SUCCESS; exact-main complete site validation 40216112170 SUCCESS.
 - Both corporate sites have original English Insights/Intelligence, navigable Contact + existing public Privacy, canonical/sitemap and site health controls. Both source homepages include Google AdSense account meta verification markers; **that does not prove active account ownership/payee match or Google's Getting ready/Ready verdict**.
