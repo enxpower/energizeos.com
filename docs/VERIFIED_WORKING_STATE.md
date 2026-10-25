@@ -11,6 +11,7 @@ Obtain Google's legitimate AdSense site approval for the existing root domain **
 - Google policy mapping and precise outstanding company/account facts: `docs/ADSENSE_PREAPPROVAL_POLICY_AUDIT_20261026.md`. Existing detailed privacy-fact review: `docs/ADSENSE_PRIVACY_NOTICE_REVIEW.md` (internal unapproved facts, not an automatically approved public notice).
 - ESI default branch is protected by active ruleset ID `25827638`: PR required, zero human approvals, mandatory `social-preview` and `verify-public-route`, strict up-to-date checks and no bypass actors.
 - Existing live English issue manifest remains `2026-reference-01` plus `2026-w43`; neither publication date nor sourcing may be falsified.
+- Sibling AGI&M main was separately re-verified as `7d904db60793f2f7758ec371d7c59275605561ce`; its exact-main deployment `40220340887` and HTTPS `40220340927` both passed after the group anti-drift rules were added. See the canonical two-site takeover index in `enxpower/op-agim.ca/docs/ADSENSE_TWO_SITE_TAKEOVER.md`.
 
 ### Completed
 - Separate corporate-domain English Intelligence, editorial deduplication/approval/append-only archive, internal link/asset and newly-cited external primary-link quality gates; CI and production HTTPS acceptance.
