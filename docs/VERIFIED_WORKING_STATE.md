@@ -1,3 +1,39 @@
+# English Intelligence Reconstruction — Current Working State (2026-10-25)
+
+## Objective
+Deliver an independent English Intelligence publication for North American customers, with real dated articles, immutable history, source review, weekly qualification and verified production.
+
+## Verified Current State
+- Takeover read the actual emergency PR diff, repository governance, designated VWS and GitHub Actions.
+- AGI&M PR #44 head 6d9c29f: CI 40203619103 FAILED on a nonexistent /insights/intelligence/#archive anchor. ESI PR #46 head e750c8d: CI 40203623080 SUCCESS. Both were OPEN / UNMERGED at takeover.
+- Root causes: escaped generator interpolation, customer navigation to a separate Chinese publisher, and a metadata-only sync that never verified English articles.
+
+## Completed
+- Reproduced the missing AGI&M anchor with the actual site build and full technical preflight.
+- Demonstrated two failing regression fixtures: unresolved template expressions and links to the isolated research publisher were not rejected by the old public-copy gate.
+
+## Remaining
+- P0: finish boundary regression tests, run CI, review, merge and verify actual production HTML and responsive layouts.
+- P1: eliminate Chinese-publisher metadata propagation; freeze numeric research snapshots until independent source validation.
+- P2: local reviewed English issue manifest, independent article routes, sources, archive and honest publication dates.
+- P3/P4: source-verified AGI&M energy and ESI optical editions, preserving each brand.
+- P5: weekly public-source collection, editorial/evidence gate, publication/synchronization, failure retention and real controlled run.
+- P6: complete build/link/language/template/SEO/archive/browser/live/rollback acceptance.
+
+## Constraints / Do Not Touch
+Preserve business pages, corporate brands, approved privacy and AdSense ownership tags, account configuration, independent Chinese research publishers and private reports. No fake dates/issues, unsafe automatic articles, new public AI API or billing.
+
+## Evidence
+Emergency PRs: https://github.com/enxpower/op-agim.ca/pull/44 and https://github.com/enxpower/energizeos.com/pull/46. GitHub Actions 40203619103 and 40203623080. Prior work below is historical evidence, not acceptance of the new Intelligence platform.
+
+## Success Criteria
+Both English sites expose latest/current/previous/watchlist/archive directly in Insights; complete source-backed local articles; reviewed English manifest is the only issue authority; real weekly qualification/publication run; failures preserve history; CI, responsive, link and public HTTPS checks pass. All ten owner acceptance conditions must be verified before completion.
+
+## Next Action
+Finish and validate the emergency PRs first. Then implement manifest-driven publishing within the existing Node/static HTML architecture. Resume from this section and reverify remote heads before writes.
+
+---
+
 # VERIFIED WORKING STATE
 
 Project: `enxpower/energizeos.com`
@@ -124,3 +160,4 @@ Operate a premium, English-only ESI corporate website and original `/insights/` 
 - Latest Google Sites list screenshot for **energizeos.com** shows **Approval status: Getting ready**, last updated **Oct 25, 2026 9:46 AM EDT**. Onboarding Home says **Nice work, you've completed all the steps** and Sites **Thanks for connecting the site**. This establishes review is underway for the NEW US publisher; **NOT APPROVED / NOT ADS-LIVE**. Ads setup remains optional.
 - Sites list also shows **Ads.txt status: Not found**. Record as a nonblocking observation; do not add ads.txt or ad-serving scripts speculatively during review without separately scoped approval.
 - **NEXT:** Wait for Google's review decision; keep ESI production stable and AGI&M unchanged. If Google reports a concrete issue, make only the smallest necessary change under CI and production verification. Do not re-submit, delete the site, or change publisher/account without new evidence.
+
