@@ -7,6 +7,7 @@ on:
   pull_request:
     paths:
       - "scripts/weekly_source_review.py"
+      - "content/intelligence/config.json"
       - "scripts/tests/test_weekly_source_review.py"
       - ".github/workflows/weekly-intelligence-review.yml"
 
