@@ -1,55 +1,55 @@
 # VERIFIED WORKING STATE
 
 Project: `enxpower/energizeos.com`
+Workstream: AdSense readiness — Issue #5
+Checkpoint: 2026-10-25 (GitHub source and policy audit; not a deployed-feature acceptance)
+Progress pointer: **G0 IN PROGRESS / G1–G4 NOT STARTED / G5 EXTERNAL**
 
 ## Objective
-Give `https://energizeos.com/` one accurate, non-blank, brand-controlled sharing preview across Open Graph, X/Twitter, and Apple share surfaces.
+Deliver a premium English-only ESI corporate website with a useful, original `/insights/` center and tools, fully unattended regular operations within Google's publisher policies, and a separately verifiable organization AdSense application.
 
 ## Verified Current State
-- Production is served from `enxpower/energizeos.com` `main` through GitHub Pages.
-- Production HTML names the cache-busting `assets/og-image-v2.png` and exposes complete Open Graph and X/Twitter metadata.
-- Production Apple touch icon and Organization JSON-LD use square, brand-correct assets.
-- No open Issue or PR overlaps this repair as of 2026-09-08.
+- `enxpower/energizeos.com` is the current official static website repository. It includes the approved logo assets, social-preview validation, sitemap and robots rules.
+- `enxpower/docs-energize-v2/intel` contains the optical-market intelligence packages, including W43 dated 2026-10-19. Publication workflow success is not a current live-route test.
+- The website repository tree has no `/insights/` directory at this checkpoint, and there were no open website PRs at the checkpoint.
+- `docs-energize-v2` contains other independent products and unrelated open pull requests; this work must not modify those unrelated directories.
+- The 2026-10-25 AdSense governing Issue is #5. A scoped `agent/adsense-g0-control-plane` branch exists.
 
 ## Completed
-- VWS governance structure exists.
-- Replacement 1200×630 sharing card rendered and visually inspected with the approved mark geometry, palette, and readable content.
-- Square 512×512 organization logo and 180×180 Apple touch icon rendered from the approved primary SVG mark.
-- Local social-preview contract, asset dimensions, pinned asset hashes, workflow YAML, Python syntax, and diff whitespace checks pass.
-- PR #2 passed `Validate site`, was squash-merged as `590ba0f5312984a4ffaec88de535954abb1bf0cb`, and GitHub Pages published that revision.
-- Live homepage and all three referenced PNG assets returned HTTP 200; content types, dimensions, metadata, and SHA-256 values match the merged revision.
+- Read and mapped the actual website and intelligence repository responsibilities from connected GitHub.
+- Independently located authoritative Issue #5 and the relevant source/automation boundaries.
+- Verified an isolated G0 work branch and staged the local six-rule delivery contract for review. **Not yet merged, deployed, or accepted.**
 
 ## Remaining
-- No unresolved engineering item for this repair.
-- Previously created messages may retain their old embedded preview; verify with a newly shared URL because client-side message caches are outside the site deployment.
+- G0 [IN PROGRESS] — verify current public Pages route, rollback, legacy optical URL, English and policy/claim inventory.
+- G1 [NOT STARTED] — create premium English-only `/insights/` focused on EMS and a distinct ESI-only optical channel.
+- G2 [NOT STARTED] — implement independently tested optical link budget and EMS engineering tools.
+- G3 [NOT STARTED] — integrate limited public-safe English intelligence without exposing internal BD action hints and with ad-free defaults on automated reports.
+- G4 [NOT STARTED] — test privacy/CMP/ads.txt prerequisites, SEO, accessibility, mobile and live browser flows.
+- G5 [GOOGLE EXTERNAL GATE] — separate ESI organization AdSense eligibility, verification, review and observed decision.
 
 ## Constraints / Do Not Touch
-- Action does not equal completion.
-- Current system/tool evidence outranks old docs, chats, memory, or inference.
-- Follow repository-specific governance and safety rules.
-- Do not change homepage layout, copy, links, or product claims.
-- Do not redraw or reinterpret the approved Energize 2×2 mark geometry or colors.
+- All active implementation and public copy, comments, HTML, tests, metadata, automated email and new research must be English; preserve history for audit.
+- Maintain established EnergizeOS corporate brand/VI, EMS primary positioning, and optical intelligence only under ESI.
+- Never alter independent `docs-energize-v2` products, deployment, commercial confidences, secrets or publisher cadence as collateral work.
+- Automated, uncurated new reports default to ad-free; ads must never imply Google policy approval.
+- No unauthorized new public customer claim, billing or account action.
 
 ## Evidence
-- GitHub default-branch head before work: `5c09f7797984e60b31e3ac6f404edfc952173ab5`.
-- Live `https://energizeos.com/` HTTP 200 and metadata inspected on 2026-09-08.
-- Live `assets/og-image.png` matches the repository file and approved VI source hash but is visually unsuitable as a sharing card.
-- Local validation: `python scripts/validate_social_preview.py` → `social preview contract: OK`.
-- Rendered asset SHA-256: `190f4ec8ebc28c9a2ccc919521a250b03b258019c34f6b91a2b10f01df576576`.
-- PR: `https://github.com/enxpower/energizeos.com/pull/2`; check run `34181380899` concluded `success`.
-- Live social card: HTTP 200, `image/png`, 1200×630, SHA-256 `190f4ec8ebc28c9a2ccc919521a250b03b258019c34f6b91a2b10f01df576576`.
-- Live brand icon: HTTP 200, `image/png`, 512×512, SHA-256 `b04af3fbbd945690364378549baf94331becab69e6b735292ca7fe4808436a7d`.
-- Live Apple touch icon: HTTP 200, `image/png`, 180×180, SHA-256 `51be05c24d8885bbbd155eaabe4ec28594d323a8df20f72b24137edb2fa0ba3b`.
+- Authoritative issue: https://github.com/enxpower/energizeos.com/issues/5
+- Source repository: https://github.com/enxpower/energizeos.com
+- Group policies: `enxpower/group-governance/docs/GLOBAL_OBJECTIVE_LOCK.md`, `docs/AI_DELIVERY_CONTRACT.md`, `docs/STANDING_ENGINEERING_AUTHORITY.md`.
+- Direct GitHub branch, tree, workflow and file reads from 2026-10-25. No unverified browser-live claim is used as completion evidence.
 
 ## Success Criteria
-- Correct primary Energize mark and readable company/site identity in a 1200×630 PNG.
-- Complete Open Graph and X/Twitter metadata use a new cache-busting image URL.
-- Apple touch and structured-data logo references use square, brand-correct assets.
-- Automated validation passes on the reviewed revision.
-- Production HTML and every referenced asset return HTTP 200 and match the merged revision.
+1. All active corporate and research outputs English only; business topics and brand ownership correct.
+2. High-quality, responsive `/insights/`, useful original calculators, source/methodology disclosures and robust safety gates work on live public URLs.
+3. Regular intelligence publishing and site updates run unattended with reliable fail-closed quality checks and no disallowed automatic advertising.
+4. Google publisher/privacy and technical site-ownership requirements are independently verified; the distinct organization account is eligible.
+5. Actual Google site-approval decision is observed. Never represent a pre-submission checklist as Google approval.
 
 ## Next Action
-Share `https://energizeos.com/` in a new message to confirm the receiving app refreshes its own cached presentation.
+Complete G0 live-route, origin and content-boundary checks, then deliver a narrowly scoped `/insights/` implementation PR in the website repository.
 
 ## Operating Rule
-**Action → Observation → Verification → State Update**. Keep this file concise and current; history belongs elsewhere.
+**Action → Observation → Verification → State Update**. Report the actual G0–G5 gate, observable output, blocker, and exact next action. Avoid fictional percentages and progress from code changes alone. Historical releases remain accessible in Git history; this file represents the current active workstream only.
