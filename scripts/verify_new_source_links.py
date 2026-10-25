@@ -45,10 +45,10 @@ def source_probe(url, allowed_hosts, *, opener=urlopen):
             require(sample.startswith(b"%PDF-"), "Invalid source PDF response: " + url)
         elif mime in {"text/html", "application/xhtml+xml"}:
             markup = sample.decode("utf-8", errors="replace")
-            title = re.search(r"<title\\b[^>]*>(.*?)</title>", markup, flags=re.I | re.S)
+            title = re.search(r"<title\b[^>]*>(.*?)</title>", markup, flags=re.I | re.S)
             if title:
                 cleaned = re.sub(r"<[^>]+>", " ", title.group(1))
-                cleaned = re.sub(r"\\s+", " ", cleaned).strip().lower()
+                cleaned = re.sub(r"\s+", " ", cleaned).strip().lower()
                 require(not any(bad in cleaned for bad in (
                     "404", "page not found", "access denied", "just a moment",
                     "attention required", "sign in", "login required")),
