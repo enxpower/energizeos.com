@@ -1,5 +1,13 @@
 # English Intelligence — Current Verified Working State (2026-10-26)
 
+## 2026-10-26 — Google AdSense official-policy preapproval review (staged)
+- Objective remains Google site approval for the existing corporate root domain, not more unapproved site features. See `docs/ADSENSE_PREAPPROVAL_POLICY_AUDIT_20261026.md` for direct official Google policy URLs, source audit, and specific remaining owner-side facts.
+- Repo source already contains an `google-adsense-account` verification meta marker and public English Privacy and Contact pages; no account-side approval, current Sites row or actual Google consent/payout status was independently verified. Google states meta verification is acceptable; the ID must match the existing correct account.
+- Narrow privacy hardening updates conditional future-advertising third-party cookie/identifier disclosures and Google Ads Settings opt-out, without turning on ads, fabricating privacy operations or changing company claims; project CI adds regression checks for privacy disclosures.
+- Owner-only remaining factual gates: exact AdSense account/site and Policy center status, current payee/publisher-ID matching, one-time legal/privacy operating-facts signoff and substantiation of material public commercial claims. `ads.txt` must not be fabricated; certified TCF CMP needed before relevant personalized ad serving, not as a pretend approval prerequisite.
+- **Seal state:** existing English Intelligence technical publication quality previously verified, AdSense readiness still CONDITIONAL pending factual/account checks and this PR's own CI and live deployment results. No new public Intelligence article was released. Do not resubmit an already-pending site merely to accelerate Google.
+
+
 ## 2026-10-26 — Fresh editorial intake and strict source-link preflight (verified)
 - Evidence-only Week 44 intake is recorded in `docs/INTELLIGENCE_2026_W44_SOURCE_INTAKE.md`. The CRTC October 19 broadband/fibre competition speech is a distinct candidate; the October 23 CRTC administrative cost orders are unrelated and previous CRTC/OIF source announcements are repeats. No three credible fresh developments identified.
 - New prepublication gate: `scripts/verify_new_source_links.py` probes **each primary-source URL in newly added English issues** with real HTTPS GET, allowed final host, HTTP 200, supported response type and rejection of common error/login pages; network or soft-404 errors fail the publication check. Unit tests cover valid responses, offsite redirect, 404/challenge title, invalid host and unavailable source.

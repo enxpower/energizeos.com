@@ -111,6 +111,14 @@ def audit(root, host):
             problems.append(rel + ": missing or invalid description")
         if len(doc.titles) < 1 or not any(doc.titles):
             problems.append(rel + ": missing page title")
+        if rel == "privacy/index.html":
+            # Google requires clear partner-cookie disclosures and a visible opt-out path.
+            if "https://adssettings.google.com/" not in doc.anchors:
+                problems.append(rel + ": Google advertising personalization opt-out link missing")
+            if "https://policies.google.com/technologies/partner-sites" not in doc.anchors:
+                problems.append(rel + ": Google partner-site data-use disclosure link missing")
+            if "If Google advertising is enabled" not in html:
+                problems.append(rel + ": future advertising data-use disclosure missing")
         if doc.footer_contact_links != 1:
             problems.append(rel + ": corporate footer must contain exactly one Contact link")
         if "adsbygoogle" in html.lower() or "pagead2.googlesyndication.com" in html.lower():
