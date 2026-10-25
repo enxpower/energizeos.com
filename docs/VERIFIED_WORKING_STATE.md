@@ -2,7 +2,7 @@
 
 Project: `enxpower/energizeos.com`
 Authoritative workstream: AdSense readiness — Issue #5
-Checkpoint: 2026-10-25
+Checkpoint: 2026-10-25 (one-click Owner takeover reconfirmed; no new Google approval)
 Progress pointer: **G0 PARTIAL / G1 VERIFIED COMPLETE / G2 VERIFIED COMPLETE / G3 PARTIAL (ENGLISH OFFICIAL-INDICATOR RESEARCH LIVE; AUTOMATED SAFE INGESTION OPEN) / G4 IN PROGRESS (PUBLIC COPY, CONTACT AND SITEWIDE TECHNICAL PREFLIGHT VERIFIED; PRIVACY LEGAL/CMP AND CLAIM EVIDENCE OPEN) / G5 EXTERNAL (HISTORICAL ACCOUNT IDENTIFIED; LIVE STATUS UNVERIFIED)**
 
 ## Objective
@@ -75,9 +75,18 @@ Operate a premium, English-only ESI corporate website and original `/insights/` 
 - Draft Privacy PR #33 is **OPEN / DRAFT / HOLD**, regardless of green CI. `docs/ADSENSE_PRIVACY_NOTICE_REVIEW.md` is the single factual-review matrix; actual email/log/provider/retention processing and legal signoff remain pending.
 - The Microgrid Intelligence Engine is an in-house, private paid B2B API integration offering that may be **marketed**; no public API/client signup, online call console or billing functionality may be built under this AdSense workstream.
 
-## Next Action
+## Verified Takeover Refresh — 2026-10-25
 
-**P0 / READ-ONLY:** Use the **existing ESI AdSense account** and confirm live legal/payee owner, reactivation requirements, `energizeos.com` entry and Sites/Policy center diagnostics via authenticated Google UI. Do not infer suspension or current access from 2025–February 2026 email notices, and do not open a duplicate account. If provider access is unavailable, collect only the exact missing UI screenshots/fields in one combined Owner packet for AGI&M and ESI. **P1 / R3 HOLD:** complete the real privacy/email/log/retention facts and authorized legal approval, then reconcile existing Draft PR #33 and deploy the English public Privacy Notice only after CI and live HTTP verification. **G5 EXTERNAL:** perform Google domain review in the legitimate company account and record Google's outcome. Cross-site one-click handoff: `enxpower/op-agim.ca/docs/ADSENSE_TWO_SITE_TAKEOVER.md`.
+- Independently re-read the current source repo `main` at pre-handoff SHA `d608506d20788707acf0ec3e66ce9fe194c7c064` plus open pull requests, `AGENTS.md`, the authoritative Google publisher workstream Issue, governance, and current GitHub Actions; no other open PRs besides the held Privacy draft PR #33 were found.
+- Latest observed live website acceptance: Pages #40188181306 PASS, validation #40188181605 PASS, independently fetched public HTTPS #40188181611 PASS. This is site delivery evidence only, not an authenticated Google AdSense result.
+- The existing **Draft / DO NOT MERGE** English public Privacy implementation is PR #33, head `a70e82bae6e8ff7bb69627f87f5705bd184fb0f7` with branch CI #40186548689 PASS; no R3 factual/legal approval was established, regardless of green CI. Do not deploy it, merge it, or mistake its draft for a live Privacy Notice.
+- The internal single source of truth for company-specific privacy facts remains `docs/ADSENSE_PRIVACY_NOTICE_REVIEW.md` on `main`. Inbound business mail was observed previously, but actual privacy assignment, processors, logs, retention and data transfers remain to be verified.
+- Account recovery boundary: Prior energizeos.com onboarding was incomplete. Google's 2026-02-27 notice offered reactivation; current live AdSense account, legal payee, Sites/Policy status and reactivation requirements remain unverified.
+- The shared fully English one-click takeover instructions and consolidated Owner evidence packet live at `enxpower/op-agim.ca/docs/ADSENSE_TWO_SITE_TAKEOVER.md`. Avoid recreating a second handoff, VWS, Privacy rewrite, news feed, AI API or speculative AdSense integration.
+- **Final acceptance not met:** Google provider approval of the real root domain is still EXTERNAL / UNKNOWN; G0, G3 and privacy/G4 remain PARTIAL. AdSense account identity and R3 privacy signoff are the current P0/P1 critical path.
+
+## Next Action
+**P0:** Read/reactivate the legitimate existing ESI AdSense account through authorized Google UI; inspect actual account, legal/payee, `energizeos.com` Sites status and Policy center before any signup. Historical incomplete-onboarding deactivation is not permanent suspension evidence. If authorized access is unavailable, request only the exact missing Google UI fields in the **one combined Owner packet** stored in `enxpower/op-agim.ca/docs/ADSENSE_TWO_SITE_TAKEOVER.md`. **P1 / R3 HOLD:** verify real email/hosting/privacy handling and obtain factual/legal signoff on `docs/ADSENSE_PRIVACY_NOTICE_REVIEW.md`, leave Draft Privacy PR #33 unmerged until approval, and substantiate/qualify material company claims. **Then G5:** release accurate Privacy page under CI/public HTTPS verification and use only Google's authentic instructions to review the root domain. The private paid Microgrid Intelligence Engine may be marketed but do not build public API/key/payment flows.
 
 ## Operating Rule
 **Action → Observation → Verification → State Update.** Only verified outcomes enter Completed. G0, G3, G4 and G5 remain unclosed. Optimize for the next required acceptance gate, not cosmetic changes or document counts.
