@@ -22,6 +22,11 @@ jobs:
         run: |
           python3 scripts/english_editions.py --baseline origin/main --render . --check-tracked
           git diff --exit-code -- insights sitemap.xml
+      - name: Probe newly approved official source links before publication
+        run: |
+          python3 -m unittest discover -s scripts/tests -p "test_verify_new_source_links.py" -v
+          python3 scripts/verify_new_source_links.py --baseline origin/main
+
       - name: Validate sharing metadata and assets
         run: python scripts/validate_social_preview.py
       - name: Verify publication regression fixtures
