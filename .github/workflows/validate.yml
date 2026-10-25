@@ -20,6 +20,11 @@ jobs:
         run: python scripts/validate_social_preview.py
       - name: Validate English Insights and publishing isolation
         run: python scripts/validate_insights.py
+      - name: Reject internal editorial process language in public site
+        run: |
+          python scripts/public_copy_gate.py --self-test
+          python scripts/public_copy_gate.py .
+
       - name: Set up Node for browser acceptance
         uses: actions/setup-node@v4
         with:
