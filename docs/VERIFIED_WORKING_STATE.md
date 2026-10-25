@@ -3,7 +3,7 @@
 Project: `enxpower/energizeos.com`
 Authoritative workstream: AdSense readiness — Issue #5
 Checkpoint: 2026-10-25
-Progress pointer: **G0 PARTIAL / G1 VERIFIED COMPLETE / G2 VERIFIED COMPLETE / G3 NOT STARTED / G4 NOT STARTED / G5 EXTERNAL**
+Progress pointer: **G0 PARTIAL / G1 VERIFIED COMPLETE / G2 VERIFIED COMPLETE / G3 PARTIAL (ENGLISH OFFICIAL-INDICATOR RESEARCH LIVE; AUTOMATED SAFE INGESTION OPEN) / G4 IN PROGRESS (SITE INVENTORY; LEGAL/CMP OPEN) / G5 EXTERNAL**
 
 ## Objective
 Operate a premium, English-only ESI corporate website and original `/insights/` engineering content with independently working calculation tools, safe automation and a separately eligible organizational AdSense application. Actual provider approval is the final external gate.
@@ -12,7 +12,7 @@ Operate a premium, English-only ESI corporate website and original `/insights/` 
 - The website belongs to `enxpower/energizeos.com`; the independent `docs-energize-v2` governed optical/EMS intelligence products remain outside the scope of these website changes.
 - `/insights/` is part of the root corporate domain. The website and both calculation tools are present in the current website source and published repositories.
 - The homepage/Insights logo mismatch was repaired using the homepage's exact approved corporate SVG, PR #9 merged `899652f0b1da25f8afd75124ed5fcb0578365249` and Pages/browser checks passed. Legacy optical Intel public access and existing commercial/certification claims require further review.
-- Existing automatically generated or legacy intelligence is NOT certified all-English or ad-eligible; no publisher migration was completed in G1/G2.
+- Legacy machine-generated Chinese optical weekly reports remain in the independent governed publisher and are not certified English or ad-eligible. An original source-linked English optical indicator analysis page has been added to the main corporate site, with verified dated official series and without imported business-development instructions.
 
 ## Completed
 - G1: Professional English Insights page, corporate navigation and sitemap were merged, rendered in Chromium at 390/768/1440 px, deployed, and checked over public HTTPS. Evidence is retained in preceding PRs and GitHub Actions.
@@ -20,10 +20,13 @@ Operate a premium, English-only ESI corporate website and original `/insights/` 
 - G2 acceptance evidence: PR #10; existing site validation, formula and 390/768/1440 Chromium CI run #40169925497; feature merged as `0901b1e25aadf22da5386ffc58c87c4919be6d04`. Public deployment/Pages run #40170277236 succeeded and main-branch read-only HTTPS tool-and-script smoke run #40170277808 succeeded for `https://energizeos.com/insights/tools/`.
 - The related smoke check was merged into the current main branch, so future public failures are actionable rather than treated as successful publication.
 
+- G3-A ESI Optical Market Intelligence: original English page at `https://energizeos.com/insights/intelligence/` released under PR #14, merged `c8d6ebbe9b294e728d1bf62efd7fc6bcb34991fc`. Source checks use the exact June 2025 fiber-cable PPI 86.6 (stale), August 2026 broad cable-manufacturing PPI 295.7, and August 2026 Federal Reserve industrial production 71.3379. Public source links and evidence boundaries were independently verified. Existing site CI with 390/768/1440 Chromium screenshots and visual review passed in run #40173284517; feature Pages deployment #40173434728 passed. PR #16 added exact public HTTPS checks; public site verification succeeded in PR run #40173481964 and in the main-branch smoke run #40173559216. Main Pages deployment #40173558977 succeeded.
+- G4 initial code/tree audit: no dedicated Privacy, Cookie/Consent, Terms or ads.txt files were identified in the main corporate site. No analytics/ad-tracking scripts were found in inspected homepage/Insights HTML, but hosting logs and external systems are not audited. Policy task #15 opened; no legal/privacy document has been publicly asserted or Google ad code enabled.
+
 ## Remaining
 - G0 [PARTIAL]: independently confirm business/certification/performance statements, language inventory, legacy public-route provenance, privacy footprint and release rollback evidence.
-- G3 [NOT STARTED]: safely derive original, fact-checkable, English-only public intelligence from existing publishers; exclude internal business actions and preserve their own deployment and email pipelines.
-- G4 [NOT STARTED]: Google publisher-policy audit, data/privacy notices, consent/CMP assessment, crawling/site verification, ads.txt when publisher ID exists, accessibility and index quality; automated unreviewed/uncurated briefs remain outside advertising inventory.
+- G3 [PARTIAL]: an original, English-only indicator/methodology research page is live and HTTPS-verified. Unattended public-data refresh, safe article-level English optical research/history and legacy Chinese publication isolation remain open; the independent governed publisher was not changed.
+- G4 [IN PROGRESS]: GitHub source inventory and authoritative Google AdSense/CMP requirements were checked; https://github.com/enxpower/energizeos.com/issues/15 owns the remaining factual/legal privacy notice, consent, ads.txt, site ownership, source-quality and account-specific gates. No account approval or legal-policy completion has been inferred.
 - G5 [EXTERNAL]: verify genuine ESI legal payee/account eligibility and submit `energizeos.com` for an actual Google AdSense decision; no approval has been observed.
 
 ## Constraints / Do Not Touch
@@ -34,6 +37,8 @@ Operate a premium, English-only ESI corporate website and original `/insights/` 
 - Routine R0–R2 implementation follows the group Six Rules and Global Objective Lock. Genuine R3 payment, legal, credentials, new unauthorized communications and material scope remain Owner-controlled.
 
 ## Evidence
+- ESI Energy/Optical Intelligence acceptance: https://github.com/enxpower/energizeos.com/issues/13 ; PR #14 + PR #16; browser run #40173284517; public smoke #40173559216; Pages #40173558977.
+- AdSense trust/privacy audit: https://github.com/enxpower/energizeos.com/issues/15.
 - Authoritative scope: https://github.com/enxpower/energizeos.com/issues/5
 - Source: https://github.com/enxpower/energizeos.com
 - G2 feature: https://github.com/enxpower/energizeos.com/pull/10
@@ -49,7 +54,7 @@ Operate a premium, English-only ESI corporate website and original `/insights/` 
 5. The real Google AdSense review of each corporate domain is recorded; there is no engineering shortcut to provider approval.
 
 ## Next Action
-Audit existing commercial/technical claims, privacy/cookie disclosures and legacy optical intelligence language; then establish a narrow, fail-closed public-safe English intelligence integration without modifying unrelated docs projects.
+Resolve G0 unsupported 500+ MW/Fortune 500/certification assertions with independent customer and equipment evidence or qualified copy; establish accurate English privacy/contact notices under G4 only after validating actual practices. For G3-B first verify a safe source-published JSON route and individual official data consistency; do not auto-syndicate Chinese weekly BD reports or assume Google AdSense approval.
 
 ## Operating Rule
 **Action → Observation → Verification → State Update.** Only verified outcomes enter Completed. G0, G3, G4 and G5 remain unclosed. Optimize for the next required acceptance gate, not cosmetic changes or document counts.
