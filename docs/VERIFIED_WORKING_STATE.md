@@ -3,7 +3,7 @@
 Project: `enxpower/energizeos.com`
 Authoritative workstream: AdSense readiness — Issue #5
 Checkpoint: 2026-10-25
-Progress pointer: **G0 PARTIAL / G1 VERIFIED COMPLETE / G2 VERIFIED COMPLETE / G3 PARTIAL (ENGLISH OFFICIAL-INDICATOR RESEARCH LIVE; AUTOMATED SAFE INGESTION OPEN) / G4 IN PROGRESS (PUBLIC COPY, CONTACT AND ENGINE PROMOTION VERIFIED; LEGAL/CMP OPEN) / G5 EXTERNAL**
+Progress pointer: **G0 PARTIAL / G1 VERIFIED COMPLETE / G2 VERIFIED COMPLETE / G3 PARTIAL (ENGLISH OFFICIAL-INDICATOR RESEARCH LIVE; AUTOMATED SAFE INGESTION OPEN) / G4 IN PROGRESS (PUBLIC COPY, CONTACT AND SITEWIDE TECHNICAL PREFLIGHT VERIFIED; PRIVACY LEGAL/CMP AND CLAIM EVIDENCE OPEN) / G5 EXTERNAL**
 
 ## Objective
 Operate a premium, English-only ESI corporate website and original `/insights/` engineering content with independently working calculation tools, safe automation and a separately eligible organizational AdSense application. Actual provider approval is the final external gate.
@@ -30,6 +30,9 @@ Operate a premium, English-only ESI corporate website and original `/insights/` 
 - Owner scope alignment: the independently developed Microgrid Intelligence Engine is marketed as an ESI B2B commercial offering, including private project-scoped API integration sold through enterprise agreements. It is **not** a public trial, live self-service endpoint, public API key signup or new online billing task. The ESI homepage and original microgrid architecture research were updated in PR #27 (merged `dde4b1e921ba47c57e1c68a86c6cfa0c3d66a1cb`) with original technical/product wording and no activation of the paused browser Copilot. PR head site/browser/public-content CI #40178541125 PASS; source Pages #40179001783 PASS.
 - G4 corporate trust/contact: branded `/contact/` page using the existing public Organization contact `info@energizeos.com`, linked from corporate and Insights footers with sitemap. PR #29 (merged `214d2087659ead0a13fa28dc4448d1b5c4dd1e0e`) replaced the conflicted and closed PR #28 without overwriting PR #27 product wording. Final site/browser CI #40179345180 PASS; Pages deployed. Main-branch, read-only live HTTPS quality monitor PR #30 merged `667b1c9b461fa98cd6e33e41f81a00f021858b39`; `main` runs #40179661076 (live original/Contact/engine marketing), #40179661121 (site CI), and #40179661169 (Pages) all PASS. No actual customer email delivery, privacy-law signoff, live public engine API or Google AdSense approval is asserted.
 
+- G4 technical preflight completed: PR #32 merged as `54edf0f52052c39530013fa9fba0b4eb31daee82`; sitewide policy-readiness script verifies each generated/published English HTML page, exact root-domain canonical, metadata, sitemap coverage, in-domain navigation/anchors and unique Contact footer links. PR-head CI #40185482915 passed; post-merge source/Pages run #40185482825 and independently fetched HTTPS smoke #40185482996 passed. This establishes a technical site-quality baseline, not Google's AdSense approval.
+- A separate English company-specific Privacy Notice review draft was prepared at `docs/ADSENSE_PRIVACY_NOTICE_REVIEW.md` based on code-grounded practices and official Google publisher disclosures. It explicitly marks hosting, logs, retention, data processors, mailbox responsibility, actual advertising/CMP and legal jurisdiction as unverified. The draft **is not public, not legally approved, and is NOT permission to run ads or collect new data**.
+
 ## Remaining
 - G0 [PARTIAL]: independently confirm business/certification/performance statements, language inventory, legacy public-route provenance, privacy footprint and release rollback evidence.
 - G3 [PARTIAL]: an original, English-only indicator/methodology research page is live and HTTPS-verified. Unattended public-data refresh, safe article-level English optical research/history and legacy Chinese publication isolation remain open; the independent governed publisher was not changed.
@@ -44,6 +47,7 @@ Operate a premium, English-only ESI corporate website and original `/insights/` 
 - Routine R0–R2 implementation follows the group Six Rules and Global Objective Lock. Genuine R3 payment, legal, credentials, new unauthorized communications and material scope remain Owner-controlled.
 
 ## Evidence
+- G4 root-domain technical gate PR #32, head CI #40185482915, production #40185482825 and public smoke #40185482996; internal Privacy review draft `docs/ADSENSE_PRIVACY_NOTICE_REVIEW.md`.
 - Engineering reference Issue #22; feature PR #23, live monitor PR #24, HTTPS `main` run #40177076672.
 - Public editorial quality Issue #18; source-copy PR #19, production-monitor PR #20; independently passed public smoke #40175285030.
 - ESI Energy/Optical Intelligence acceptance: https://github.com/enxpower/energizeos.com/issues/13 ; PR #14 + PR #16; browser run #40173284517; public smoke #40173559216; Pages #40173558977.
@@ -63,7 +67,7 @@ Operate a premium, English-only ESI corporate website and original `/insights/` 
 5. The real Google AdSense review of each corporate domain is recorded; there is no engineering shortcut to provider approval.
 
 ## Next Action
-G4 priority: verify ESI real personal-data and email-handling practices, prepare factual English privacy disclosures for owner legal approval, and assess regional Google-certified CMP if ads are enabled. Existing performance and certification claims still require first-party evidence. G5 requires Google publisher account/domain verification. The private paid microgrid API commercial service remains outside website implementation scope.
+Owner/legal factual signoff for the English Privacy Notice and site/email handling matrix in `docs/ADSENSE_PRIVACY_NOTICE_REVIEW.md`; confirm real `info@energizeos.com` handling and hosting/service-provider logs. Do not publish the draft until verified. Then release a branded public `/privacy/` page under CI/HTTPS checks and perform Google site/account verification; the privately sold microgrid API service stays outside website engineering scope.
 
 ## Operating Rule
 **Action → Observation → Verification → State Update.** Only verified outcomes enter Completed. G0, G3, G4 and G5 remain unclosed. Optimize for the next required acceptance gate, not cosmetic changes or document counts.
