@@ -93,14 +93,14 @@ try {
     await page.screenshot({path:"build/visual/esi-microgrid-ai-" + width + ".png",fullPage:true});
     const contactResponse = await page.goto(origin + "/contact/", {waitUntil:"domcontentloaded"});
     if (!contactResponse || contactResponse.status() !== 200) throw new Error("ESI Contact unavailable at " + width);
-    const state = await page.evaluate(() => ({
+    const contactState = await page.evaluate(() => ({
       scroll: document.documentElement.scrollWidth,
       client: document.documentElement.clientWidth,
       canonical: document.querySelector('link[rel="canonical"]')?.getAttribute("href"),
       mark: Boolean(document.querySelector('.brand svg[viewBox="0 0 48 48"]')),
       email: Boolean(document.querySelector('a[href^="mailto:info@energizeos.com"]'))
     }));
-    if (state.scroll > state.client + 1 || state.canonical !== "https://energizeos.com/contact/" || !state.mark || !state.email) throw new Error("ESI Contact acceptance failed at " + width);
+    if (contactState.scroll > contactState.client + 1 || contactState.canonical !== "https://energizeos.com/contact/" || !contactState.mark || !contactState.email) throw new Error("ESI Contact acceptance failed at " + width);
     await page.evaluate(() => window.scrollTo(0,0));
     await page.screenshot({path:"build/visual/esi-business-contact-" + width + ".png",fullPage:true});
     await context.close();
