@@ -4,16 +4,18 @@
 Deliver an independent English Intelligence publication for North American customers, with real dated articles, immutable history, source review, weekly qualification and verified production.
 
 ## Verified Current State
-- Takeover read the actual emergency PR diff, repository governance, designated VWS and GitHub Actions.
-- AGI&M PR #44 head 6d9c29f: CI 40203619103 FAILED on a nonexistent /insights/intelligence/#archive anchor. ESI PR #46 head e750c8d: CI 40203623080 SUCCESS. Both were OPEN / UNMERGED at takeover.
-- Root causes: escaped generator interpolation, customer navigation to a separate Chinese publisher, and a metadata-only sync that never verified English articles.
+- P0 emergency PR #46 merged at `78523bf10cb8d502eb235c94ccf32c1303f44956` after successful current-head CI `40204215715` and independent code review. Deployment `40204318626` completed successfully.
+- Independent public HTTPS reads returned 200 for both /insights/ and /insights/intelligence/ on both domains. No Chinese characters, unresolved templates or Chinese research reading links remained in those four deployed HTML responses.
+- Permanent boundary fixtures reject raw, encoded, dot-segment and trailing-dot variations of isolated research links. The old metadata sync is retired; scheduled Chinese-publisher propagation is disabled.
+- Local manifest-driven English rendering currently passes unit tests, English/public-copy gates, full route/anchor/canonical/sitemap audits and ESI deterministic regeneration. Feature CI, merge and live acceptance remain PENDING.
 
 ## Completed
+- P0 emergency isolation merged, deployed and independently verified by public HTTPS; responsive premerge CI passed at 390/768/1440.
 - Reproduced the missing AGI&M anchor with the actual site build and full technical preflight.
 - Demonstrated two failing regression fixtures: unresolved template expressions and links to the isolated research publisher were not rejected by the old public-copy gate.
 
 ## Remaining
-- P0: finish boundary regression tests, run CI, review, merge and verify actual production HTML and responsive layouts.
+- P0 follow-through: expand live browser acceptance to the new article/manifest routes when the publication feature deploys.
 - P1: eliminate Chinese-publisher metadata propagation; freeze numeric research snapshots until independent source validation.
 - P2: local reviewed English issue manifest, independent article routes, sources, archive and honest publication dates.
 - P3/P4: source-verified AGI&M energy and ESI optical editions, preserving each brand.
@@ -24,13 +26,14 @@ Deliver an independent English Intelligence publication for North American custo
 Preserve business pages, corporate brands, approved privacy and AdSense ownership tags, account configuration, independent Chinese research publishers and private reports. No fake dates/issues, unsafe automatic articles, new public AI API or billing.
 
 ## Evidence
+P0: PR #46, merge `78523bf10cb8d502eb235c94ccf32c1303f44956`, CI `40204215715`, deployment `40204318626`; four independent public HTTPS HTML responses passed.
 Emergency PRs: https://github.com/enxpower/op-agim.ca/pull/44 and https://github.com/enxpower/energizeos.com/pull/46. GitHub Actions 40203619103 and 40203623080. Prior work below is historical evidence, not acceptance of the new Intelligence platform.
 
 ## Success Criteria
 Both English sites expose latest/current/previous/watchlist/archive directly in Insights; complete source-backed local articles; reviewed English manifest is the only issue authority; real weekly qualification/publication run; failures preserve history; CI, responsive, link and public HTTPS checks pass. All ten owner acceptance conditions must be verified before completion.
 
 ## Next Action
-Finish and validate the emergency PRs first. Then implement manifest-driven publishing within the existing Node/static HTML architecture. Resume from this section and reverify remote heads before writes.
+Finish independent source/editorial and code review of the manifest-driven publication feature, run CI including 390/768/1440 article navigation, merge/deploy, and verify exact public articles and archive. Then implement and genuinely exercise weekly qualification and scheduled editorial publishing. Reverify remote heads before writes.
 
 ---
 

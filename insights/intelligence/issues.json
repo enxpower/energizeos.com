@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "language": "en",
+  "issues": [
+    {
+      "issue": "2026-w43",
+      "label": "2026 · Week 43",
+      "headline": "Fiber investment, a closed funding window and the next coherent interface",
+      "summary": "North American optical procurement must distinguish announced factory investment, broadband program milestones and interface specifications.",
+      "published_at": "2026-10-25T14:45:00Z",
+      "url": "/insights/intelligence/2026-w43/"
+    },
+    {
+      "issue": "2026-reference-01",
+      "label": "Launch Reference 01",
+      "headline": "From optical compatibility to a deliverable broadband network",
+      "summary": "A launch reference on interoperability evidence, U.S. sourcing compliance and Canadian network resilience.",
+      "published_at": "2026-10-25T14:44:00Z",
+      "url": "/insights/intelligence/2026-reference-01/"
+    }
+  ]
+}
