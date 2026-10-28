@@ -1,5 +1,29 @@
 # English Intelligence — Current Verified Working State (2026-10-26)
 
+## 2026-10-29 — Week 44 publication resumed (prepublication)
+
+### Objective
+Close the original English Intelligence weekly-publication acceptance gate with a substantive, newly verified edition; preserve the accepted site, source archives and unrelated business/AdSense/privacy state.
+
+### Verified Current State
+- Resumed from exact remote `main` `08cf96c381a30d26c9ceabf27e99232492a221a4`; re-read governance, open PRs, live workflows, designated VWS, current approved manifest and deployed article routes. Prior feature work is already merged; do not replay old local diffs.
+- Independent HTTPS reads of both domains' Insights, publication hubs and both existing articles returned HTTP 200 with English content and no template leakage. Both public manifests still identify Week 43 as latest before this release.
+- Existing weekly editorial task `6ade2902a668819189bfb89c6ac19502` is enabled. Its actual October 27 run completed with an evidence-insufficient HOLD, preserving both manifests; the prior Monday scheduled collector runs are successful. This is real fail-closed operation, not proof that a new article was published.
+- New Week 44 draft now uses three distinct primary developments, not a relabelled prior edition. All six new primary URLs across the two drafts passed the existing strict HTTPS/content-type/host/error-page probe. Exact draft content passed independent source/editorial review by `/root/p0_review`; approved canonical SHA-256: `08b24f89f6e8c1b2898ac2aab6287562854653488e4fa73eb21b6a9caa7d80dd`. The review did not claim CI, deployment or live acceptance.
+
+### Completed
+- Fresh remote and live takeover verification, six strict primary-link probes and the existing local unit suite (33 tests) passed.
+
+### Remaining
+Full build, immutable-history and link/SEO/English checks; required CI and responsive browser navigation; governed merge and deployment; independent live new-article/latest/previous/archive verification.
+
+### Constraints / Do Not Touch
+Content-only release through the existing publisher. No engine redesign, tracking/AdSense/privacy changes, edits to old source issue JSON, private reports or Chinese publishers. ESI admits only the two named official company disclosure hosts needed for source attribution; company results remain explicitly global and company-reported.
+
+### Evidence / Success Criteria / Next Action
+Acceptance requires a real `2026-w44` local English article and both correct prior editions, automatically synchronized homepage/archive, green exact-head CI and exact production verification. Next: submit one scoped Week 44 publication PR per site, pass required checks, merge/deploy and independently verify public output. Publication timestamps use the true UTC release-preparation date (October 28); this checkpoint uses Asia/Shanghai date (October 29).
+
+
 ## 2026-10-27 — Week 44 scheduled-source audit (HOLD; no publication)
 
 ### Objective
