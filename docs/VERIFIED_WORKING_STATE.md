@@ -1,4 +1,47 @@
-# English Intelligence — Current Verified Working State (2026-10-26)
+# English Intelligence — Current Verified Working State (2026-10-29)
+
+## Objective
+Operate a professional, source-reviewed, independent English Intelligence series for North American customers, with dated local articles, immutable history, automatic navigation and genuine weekly evidence/editorial execution.
+
+## Verified Current State
+- Week 44 is MERGED, DEPLOYED and independently verified on the corporate domain. Release PR #73; reviewed source head `ab9744005997b2e25823733e29e26aa200a96afb`; squash release `b4cad8493d775d53e4472ca0d78dd7388bba829f`.
+- Exact PR-head CI `40777838837` SUCCESS, including 390/768/1440 Chromium article/navigation checks and retained screenshots. New primary source URLs passed the strict live HTTPS/type/host/error-page gate. Independent editorial review approved the exact article content digest recorded in its source JSON.
+- Exact release deployment `40778177997` SUCCESS. ESI Pages, exact-main site validation, source qualification and live-smoke jobs succeeded.
+- Independent production HTTPS acceptance on 2026-10-28 22:15 UTC (2026-10-29 Asia/Shanghai): all SIX publication routes returned 200 and matched the tested local build byte-for-byte by SHA-256: /insights/, /insights/intelligence/, /insights/intelligence/archive/, /insights/intelligence/2026-w44/, /insights/intelligence/2026-w43/ and /insights/intelligence/2026-reference-01/.
+- Live manifest order is exactly Week 44, Week 43, Launch Reference 01. Current/previous entries, next-week watchlist, archive links, canonical metadata, source references and sitemap inclusion passed. No Chinese text, unresolved templates or isolated Chinese-research reading links were found.
+- Existing weekly editorial task `6ade2902a668819189bfb89c6ac19502` remains enabled for Tuesday 09:00 Asia/Shanghai. Its actual October 27 scheduled run completed with evidence-insufficient HOLD and preserved history. Actual Monday GitHub source-review schedule runs 40361759584 succeeded. This establishes real scheduled qualification and fail-closed behavior; the Week 44 article release above separately establishes the full admitted-content publication and synchronization path.
+
+## Completed
+- P0/P1: customer-facing Chinese research isolation, retired unsafe metadata sync and permanent English/template/link regression checks.
+- P2/P3/P4: reviewed local English manifest, complete independent articles for both brands, original publication dates, current/previous/watchlist and permanent archive.
+- P5: real scheduled public-source qualification and editorial decision run verified; insufficient evidence retained the last accepted content; this newly reviewed Week 44 release exercised admission, CI, deployment and automatic homepage/archive synchronization.
+- P6: source/editorial review, append-only historical source checks, existing unit suite (33 tests), full link/asset/language/template/SEO checks, 390/768/1440 browser review, exact production output comparison and rollback baseline recorded.
+- Old approved source JSON for Week 43 and Launch Reference is unchanged.
+
+## Remaining
+No open engineering or content gate for this accepted Week 44 release. Future editions remain conditional on sufficient distinct primary evidence and independent review; do not predeclare future scheduled outcomes. Google AdSense approval is a separate external workstream, not established by this publication.
+
+## Constraints / Do Not Touch
+Preserve accepted article source history, corporate identity, business pages, Privacy/AdSense state, credentials, billing, private reports and independent Chinese publishers. No filler or false freshness. No new publishing engine or service was introduced in this release. ESI's two added source hosts are official company disclosure sites; its corporate sales figures are explicitly company-reported and global.
+
+## Evidence
+- Release: https://github.com/enxpower/energizeos.com/pull/73
+- Reviewed-head CI: https://github.com/enxpower/energizeos.com/actions/runs/40777838837
+- Deployment: https://github.com/enxpower/energizeos.com/actions/runs/40778177997
+- Live article: https://energizeos.com/insights/intelligence/2026-w44/
+- Canonical article source and approval digest: `content/intelligence/issues/2026-w44.json`.
+- Prior accepted rollback baseline: `08cf96c381a30d26c9ceabf27e99232492a221a4`. If a release fault requires rollback, preserve this accepted edition in recoverable source history and restore through the governed release path.
+
+## Success Criteria
+The ten original English Intelligence acceptance conditions are verified for the current operating system and Week 44 release: English-only local articles, direct Insights discovery, current/previous/watchlist/archive closure, actual weekly qualification/editorial execution, automatic synchronization, history retention on failure, no leaks/dead first-party routes/false dates, green CI/deployment/public proof and protected unrelated functions. Future publication remains evidence-conditional.
+
+## Next Action
+Release is accepted; stop discretionary implementation. Continue the existing weekly source/editorial task. Admit a later original English issue only after independent review and all established CI/live gates; otherwise preserve the current publication. Re-read current main and live evidence at any takeover.
+
+---
+
+## Historical checkpoints (superseded where they conflict with the current state above)
+
 
 ## 2026-10-29 — Week 44 publication resumed (prepublication)
 
