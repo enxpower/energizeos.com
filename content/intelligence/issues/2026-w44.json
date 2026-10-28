@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "issue": "2026-w44",
+  "label": "2026 · Week 44",
+  "language": "en",
+  "published_at": "2026-10-28T22:06:40Z",
+  "headline": "Optical supplier results strengthen; local delivery evidence still matters",
+  "summary": "Corning and Nokia report optical growth while Canada’s regulator explains wholesale fibre access. Global sales and local network readiness remain distinct.",
+  "briefing": "New supplier results provide a different signal from last edition’s factory expansion and interface announcements: reported business activity. Corning’s October 27 release and Nokia’s October 22 report describe their own global operations, not a North American market census. A separate October 19 CRTC speech supplies Canadian access-policy context. This edition examines what those sources can tell a procurement team, and which local delivery questions they leave unanswered.",
+  "developments": [
+    {
+      "headline": "Corning reports optical sales growth, distinct from factory expansion",
+      "status": "Company-reported quarterly results",
+      "fact": "Corning’s October 27 results report third-quarter Optical Communications sales of $2.379 billion, up 44% year over year. This is a company segment result, distinct from the Wilmington expansion announcement covered previously. It is neither a fibre-volume series nor a North-America-only sales total.",
+      "why_it_matters": "Reported revenue adds evidence of supplier activity, while leaving product mix, route-level demand and near-term customer allocation unresolved.",
+      "implications": "ESI analysis: request current availability for the exact fibre, cable construction and connectivity components in the bill of materials. Match factory qualification and committed delivery to the project schedule. Strong segment sales do not establish that every product is constrained, immediately available or interchangeable.",
+      "uncertainty": "The release does not provide a market-wide fibre price, an individual buyer’s allocation or route-specific lead times.",
+      "sources": [
+        "corning-q3"
+      ]
+    },
+    {
+      "headline": "Nokia’s optical growth is a global supplier signal",
+      "status": "Company-reported quarterly results",
+      "fact": "Nokia’s October 22 interim report states that Optical Networks sales grew 18% year over year on a constant-currency basis. The company also discusses continuing integration of Infinera. These are global corporate disclosures, not a separate growth estimate for North American optical transport or evidence of a named customer’s equipment acceptance.",
+      "why_it_matters": "System suppliers’ results inform capacity and support discussions, but their headline growth rates are not directly comparable with another supplier’s differently defined segment.",
+      "implications": "ESI analysis: confirm the offered platform, software release, management interfaces and support ownership. Obtain a documented DWDM line-system and OTN service-mapping compatibility matrix before approving substitutions. Keep the customer’s installed-base migration and spares plan separate from a vendor’s corporate integration timetable.",
+      "uncertainty": "The report does not establish universal cross-platform compatibility, an individual route’s performance or a project’s commissioning status.",
+      "sources": [
+        "nokia-q3"
+      ]
+    },
+    {
+      "headline": "Canada’s wholesale fibre framework informs access choices",
+      "status": "Regulatory context / existing framework",
+      "fact": "In an October 19 speech, the CRTC chair described a wholesale fibre framework allowing competitors to use major telephone-company networks. She also described a five-year head start for new fibre builds before wholesale access is required. This is an explanation of an existing framework, not a newly awarded fibre construction project.",
+      "why_it_matters": "A service provider’s access route can affect whether its immediate requirement is wholesale service, customer equipment or a new physical build.",
+      "implications": "ESI analysis: establish the relevant network, eligible service and applicable terms before preparing an equipment scope. Verify the controlling decisions and tariffs for the actual location. A national policy explanation does not settle local fibre availability, optical handoff specifications or who owns the transport equipment.",
+      "uncertainty": "The speech alone does not verify a specific address’s service eligibility, a local access price or an optical equipment order.",
+      "sources": [
+        "crtc-access"
+      ]
+    }
+  ],
+  "takeaways": [
+    "Compare supplier disclosures using their stated business scope and accounting basis rather than treating different percentages as a single market index.",
+    "Translate each project into an explicit access model, supported equipment configuration and delivery commitment before procurement."
+  ],
+  "uncertainties": [
+    "The cited sales results are supplier reports and are not independent field-performance measurements.",
+    "No new fibre price, universal interoperability result or local construction award is inferred."
+  ],
+  "watchlist": [
+    "Check product-specific delivery and qualification evidence following supplier results.",
+    "Review optical-platform support notices for software, spares and migration implications.",
+    "Track Canadian access decisions and location-specific service availability rather than reusing national coverage headlines."
+  ],
+  "sources": [
+    {
+      "id": "corning-q3",
+      "publisher": "Corning Incorporated",
+      "title": "Third-quarter 2026 results — Optical Communications segment",
+      "url": "https://investor.corning.com/news-and-events/news/news-details/2026/Corning-Delivers-Outstanding-Third-Quarter-Results1/default.aspx",
+      "published_on": "2026-10-27",
+      "verified_on": "2026-10-28",
+      "kind": "primary",
+      "verified_fact": "Corning reported Q3 Optical Communications sales of $2.379 billion, up 44% year over year; these are global company segment results."
+    },
+    {
+      "id": "nokia-q3",
+      "publisher": "Nokia Corporation",
+      "title": "Third-quarter 2026 interim report",
+      "url": "https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q3-2026/",
+      "published_on": "2026-10-22",
+      "verified_on": "2026-10-28",
+      "kind": "primary",
+      "verified_fact": "Nokia reported Optical Networks sales growth of 18% year over year at constant currency; the disclosure is global."
+    },
+    {
+      "id": "crtc-access",
+      "publisher": "Canadian Radio-television and Telecommunications Commission",
+      "title": "Chair’s October 19 speech — wholesale fibre framework",
+      "url": "https://www.canada.ca/en/radio-television-telecommunications/news/2026/10/vicky-eatrides-to-the-canadian-chapter-of-the-international-institute-of-communications.html",
+      "published_on": "2026-10-19",
+      "verified_on": "2026-10-28",
+      "kind": "primary",
+      "verified_fact": "The speech describes existing wholesale fibre access and a five-year head start for new fibre builds; it is context, not a new construction award."
+    }
+  ],
+  "approval": {
+    "status": "approved",
+    "reviewed_on": "2026-10-28",
+    "reviewer": "Codex independent editorial/code reviewer /root/p0_review",
+    "content_sha256": "08b24f89f6e8c1b2898ac2aab6287562854653488e4fa73eb21b6a9caa7d80dd"
+  }
+}
