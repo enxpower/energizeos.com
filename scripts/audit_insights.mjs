@@ -115,6 +115,28 @@ try {
     if (draftPrivacyLayout.scroll > draftPrivacyLayout.client + 1 || !draftPrivacyLayout.logo || draftPrivacyLayout.sections !== 7 || draftPrivacyLayout.canonical !== "https://energizeos.com/privacy/") throw new Error("Privacy draft responsive quality failed at " + width);
     await page.evaluate(() => window.scrollTo(0,0));
     await page.screenshot({path:"build/visual/esi-privacy-draft-" + width + ".png",fullPage:true});
+    const guideResponse = await page.goto(origin + "/insights/guides/optical-receive-window/", {waitUntil:"domcontentloaded"});
+    if (!guideResponse || guideResponse.status() !== 200) throw new Error("Receive-power reference unavailable");
+    const guide = await page.evaluate(() => ({
+      width:document.documentElement.scrollWidth, client:document.documentElement.clientWidth,
+      heading:document.querySelector('h1')?.textContent,
+      canonical:document.querySelector('link[rel="canonical"]')?.getAttribute('href'),
+      main:document.querySelectorAll('main').length
+    }));
+    if (guide.width > guide.client + 1 || guide.main !== 1 || !guide.heading?.includes("receive-power window") || guide.canonical !== "https://energizeos.com/insights/guides/optical-receive-window/") throw new Error("Receive-power reference layout or identity failed at " + width);
+    const csv = await context.request.get(origin + "/downloads/optical-receive-window.csv");
+    if (csv.status() !== 200 || !(await csv.text()).includes("short,-3,1,-18,-1,0.5,1.5,3,-4.5,0.5,10.5,-1.5,FAIL")) throw new Error("Original receive-power worksheet unavailable");
+    await page.screenshot({path:"build/visual/esi-receive-window-" + width + ".png",fullPage:true});
+    const homeResponse = await page.goto(origin + "/", {waitUntil:"domcontentloaded"});
+    if (!homeResponse || homeResponse.status() !== 200) throw new Error("Corporate homepage unavailable");
+    const home = await page.evaluate(() => ({
+      width:document.documentElement.scrollWidth, client:document.documentElement.clientWidth,
+      tiles:[...document.querySelectorAll('.metric-n')].map(e=>({text:e.textContent, width:e.scrollWidth, client:e.clientWidth})),
+      text:document.body.innerText
+    }));
+    if (home.width > home.client + 1 || home.tiles.length !== 4 || home.tiles.some(x=>x.width > x.client + 1)) throw new Error("Homepage focus tiles overflow at " + width);
+    if (/MW deployed|Fortune 500|15 in production/.test(home.text)) throw new Error("Unverified deployment claims returned");
+    await page.screenshot({path:"build/visual/esi-qualified-home-" + width + ".png",fullPage:true});
     await context.close();
   }
   console.log("EnergizeOS Insights Chromium tests PASS at 390 / 768 / 1440 px");

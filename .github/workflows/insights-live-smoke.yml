@@ -109,8 +109,14 @@ jobs:
       - name: Verify public English optical market research and exact source IDs
         run: |
           python3 - <<'PY'
+          import json
+          import os
           import re
+          import sys
+          import urllib.error
           import urllib.request
+          sys.path.insert(0, 'scripts')
+          from refresh_optical_metrics import validate_dataset, render
 
           url = "https://energizeos.com/insights/intelligence/"
           request = urllib.request.Request(
@@ -123,8 +129,18 @@ jobs:
           assert '<html lang="en">' in body
           assert 'href="https://energizeos.com/insights/intelligence/"' in body
           assert 'viewBox="0 0 48 48"' in body
-          assert "86.6" in body and "295.7" in body and "71.3379" in body
-          assert "June 2025" in body and "August 2026" in body
+          try:
+              with urllib.request.urlopen(url + 'data.json', timeout=25) as response:
+                  dataset = validate_dataset(json.load(response))
+              assert render(dataset['metrics']) in body, 'Live page differs from the published dated observations'
+          except urllib.error.HTTPError as error:
+              # The first candidate is checked before the new dataset route is deployed.
+              # Push/scheduled acceptance always requires the new numeric publication.
+              if error.code != 404 or os.environ.get('GITHUB_EVENT_NAME') != 'pull_request':
+                  raise
+              assert '86.6' in body and '295.7' in body and '71.3379' in body
+              assert 'June 2025' in body and 'August 2026' in body
+              print('PREDEPLOYMENT_LEGACY_PRODUCTION_VERIFIED; candidate dataset still requires post-release acceptance')
           assert body.count("fred.stlouisfed.org/series/") == 3
           assert not re.search(r"[\u3400-\u9fff]", body)
           assert "adsbygoogle" not in body.lower()

@@ -1,0 +1,4 @@
+case,tx_min_dbm,tx_max_dbm,rx_sensitivity_dbm,rx_max_dbm,path_min_loss_db,path_max_loss_db,reserve_db,weakest_rx_dbm,strongest_rx_dbm,usable_sensitivity_margin_db,overload_headroom_db,screen
+base,-3,1,-18,-1,6,10,3,-13,-5,2,4,PASS
+short,-3,1,-18,-1,0.5,1.5,3,-4.5,0.5,10.5,-1.5,FAIL
+revised_short,-3,1,-18,-1,3.3,4.7,3,-7.7,-2.3,7.3,1.3,PASS
