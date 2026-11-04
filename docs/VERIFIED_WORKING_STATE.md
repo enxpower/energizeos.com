@@ -1,32 +1,35 @@
-## Unified content/Search/AdSense audit — 2026-11-04
+## Unified content/Search/AdSense — current state, 2026-11-04
 
 ### Objective
-Integrate content quality, search discovery/indexing and ad-readiness in the existing operating loop; correct observed ESI sitemap metadata and the missing seller file without changing the website identity, ads or private document systems.
+Remediate both sites as one content/search/advertising operation and make existing automatic numeric updates executable, source-dated and failure-safe. Preserve the distinct brands and useful, independently reviewed narrative publishing.
 
 ### Verified Current State
-Public HTTPS inventory at 03:44:35 UTC: 11/11 sitemap HTML pages returned 200, with no detected canonical/title/description/h1/English/current-page-noindex defect or broken discovered first-party link. No ad loader detected. ads.txt returned 404 at the initial audit; the release verification below supersedes that file status. The live and source homepage carry the existing `ca-pub-1868208103047115` metadata. Google's documented ads.txt format was verified; this is the existing ID, not a new account.
+AGI&M publisher pub-3331849532184610 and ESI publisher pub-1868208103047115 were each verified in their correct signed-in AdSense identity. Both Sites rows show Getting ready, both Policy centers No current issues; dashboard ads.txt remains Not found although public seller files return 200. No duplicate review request was made. ESI Search Console accepted https://energizeos.com/sitemap.xml once and showed Success, 11 discovered pages before this candidate adds a guide. The previous browser usage-limit blocker is resolved.
 
-The signed-in Search Console domain property is accessible. Its indexing report is dated October 22 and must not be used as current main-site coverage. All five noindex examples are on docs.energizeos.com; intentional document/customer protections were preserved. Main sitemap-index record: July 2 last read, Success, zero discovered pages; the current main sitemap has 11 HTML pages. The separate media-subdomain sitemap was preserved. The currently signed-in AGI&M identity is explicitly denied ESI AdSense access; the current ESI review status has not been read.
+The prepared ESI updater fetched all three fixed FRED CSV series successfully. Latest available periods are June 2025 for PCU335921335921 and September 2026 for PCU3359233592 / IPN33592S. The old source period is retained honestly. Local 38-test suite, 12-page preflight, content and social-preview checks passed. The new receive-window guide and CSV calculations were independently reviewed; qualified homepage and social copy remove unsupported capacity/client/compliance claims.
+
+The existing Tuesday 09:00 Asia/Shanghai editorial task was updated successfully at 2026-11-04T04:33:10Z. It explicitly invokes the ESI --refresh command, validates consistency, avoids PR/CI for a true no-op and handles real deltas through existing review/release. AGI&M reuses its existing scheduled deployment. No new schedule, workflow, permission or paid API was added. The next actual scheduled run remains unverified.
 
 ### Completed
-- Scoped PR #76 merged as `6241926c5e2e6765a007e67ad86944b079beba3a` after exact-head CI 41770323430 and live smoke 41770323388 succeeded. Pages deployment 41770497277 and post-merge live smoke 41770497188 succeeded. Independent public HTTPS readback verified sitemap.xml (11 URLs), sitemap-index.xml and ads.txt all return 200; stale optional dates are omitted, article dates retained, and the seller record exactly matches the existing live/source publisher ID. This does not establish Google's ads.txt Authorized state or AdSense approval.
-- Direct public and Search Console audit observations above; detected the static July 2 sitemap-index date and outdated base-page dates without claiming that they explain Google quality decisions.
-- Existing shared audit/editorial automation prompts updated successfully on November 4 with unified content/search checks, source-dated updates and real publication evidence. Schedules were unchanged; this does not prove future execution.
+- Correct-account Google access and the observed account/policy states above; ESI sitemap processing succeeded.
+- Actual controlled upstream numeric reads and the local checks above. Source failures preserve the existing publication; source period and observation date are distinct.
+- Independent AI review of both candidate changes, with stale ESI social copy and mutable AGI&M test-fixture assumptions corrected. This is not human curation or Google approval.
+- ESI consent-message draft saved in Google AdSense as “ESI — European privacy choices”; all-region Do not consent enabled, revenue optimization Off. It is unpublished. Missing logo and account vendor/purpose settings still require validation before publishing.
 
 ### Remaining
-ESI-specific AdSense login/current account state; submit the current main sitemap once and verify processing; representative current URL index results; actual privacy/CMP acceptance, sustained audience use and Google approval. Browser action was not executed after approval review hit the current usage limit. No alternate login, new account or review submission was performed.
+Exact candidate PR CI and browser checks; merge, existing deployment and independent production HTTP acceptance. Verify the first future scheduled numeric execution, useful audience engagement, representative current indexing and Google's ads.txt processing/AdSense decision. AGI&M CMP and both sites' eventual consent/ad-serving integration remain open; no consent compliance acceptance or ads activation is claimed.
 
 ### Constraints / Do Not Touch
-Preserve EMS/energy-controls positioning and ESI-only optical column, historical issue inputs/dates, VI, independent customer/document systems/noindex, Privacy, current ad-free behavior, billing, DNS, credentials and unrelated draft PRs. No additional workflow or paid tool.
+Preserve VI, English public copy, immutable historical issues, private/customer documents and intentional noindex, existing ad-free state, billing, DNS, credentials and unrelated drafts. AGI&M remains energy/BESS/grid; optical material belongs only to ESI. No fabricated freshness, human review, deployments or Google approval. Preserve source-gathering HOLD when narrative evidence is insufficient.
 
 ### Evidence
-Current public site and sitemap, signed-in Search Console records, existing source publisher meta and Google's official ads.txt instructions: https://support.google.com/adsense/answer/7584263?hl=en . Shared internal operating strategy is maintained by the AGI&M source workstream; do not copy private operational material into the public site.
+Current signed-in Google UI observations on November 4; successful ESI sitemap row (11 discovered before this candidate); actual source fetches and local test outputs; explicit automation update response. Prior release/production records below are historical and do not establish this candidate deployment.
 
 ### Success Criteria
-Public seller declaration matches the existing ESI ID; only accurate sitemap dates remain; existing review/history checks pass; actual public HTTPS verifies the release. Google processing/indexing/approval are separate external gates.
+Validated source-dated numeric changes actually reach public pages/data; failed sources retain the last valid data; unchanged input creates no publication churn; useful original guide/calculations are accessible and discoverable; existing history/English/SEO checks pass. Future scheduling, indexing and AdSense approval are independent external gates.
 
 ### Next Action
-Keep the verified source release stable; finish the blocked ESI account and Search Console submission steps when correct access and browser approval are available. Do not treat an old report or a successful source collector as acceptance.
+Open the bounded reviewed candidate PR, require exact-head checks, merge through existing protections, verify the deployed URLs and record release evidence. Do not repeat pending AdSense review submissions.
 
 ---
 

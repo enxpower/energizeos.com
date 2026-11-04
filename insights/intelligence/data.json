@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "metrics": [
+    {
+      "series": "PCU335921335921",
+      "period": "2025-06-01",
+      "value": 86.597,
+      "source_url": "https://fred.stlouisfed.org/series/PCU335921335921",
+      "source_sha256": "4bdb507a49c4e685b786628392b00c4b1226ef11631164b52b6e462d484baed0"
+    },
+    {
+      "series": "PCU3359233592",
+      "period": "2026-09-01",
+      "value": 298.591,
+      "source_url": "https://fred.stlouisfed.org/series/PCU3359233592",
+      "source_sha256": "fad97414beeb65e481079539d446a391f890aac3ec68771aae55db699424a7c6"
+    },
+    {
+      "series": "IPN33592S",
+      "period": "2026-09-01",
+      "value": 73.3782,
+      "source_url": "https://fred.stlouisfed.org/series/IPN33592S",
+      "source_sha256": "196879515c650555a1effa3d48b34718249424dab27a841014949faa47d07d32"
+    }
+  ]
+}
