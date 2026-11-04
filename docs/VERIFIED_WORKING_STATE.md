@@ -1,3 +1,34 @@
+## Unified content/Search/AdSense audit — 2026-11-04
+
+### Objective
+Integrate content quality, search discovery/indexing and ad-readiness in the existing operating loop; correct observed ESI sitemap metadata and the missing seller file without changing the website identity, ads or private document systems.
+
+### Verified Current State
+Public HTTPS inventory at 03:44:35 UTC: 11/11 sitemap HTML pages returned 200, with no detected canonical/title/description/h1/English/current-page-noindex defect or broken discovered first-party link. No ad loader detected. ads.txt returned 404. The live and source homepage carry the existing `ca-pub-1868208103047115` metadata. Google's documented ads.txt format was verified; this is the existing ID, not a new account.
+
+The signed-in Search Console domain property is accessible. Its indexing report is dated October 22 and must not be used as current main-site coverage. All five noindex examples are on docs.energizeos.com; intentional document/customer protections were preserved. Main sitemap-index record: July 2 last read, Success, zero discovered pages; the current main sitemap has 11 HTML pages. The separate media-subdomain sitemap was preserved. The currently signed-in AGI&M identity is explicitly denied ESI AdSense access; the current ESI review status has not been read.
+
+### Completed
+- Direct public and Search Console audit observations above; detected the static July 2 sitemap-index date and outdated base-page dates without claiming that they explain Google quality decisions.
+- Existing shared audit/editorial automation prompts updated successfully on November 4 with unified content/search checks, source-dated updates and real publication evidence. Schedules were unchanged; this does not prove future execution.
+
+### Remaining
+Review, required CI and actual deployment verification for prepared ads.txt and optional-date corrections; ESI-specific AdSense login/current account state; submit the current main sitemap once and verify processing; representative current URL index results; actual privacy/CMP acceptance, sustained audience use and Google approval. Browser action was not executed after approval review hit the current usage limit. No alternate login, new account or review submission was performed.
+
+### Constraints / Do Not Touch
+Preserve EMS/energy-controls positioning and ESI-only optical column, historical issue inputs/dates, VI, independent customer/document systems/noindex, Privacy, current ad-free behavior, billing, DNS, credentials and unrelated draft PRs. No additional workflow or paid tool.
+
+### Evidence
+Current public site and sitemap, signed-in Search Console records, existing source publisher meta and Google's official ads.txt instructions: https://support.google.com/adsense/answer/7584263?hl=en . Shared internal operating strategy is maintained by the AGI&M source workstream; do not copy private operational material into the public site.
+
+### Success Criteria
+Public seller declaration matches the existing ESI ID; only accurate sitemap dates remain; existing review/history checks pass; actual public HTTPS verifies the release. Google processing/indexing/approval are separate external gates.
+
+### Next Action
+Complete the scoped source release and public verification; finish the blocked ESI account and Search Console submission steps when correct access and browser approval are available. Do not treat an old report or a successful source collector as acceptance.
+
+---
+
 # English Intelligence — Current Verified Working State (2026-11-03)
 
 ## Objective
