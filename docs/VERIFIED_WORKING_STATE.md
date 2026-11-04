@@ -6,7 +6,7 @@ Remediate both sites as one content/search/advertising operation and make existi
 ### Verified Current State
 AGI&M publisher pub-3331849532184610 and ESI publisher pub-1868208103047115 were each verified in their correct signed-in AdSense identity. Both Sites rows show Getting ready, both Policy centers No current issues; dashboard ads.txt remains Not found although public seller files return 200. No duplicate review request was made. ESI Search Console accepted https://energizeos.com/sitemap.xml once and showed Success, 11 discovered pages before this candidate adds a guide. The previous browser usage-limit blocker is resolved.
 
-The prepared ESI updater fetched all three fixed FRED CSV series successfully. Latest available periods are June 2025 for PCU335921335921 and September 2026 for PCU3359233592 / IPN33592S. The old source period is retained honestly. Local 38-test suite, 12-page preflight, content and social-preview checks passed. The new receive-window guide and CSV calculations were independently reviewed; qualified homepage and social copy remove unsupported capacity/client/compliance claims.
+The deployed ESI updater fetched all three fixed FRED CSV series successfully. Latest available periods are June 2025 for PCU335921335921 and September 2026 for PCU3359233592 / IPN33592S. The old source period is retained honestly. Local 38-test suite, 12-page preflight, content and social-preview checks passed. The new receive-window guide and CSV calculations were independently reviewed; qualified homepage and social copy remove unsupported capacity/client/compliance claims.
 
 The existing Tuesday 09:00 Asia/Shanghai editorial task was updated successfully at 2026-11-04T04:33:10Z. It explicitly invokes the ESI --refresh command, validates consistency, avoids PR/CI for a true no-op and handles real deltas through existing review/release. AGI&M reuses its existing scheduled deployment. No new schedule, workflow, permission or paid API was added. The next actual scheduled run remains unverified.
 
@@ -14,10 +14,14 @@ The existing Tuesday 09:00 Asia/Shanghai editorial task was updated successfully
 - Correct-account Google access and the observed account/policy states above; ESI sitemap processing succeeded.
 - Actual controlled upstream numeric reads and the local checks above. Source failures preserve the existing publication; source period and observation date are distinct.
 - Independent AI review of both candidate changes, with stale ESI social copy and mutable AGI&M test-fixture assumptions corrected. This is not human curation or Google approval.
-- ESI consent-message draft saved in Google AdSense as “ESI — European privacy choices”; all-region Do not consent enabled, revenue optimization Off. It is unpublished. Missing logo and account vendor/purpose settings still require validation before publishing.
+- Both Google AdSense consent-message drafts saved: “AGI&M — European privacy choices” and “ESI — European privacy choices”; all-region Do not consent enabled, revenue optimization Off. It is unpublished. Missing logo and account vendor/purpose settings still require validation before publishing.
 
-### Remaining
-Exact candidate PR CI and browser checks; merge, existing deployment and independent production HTTP acceptance. Verify the first future scheduled numeric execution, useful audience engagement, representative current indexing and Google's ads.txt processing/AdSense decision. AGI&M CMP and both sites' eventual consent/ad-serving integration remain open; no consent compliance acceptance or ads activation is claimed.
+- Release PR #78 merged as `a4ee4de6877f78b3f157845ed1c626543a3a3ed5` after exact-head CI 41774771061 (successful failed-job retry) and independent AI review. ESI Pages 41775102734, site validation 41775103293 and live smoke 41775103284 (successful post-Pages retry) succeeded. Browser checks passed at 390/768/1440, including the ESI guide/CSV and qualified homepage.
+- Independent production HTTPS: both data.json routes, both Intelligence hubs, ESI guide, CSV, homepage and 12-URL sitemap returned 200. JSON datasets, ESI guide/home/hub/sitemap match the tested files byte-for-byte; CSV rows match after newline normalization; AGI&M hub differs only in generated style-block whitespace. History source files were not changed.
+- Google live-tested the new ESI guide: URL is available to Google / Page can be indexed; then returned Indexing requested, priority crawl queue. This is not indexed status. The new URL is in the published sitemap and linked from Insights/tools; no repeated sitemap submission.
+- A second actual upstream refresh returned UNCHANGED for each site with successful exit status; ESI offline numeric consistency also passed. No fabricated date update or no-op PR was created.
+
+### Remaining Verify the first future scheduled numeric execution, useful audience engagement, representative current indexing and Google's ads.txt processing/AdSense decision. Both sites' eventual consent/ad-serving integration remains open; no consent compliance acceptance or ads activation is claimed.
 
 ### Constraints / Do Not Touch
 Preserve VI, English public copy, immutable historical issues, private/customer documents and intentional noindex, existing ad-free state, billing, DNS, credentials and unrelated drafts. AGI&M remains energy/BESS/grid; optical material belongs only to ESI. No fabricated freshness, human review, deployments or Google approval. Preserve source-gathering HOLD when narrative evidence is insufficient.
@@ -29,7 +33,7 @@ Current signed-in Google UI observations on November 4; successful ESI sitemap r
 Validated source-dated numeric changes actually reach public pages/data; failed sources retain the last valid data; unchanged input creates no publication churn; useful original guide/calculations are accessible and discoverable; existing history/English/SEO checks pass. Future scheduling, indexing and AdSense approval are independent external gates.
 
 ### Next Action
-Open the bounded reviewed candidate PR, require exact-head checks, merge through existing protections, verify the deployed URLs and record release evidence. Do not repeat pending AdSense review submissions.
+Keep this verified release stable. Observe the next existing scheduled run, record real data delta/no-op/failure and production evidence, then track Google indexing/ads.txt/review separately. Complete vendor/purpose, logo and consent-flow validation before any CMP publication or advertising activation. Do not repeat pending review/index requests.
 
 ---
 
