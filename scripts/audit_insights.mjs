@@ -127,6 +127,18 @@ try {
     const csv = await context.request.get(origin + "/downloads/optical-receive-window.csv");
     if (csv.status() !== 200 || !(await csv.text()).includes("short,-3,1,-18,-1,0.5,1.5,3,-4.5,0.5,10.5,-1.5,FAIL")) throw new Error("Original receive-power worksheet unavailable");
     await page.screenshot({path:"build/visual/esi-receive-window-" + width + ".png",fullPage:true});
+    const reserveResponse = await page.goto(origin + "/insights/guides/battery-dispatch-reserve/", {waitUntil:"domcontentloaded"});
+    if (!reserveResponse || reserveResponse.status() !== 200) throw new Error("Dispatch reserve reference unavailable");
+    const reserve = await page.evaluate(() => ({
+      width: document.documentElement.scrollWidth, client: document.documentElement.clientWidth,
+      tableRows: document.querySelectorAll("table tbody tr").length,
+      hasUncuratedGoogleLoader: Boolean(document.querySelector('script[src*="privacy-messaging"], script[src*="googlesyndication"]')),
+      brokenAnchors: [...document.querySelectorAll('a[href^="#"]')].filter(a=>!document.getElementById(a.hash.slice(1))).length
+    }));
+    if (reserve.width > reserve.client + 1 || reserve.tableRows !== 3 || reserve.hasUncuratedGoogleLoader || reserve.brokenAnchors) throw new Error("Dispatch reference layout/evidence boundary failed at " + width);
+    const reserveCSV = await context.request.get(origin + "/downloads/battery-dispatch-reserve.csv");
+    if (reserveCSV.status() !== 200 || !(await reserveCSV.text()).includes("energy_headroom_mwh")) throw new Error("Dispatch worksheet unavailable");
+    await page.screenshot({path:"build/visual/esi-dispatch-reserve-" + width + ".png",fullPage:true});
     const homeResponse = await page.goto(origin + "/", {waitUntil:"domcontentloaded"});
     if (!homeResponse || homeResponse.status() !== 200) throw new Error("Corporate homepage unavailable");
     const home = await page.evaluate(() => ({

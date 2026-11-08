@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Battery Dispatch: State of Charge, Reserve and Auxiliary Loads | EnergizeOS</title>
+<meta name="description" content="Reconcile battery energy, state-of-charge reserve, auxiliary demand and inverter power with three reproducible dispatch cases and a CSV worksheet.">
+<link rel="canonical" href="https://energizeos.com/insights/guides/battery-dispatch-reserve/">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<meta name="theme-color" content="#1A2B3C">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EnergizeOS">
+<meta property="og:title" content="Battery Dispatch: State of Charge, Reserve and Auxiliary Loads">
+<meta property="og:description" content="Reconcile battery energy, state-of-charge reserve, auxiliary demand and inverter power with three reproducible dispatch cases and a CSV worksheet.">
+<meta property="og:url" content="https://energizeos.com/insights/guides/battery-dispatch-reserve/">
+<meta property="og:image" content="https://energizeos.com/assets/og-image-v2.png">
+<meta name="robots" content="index,follow">
+<style>
+:root{--slate:#1A2B3C;--volt:#D4840A;--muted:#64788D;--rule:#DEE4E9;--paper:#F4F6F8;--width:1160px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--slate);font:16px/1.7 "Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}a:focus-visible{outline:3px solid var(--volt);outline-offset:3px}
+.wrap{width:min(var(--width),calc(100% - 64px));margin-inline:auto}
+.site-head{background:#fff;border-bottom:1px solid var(--rule);position:sticky;top:0;z-index:5}
+.site-nav{display:flex;align-items:center;justify-content:space-between;min-height:78px;gap:25px}
+.brand{display:inline-flex;align-items:center;gap:11px;font-weight:700;text-decoration:none;white-space:nowrap}
+.brand svg{width:24px;height:24px;display:block;flex-shrink:0}
+.brand-name{font-size:13px;font-weight:700;letter-spacing:.02em;color:var(--slate)}
+.navlinks{display:flex;align-items:center;gap:30px;flex-wrap:wrap}
+.navlinks a{font-size:12px;font-weight:700;letter-spacing:.08em;text-decoration:none;text-transform:uppercase}
+.navlinks a[aria-current="page"]{color:#965300}
+.hero{background:var(--slate);color:#fff;position:relative;overflow:hidden;padding:110px 0 105px}
+.hero:after{content:"";position:absolute;width:500px;height:500px;right:-270px;top:-200px;border:1px solid rgba(255,255,255,.15);border-radius:50%;box-shadow:0 0 0 90px rgba(255,255,255,.025),0 0 0 180px rgba(255,255,255,.02)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--volt)}
+.hero .eyebrow{color:#F5B65A}
+h1{font-weight:500;letter-spacing:-.04em;font-size:clamp(42px,6vw,76px);line-height:1.07;margin:24px 0;max-width:900px}
+h1 strong{font-weight:700}
+.hero p{max-width:700px;color:#CDD9E2;font-size:18px;line-height:1.8;margin:0}
+.hero .meta{margin-top:45px;display:flex;gap:20px;flex-wrap:wrap;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#B7C7D4}
+.hero .meta span{border-top:1px solid rgba(255,255,255,.28);padding-top:14px;min-width:160px}
+.section{padding:86px 0}
+.section.tint{background:var(--paper)}
+.section h2{font-size:clamp(28px,4vw,44px);line-height:1.18;letter-spacing:-.035em;margin:12px 0 22px;font-weight:600}
+.intro{max-width:760px;color:#526A7F;line-height:1.85}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:42px}
+.card{background:#fff;border:1px solid var(--rule);padding:34px;min-width:0}
+.card .number{font:700 11px/1.4 ui-monospace,Consolas,monospace;color:#965300;letter-spacing:.12em}
+.card h3{font-size:22px;font-weight:600;line-height:1.3;letter-spacing:-.02em;margin:22px 0 14px}
+.card p{color:#587084;font-size:14px;line-height:1.8;margin:0}
+.research{display:grid;grid-template-columns:1.08fr .92fr;gap:70px;align-items:start;margin-top:30px}
+.formula{background:var(--slate);color:#fff;padding:36px;margin:18px 0}
+.formula strong{display:block;font:600 clamp(16px,2vw,23px)/1.6 ui-monospace,Consolas,monospace;overflow-wrap:anywhere}
+.formula small{display:block;color:#C9D9E4;margin-top:16px}
+.evidence{border-left:3px solid var(--volt);padding:12px 0 12px 24px;color:#536B7E;line-height:1.8}
+.research h3{font-size:22px;margin:0 0 16px}
+.research p{color:#536B7E;line-height:1.85}
+.footer{background:var(--slate);padding:36px 0;color:#C9D6E1}
+.footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.footer a{color:#fff;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}.research{grid-template-columns:1fr;gap:35px}.hero{padding:82px 0}}
+@media(max-width:600px){.wrap{width:min(var(--width),calc(100% - 36px))}.site-nav{align-items:flex-start;padding:17px 0;flex-direction:column}.navlinks{gap:18px}.navlinks a{font-size:11px}.hero{padding:65px 0}.hero p{font-size:16px}.hero .meta span{min-width:120px}.section{padding:60px 0}.card{padding:26px}.formula{padding:24px}}
+</style>
+<style>
+.calc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:38px;align-items:start}
+.calc-card{min-width:0;border:1px solid #DEE4E9;background:#fff;padding:33px}
+.calc-card h3{font-size:25px;letter-spacing:-.025em;line-height:1.3;margin:12px 0}
+.calc-card p{color:#587084;line-height:1.8;font-size:14px}
+.calc-index{font:700 11px/1.5 ui-monospace,Consolas,monospace;letter-spacing:.1em;color:#965300!important}
+.field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:24px}
+.field-grid label{font-size:12px;font-weight:600;color:var(--slate)}
+.field-grid input{display:block;width:100%;min-width:0;font:inherit;color:var(--slate);margin-top:7px;padding:11px;border:1px solid #B7C4D0;background:#fff;border-radius:0}
+.field-grid input:focus-visible{outline:3px solid var(--volt);outline-offset:1px}
+.calc-action{cursor:pointer;border:none;background:var(--slate);color:#fff;letter-spacing:.045em;font:700 12px/1.4 "Helvetica Neue",Arial,sans-serif;padding:16px 18px;margin-top:24px;width:100%}
+.calc-action:focus-visible{outline:3px solid var(--volt);outline-offset:3px}
+.calc-result{background:#F3F5F7;border-left:4px solid #D4840A;padding:20px;margin-top:23px;min-height:94px;line-height:1.75;overflow-wrap:anywhere}
+.calc-result strong{display:block;font-size:22px;margin-bottom:6px}
+.calc-result[data-invalid="true"]{border-left-color:#BB4B4B;color:#863030}
+.calc-result small{display:block;margin-top:8px;color:#597086}
+.calc-method{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px}
+.calc-method h3{font-size:23px;margin:10px 0}
+.calc-method p,.calc-disclosure{font-size:14px;color:#587084;line-height:1.85}
+.calc-disclosure{border-top:1px solid #DEE4E9;padding-top:24px;margin:30px 0}
+@media(max-width:900px){.calc-grid,.calc-method{grid-template-columns:1fr}}
+@media(max-width:500px){.calc-card{padding:22px}.field-grid{grid-template-columns:1fr}.calc-result strong{font-size:19px}}
+</style>
+
+<style>.guide-table{overflow-x:auto;margin:32px 0}table{border-collapse:collapse;min-width:650px;width:100%;font-size:14px}th,td{padding:14px;text-align:left;border-bottom:1px solid var(--rule)}caption{text-align:left;font-weight:700;margin-bottom:14px}.section ul{max-width:900px}.section p{max-width:950px}</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Battery Dispatch: State of Charge, Reserve and Auxiliary Loads", "datePublished": "2026-11-08", "inLanguage": "en", "author": {"@type": "Organization", "name": "Energize Solutions Inc."}, "publisher": {"@type": "Organization", "name": "Energize Solutions Inc."}, "mainEntityOfPage": "https://energizeos.com/insights/guides/battery-dispatch-reserve/"}</script>
+</head>
+<body>
+<header class="site-head"><nav class="wrap site-nav" aria-label="Main navigation">
+  <a class="brand" href="/" aria-label="EnergizeOS corporate homepage"><svg width="24" height="24" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="0" y="0" width="21" height="21" fill="#1A2B3C"/><rect x="27" y="0" width="21" height="21" fill="#D4840A"/><rect x="0" y="27" width="21" height="21" fill="#D4840A"/><rect x="27" y="27" width="21" height="21" fill="#1A2B3C"/></svg><span class="brand-name">EnergizeOS</span></a>
+  <div class="navlinks"><a href="/">Company</a><a href="/#ems">EMS Platform</a><a href="/insights/" aria-current="page">Insights</a><a href="https://docs.energizeos.com/">Documents</a></div>
+</nav></header>
+<main><section class="hero"><div class="wrap"><div class="eyebrow">EMS Engineering / Dispatch Reference</div><h1>A two-hour battery may not have two hours left.</h1><p>Before accepting a battery schedule, reconcile the starting energy, protected reserve and the power delivered to the load. Three worked cases show why an energy check and a power check can disagree.</p><div class="meta"><span>November 8, 2026</span><span>Worked engineering reference</span><span>Energize Solutions Inc.</span></div></div></section>
+<section class="section"><div class="wrap"><nav aria-label="Reference contents"><a href="#boundary">Define the boundary</a> · <a href="#ledger">Build the energy ledger</a> · <a href="#cases">Compare three schedules</a> · <a href="#handover">Check the operating evidence</a> · <a href="#sources">Sources</a></nav>
+<h2 id="boundary">Start at the point where power is promised.</h2><p>A request for 0.6 MW for two hours promises 1.2 MWh at its stated delivery point. It does not specify the battery energy that must be withdrawn, whether the enclosure consumes part of the output, or the state of charge that has to remain. These are separate entries in the operating plan.</p><p>The EIA defines storage duration as energy capacity divided by power capacity. That nameplate relationship is useful for comparing ratings; it is not a live forecast of remaining runtime. SAM's dispatch documentation separately applies battery capacity, state-of-charge and conversion-loss constraints. Its target power and achieved power may differ when those constraints bind. Neither reference supplies the equipment inputs used below.</p><p>Define the delivery point before calculating. In this example, battery DC energy passes through a power conversion system (PCS) to an AC bus. A local auxiliary load is supplied from that same bus, leaving the remaining AC power for the useful load. A different auxiliary supply, transformer boundary or import/export meter requires a different ledger. Do not count one loss or reserve at two boundaries.</p>
+<h2 id="ledger">Build an energy ledger, not a duration label.</h2><p>All three cases use a deliberately constructed battery with 2.0 MWh of presently available full-scale DC energy, a protected floor of 20%, a constant one-way DC-to-AC discharge efficiency of 95%, an auxiliary demand of 0.02 MW and a continuous PCS output ceiling of 1.0 MW AC. These are teaching assumptions, not equipment specifications, a commissioned system or an efficiency measurement.</p><p>For this worksheet only, state of charge is treated as the fraction of that same available energy basis. An actual battery management system (BMS) may estimate SOC on a different basis, and available capacity changes with condition, temperature and age. Obtain the vendor's mapping and current allowable discharge limits; do not substitute nominal nameplate energy or assume every percentage of displayed SOC corresponds to a fixed amount of deliverable energy.</p><div class="formula">DC energy above reserve = available DC capacity × max(starting SOC − reserve SOC, 0)<br>Gross AC energy allowance = DC energy above reserve × one-way discharge efficiency<br>Useful-load energy allowance = gross AC allowance − auxiliary power × duration<br>Required useful-load energy = useful-load power × duration<br>Required PCS output = useful-load power + auxiliary power</div><p>SOC and efficiency are fractions in these equations. Multiplying MW by hours gives MWh. The auxiliary demand belongs on the AC side in this particular topology; it is not multiplied by the discharge efficiency again. Round-trip efficiency describes a charging-and-discharging cycle and must not simply replace the one-way efficiency in this discharge-only ledger.</p><p>Both energy and power must pass. A positive energy allowance cannot rescue a request above the PCS ceiling, and a low requested power cannot restore energy that is below the protected SOC floor. If the useful-load allowance is negative, even the assumed auxiliary demand cannot be sustained for that duration without crossing the floor under this model.</p>
+<h2 id="cases">Three schedules, two different reasons to stop.</h2><h3>Case A: the request fits the declared assumptions.</h3><p>Start at 90% SOC and request 0.6 MW for two hours. DC energy above reserve is 2.0 × (0.90 − 0.20) = 1.40 MWh. Conversion leaves 1.33 MWh AC. Auxiliary demand consumes 0.02 × 2 = 0.04 MWh, leaving 1.29 MWh for the useful load. The requested 1.20 MWh leaves 0.09 MWh headroom. PCS output is 0.62 MW, below the assumed 1.0 MW ceiling.</p><p>The useful-load duration limit under these constant assumptions is 1.33 / (0.60 + 0.02) ≈ 2.145 hours. That is a screening result, not a promised runtime or an operating instruction. Changing efficiency, thermal limits or auxiliary demand changes the result.</p><h3>Case B: the same battery and request fail at a lower starting SOC.</h3><p>Start at 55% with the same two-hour schedule. DC energy above reserve falls to 2.0 × (0.55 − 0.20) = 0.70 MWh. After conversion and the 0.04 MWh auxiliary demand, the useful-load allowance is 0.625 MWh. The 1.20 MWh request exceeds it by 0.575 MWh, although the requested PCS power remains only 0.62 MW. The corresponding duration screen is 0.665 / 0.62 ≈ 1.073 hours.</p><p>Reducing the power could extend duration, but that would change the service being promised. The operator needs a revised plan, a different reserve decision by the authorized party, or verified charging before the discharge window—not a silent acceptance of the original schedule.</p><h3>Case C: enough energy, too much instantaneous power.</h3><p>Return to 90% SOC and request 1.1 MW for half an hour. The gross AC allowance is again 1.33 MWh. After 0.01 MWh of auxiliary demand, 1.32 MWh is available to the useful load, which requests only 0.55 MWh. Energy headroom is 0.77 MWh. Yet the PCS would have to produce 1.12 MW, exceeding its assumed 1.0 MW ceiling. This schedule fails the power screen even though the energy ledger is positive.</p>
+<div class="guide-table" tabindex="0" role="region" aria-label="Scrollable dispatch comparison"><table><caption>Constructed schedules: same 2.0 MWh capacity and 20% reserve</caption><thead><tr><th scope="col">Case</th><th scope="col">Start SOC</th><th scope="col">Load MW / hours</th><th scope="col">Load allowance, MWh</th><th scope="col">Load request, MWh</th><th scope="col">PCS MW</th><th scope="col">Screen</th></tr></thead><tbody><tr><th scope="row">A</th><td>90%</td><td>0.6 / 2</td><td>1.290</td><td>1.200</td><td>0.620</td><td>Energy and power pass</td></tr><tr><th scope="row">B</th><td>55%</td><td>0.6 / 2</td><td>0.625</td><td>1.200</td><td>0.620</td><td>Energy fails</td></tr><tr><th scope="row">C</th><td>90%</td><td>1.1 / 0.5</td><td>1.320</td><td>0.550</td><td>1.120</td><td>Power fails</td></tr></tbody></table></div><p><a href="/downloads/battery-dispatch-reserve.csv" download>Download the inputs and independently reproducible case results (CSV)</a></p>
+<h2 id="handover">The evidence that turns a worksheet into an operating decision.</h2><p>Ask for the presently available capacity and its reference conditions, current SOC with timestamp and quality, the agreed reserve, and the BMS/PCS discharge envelope. State whether each power value is measured at the DC terminals, PCS AC bus or point of common coupling. Retain the auxiliary-supply diagram and explain which losses are already included in a vendor's usable-AC-energy rating.</p><p>The operating record should identify the proposed schedule, the applicable limits and the authority that accepts or rejects it. Recalculate after a change in SOC, available capacity, temperature-related derating, auxiliary demand or inverter availability. A spreadsheet is an energy screen; a valid operating command also depends on protections, communications, modes, permissions and the installation's commissioning evidence.</p><p>A multi-interval schedule requires a state update at each interval. Do not spend the same starting energy independently in several rows, assume an earlier charge occurred, or move an unmet interval's demand into another interval without changing the load-service requirement. Recharge power, charging losses and the available charging window need their own check.</p><p>This reference does not calculate battery degradation, dynamic efficiency, reserve obligations, protection settings, tariffs or demand-charge savings. Grid-parallel and islanded service also impose different operating requirements. A schedule that passes these two accounting tests has passed only these tests.</p><h2>Use the right tool for the question.</h2><p>The <a href="/insights/tools/">existing dispatch calculator</a> screens a declared usable-energy window and constant inverter ceiling. It does not request starting SOC, protected reserve or auxiliary topology; do not read its simplified PASS as validation of the fuller cases here. Use this worksheet to make those extra boundaries explicit, and the <a href="/insights/microgrid-ai/">microgrid architecture reference</a> to separate advisory analysis from control authorization.</p>
+<h2 id="sources">Sources and method</h2><p>Published by Energize Solutions Inc. The scenarios and arithmetic are original illustrative analysis; no customer installation, equipment test, safety certification or commissioned performance is claimed. Sources checked November 8, 2026. Send factual corrections to <a href="mailto:info@energizeos.com">info@energizeos.com</a>.</p><ul><li><a href="https://www.eia.gov/todayinenergy/detail.php?id=51798" target="_blank" rel="noopener noreferrer">EIA: Duration of utility-scale batteries depends on how they are used</a> (March 25, 2022): energy/power duration definition only; historical fleet statistics are not used as current data.</li><li><a href="https://samrepo.nlr.gov/help/battery_dispatch_fom.html" target="_blank" rel="noopener noreferrer">SAM: Battery Dispatch FOM</a>: SOC/capacity limits, conversion losses and target-versus-achieved dispatch. Live documentation; it does not establish the assumed numerical inputs in this worksheet.</li></ul><p><a href="/insights/">Return to Engineering Insights →</a></p></div></section></main>
+<footer class="footer"><div class="wrap"><span>EnergizeOS · Energize Solutions Inc.</span><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/">Corporate Website</a></div></footer>
+</body>
+</html>

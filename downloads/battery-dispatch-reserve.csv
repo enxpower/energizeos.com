@@ -1,0 +1,4 @@
+case,available_dc_mwh,start_soc_fraction,reserve_soc_fraction,discharge_efficiency,aux_ac_mw,load_ac_mw,hours,pcs_ceiling_ac_mw,dc_above_reserve_mwh,gross_ac_mwh,load_allowance_mwh,requested_load_mwh,energy_headroom_mwh,pcs_required_ac_mw,energy_pass,power_pass
+A,2,0.9,0.2,0.95,0.02,0.6,2,1,1.4,1.33,1.29,1.2,0.09,0.62,True,True
+B,2,0.55,0.2,0.95,0.02,0.6,2,1,0.7,0.665,0.625,1.2,-0.575,0.62,False,True
+C,2,0.9,0.2,0.95,0.02,1.1,0.5,1,1.4,1.33,1.32,0.55,0.77,1.12,True,False
