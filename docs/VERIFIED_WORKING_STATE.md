@@ -1,3 +1,39 @@
+# AdSense content-value remediation — current state, November 8, 2026
+
+## Objective
+Address the actual energizeos.com Low value content rejection with useful, original engineering references and clearer discovery, preserving the corporate brand, existing static GitHub Pages architecture and advertising pause. Google approval is an external decision, not a technical test result.
+
+## Verified Current State
+- Owner supplied a Google AdSense screenshot for energizeos.com / pub-1868208103047115: Needs attention, ownership verified, policy finding Low value content. The earlier pending-review observations below are history. No account visit or new Request review was performed in this engineering thread.
+- Source main at takeover:741e128233d71dee557915c4aa8b8356d04937d8. Existing open PR33 Privacy draft and PR38 takeover note remain untouched. The active release ruleset25827638 requires social-preview and verify-public-route, with an empty bypass list. Legacy branch-protection endpoint returned integration403; no permission change or retry was attempted. Ruleset read succeeded independently.
+- Ordinary HTTPS homepage returned200 with the correct ESI publisher meta. The existing corpus includes original calculators and an optical receive-window guide; therefore a blanket claim of no useful content is unsupported. The Insights entry prioritizes three optical editions while the energy-control business has less worked technical content. This is an editorial gap observed in source, not Google's identified URL-specific cause.
+- An isolated candidate adds a battery dispatch/SOC-reserve engineering reference, three reproducible scenarios and CSV. It explains energy versus power failure, one-way losses, AC auxiliaries, SOC reference conditions and the existing calculator's narrower scope. Links from Insights, tools and microgrid architecture improve discovery. Historical issues/source approvals remain unchanged. A redundant production-process phrase is removed from the optical guide without changing technical conditions. The new reference has no Google loading bootstrap and is not represented as human-approved ad inventory.
+
+## Completed
+- Read the actual screenshot, official Google content/navigation guidance, repository rules, Issue5/comments and relevant source/publishing contracts.
+- Opened primary EIA duration-definition and SAM dispatch-constraint documentation; original example assumptions are explicitly constructed, not equipment/test/customer claims.
+- Existing39 regression tests passed; the new independent Decimal energy-conservation test passes all3 CSV cases. Technical preflight13pages/193internal-links/27asset-references, English/public-copy checks, social-preview metadata and tracked renderer validation passed. No existing issue body or publication approval record changed.
+
+## Remaining
+- Independent AI technical/editorial review completed with no Critical/Important findings, including all3 CSV cases and bounded source/assumption checks. This is not human acceptance or Google approval. Mandatory exact-head CI/browser checks, protected merge, Pages deployment and direct public acceptance remain pending.
+- Local Chromium validation could not run: installed Playwright lacked its browser and the official download returned an invalid/truncated ZIP. No performance/mobile pass is claimed; retain the existing CI browser gate without weakening it or repeating the local download.
+- Google's content-value decision, genuine audience engagement, current index coverage and real CMP accept/reject/manage/reopen remain separate unverified gates. Do not manufacture traffic or request review solely because tests pass.
+
+## Constraints / Do Not Touch
+Only energizeos.com content-value remediation. Preserve ESI identity, existing scripts/publisher/privacy facts/ad pause, old issues, scheduled source pipeline, protected checks, existing assets and unrelated draft PRs. No change to enorb.com, agim.ca, docs-energize-v2, DNS, billing, accounts, security or any arcbos repository. No invented human approval, deployment, customer/field-test evidence, certifications or Google approval. Do not resubmit review before substantive release acceptance.
+
+## Evidence
+Owner-provided screenshot image(20261108-061256).png, AdSense URL pub-1868208103047115/energizeos.com. Repository baseline and one-time ordinary homepage fetch above; current official policy https://support.google.com/adsense/answer/81904?hl=en . Primary references: https://www.eia.gov/todayinenergy/detail.php?id=51798 (historical definition only) and https://samrepo.nlr.gov/help/battery_dispatch_fom.html (live constraint documentation). Tests/CSV provide computational checks, not physical safety acceptance.
+
+## Success Criteria
+A useful, source-grounded EMS reference with reproducible outputs is easy to reach, readable at390/768/1440, deployed through unchanged required gates and verified live; existing content, ads pause and privacy remain intact. Google Low value content clearance requires an actual later Google decision and is not promised by one guide or a page count.
+
+## Next Action
+Complete independent review and existing mandatory CI, resolve actual failures without changing gates, then release and verify only the scoped content remediation. Preserve the current rejection as current Google state until an actual new decision. No Request review action in this task.
+
+---
+Historical November4 and earlier checkpoints follow; the current rejection and remediation status above supersede their pending-review wording.
+
 ## Unified content/Search/AdSense — current state, 2026-11-04
 
 ### Objective
