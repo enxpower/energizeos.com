@@ -17,7 +17,7 @@
 <meta name="robots" content="index,follow">
 <style>
 :root{--slate:#1A2B3C;--volt:#D4840A;--muted:#64788D;--rule:#DEE4E9;--paper:#F4F6F8;--width:1160px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--slate);font:16px/1.7 "Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:#fff;color:var(--slate);font:16px/1.7 "Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit}a:focus-visible{outline:3px solid var(--volt);outline-offset:3px}
 .wrap{width:min(var(--width),calc(100% - 64px));margin-inline:auto}
 .site-head{background:#fff;border-bottom:1px solid var(--rule);position:sticky;top:0;z-index:5}
@@ -57,7 +57,7 @@ h1 strong{font-weight:700}
 .footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
 .footer a{color:#fff;text-decoration:underline;text-underline-offset:4px}
 @media(max-width:900px){.grid{grid-template-columns:1fr}.research{grid-template-columns:1fr;gap:35px}.hero{padding:82px 0}}
-@media(max-width:600px){.wrap{width:min(var(--width),calc(100% - 36px))}.site-nav{align-items:flex-start;padding:17px 0;flex-direction:column}.navlinks{gap:18px}.navlinks a{font-size:11px}.hero{padding:65px 0}.hero p{font-size:16px}.hero .meta span{min-width:120px}.section{padding:60px 0}.card{padding:26px}.formula{padding:24px}}
+@media(max-width:600px){html{scroll-padding-top:160px}.wrap{width:min(var(--width),calc(100% - 36px))}.site-nav{align-items:flex-start;padding:17px 0;flex-direction:column}.navlinks{gap:18px}.navlinks a{font-size:11px}.hero{padding:65px 0}.hero p{font-size:16px}.hero .meta span{min-width:120px}.section{padding:60px 0}.card{padding:26px}.formula{padding:24px}}
 </style>
 <style>
 .calc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:38px;align-items:start}
