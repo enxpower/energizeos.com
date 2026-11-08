@@ -101,6 +101,7 @@ try {
       email: Boolean(document.querySelector('a[href^="mailto:info@energizeos.com"]'))
     }));
     if (contactState.scroll > contactState.client + 1 || contactState.canonical !== "https://energizeos.com/contact/" || !contactState.mark || !contactState.email) throw new Error("ESI Contact acceptance failed at " + width);
+    if (await page.locator('.site-head [aria-current="page"]').evaluateAll(links => links.filter(link => new URL(link.href).pathname !== location.pathname).length)) throw new Error("Contact incorrectly marks another section as the current page");
     await page.evaluate(() => window.scrollTo(0,0));
     await page.screenshot({path:"build/visual/esi-business-contact-" + width + ".png",fullPage:true});
     const draftPrivacyResponse = await page.goto(origin + "/privacy/", {waitUntil:"domcontentloaded"});
@@ -113,6 +114,7 @@ try {
       sections:document.querySelectorAll(".privacy-block h2").length
     }));
     if (draftPrivacyLayout.scroll > draftPrivacyLayout.client + 1 || !draftPrivacyLayout.logo || draftPrivacyLayout.sections !== 7 || draftPrivacyLayout.canonical !== "https://energizeos.com/privacy/") throw new Error("Privacy draft responsive quality failed at " + width);
+    if (await page.locator('.site-head [aria-current="page"]').evaluateAll(links => links.filter(link => new URL(link.href).pathname !== location.pathname).length)) throw new Error("Privacy incorrectly marks another section as the current page");
     await page.evaluate(() => window.scrollTo(0,0));
     await page.screenshot({path:"build/visual/esi-privacy-draft-" + width + ".png",fullPage:true});
     const guideResponse = await page.goto(origin + "/insights/guides/optical-receive-window/", {waitUntil:"domcontentloaded"});
@@ -139,6 +141,14 @@ try {
     const reserveCSV = await context.request.get(origin + "/downloads/battery-dispatch-reserve.csv");
     if (reserveCSV.status() !== 200 || !(await reserveCSV.text()).includes("energy_headroom_mwh")) throw new Error("Dispatch worksheet unavailable");
     await page.screenshot({path:"build/visual/esi-dispatch-reserve-" + width + ".png",fullPage:true});
+    await page.evaluate(() => { document.documentElement.style.scrollBehavior = "auto"; });
+    await page.locator('a[href="#cases"]').click();
+    await page.waitForFunction(() => {
+      const heading = document.querySelector('#cases').getBoundingClientRect();
+      const header = document.querySelector('.site-head').getBoundingClientRect();
+      return heading.top >= header.bottom + 8 && heading.bottom < innerHeight;
+    }, null, {timeout:5000});
+    await page.screenshot({path:"build/visual/esi-dispatch-anchor-" + width + ".png"});
     const homeResponse = await page.goto(origin + "/", {waitUntil:"domcontentloaded"});
     if (!homeResponse || homeResponse.status() !== 200) throw new Error("Corporate homepage unavailable");
     const home = await page.evaluate(() => ({
