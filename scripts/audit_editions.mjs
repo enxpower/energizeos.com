@@ -32,7 +32,7 @@ try {
       if (/[\u3400-\u9fff]|\$\{|%%[A-Z_]+%%/.test(info.html)) throw Error('Language/template leakage: '+route);
       if (route === '/insights/') {
         if (info.currentTop > 1000) throw Error('Latest Intelligence is buried below first viewport at '+width);
-        for (const label of ['Latest Intelligence','Current Edition','Previous Edition','Next Week’s Watchlist','Browse All Editions']) {
+        for (const label of ['Latest Intelligence','Latest Published Edition','Previous Edition','Watchlist from this edition','Browse All Editions']) {
           if (!info.text.toLowerCase().includes(label.toLowerCase())) throw Error('Missing direct reading entry: '+label);
         }
       }

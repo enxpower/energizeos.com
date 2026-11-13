@@ -4,6 +4,12 @@
   "title": "Optical Intelligence",
   "domain": "energizeos.com",
   "brand": "EnergizeOS",
+  "reference_links": [
+    {"title": "Battery dispatch, state of charge and reserve", "path": "/insights/guides/battery-dispatch-reserve/"},
+    {"title": "Optical receiver sensitivity and overload", "path": "/insights/guides/optical-receive-window/"},
+    {"title": "Microgrid intelligence and EMS architecture", "path": "/insights/microgrid-ai/"},
+    {"title": "Optical link and dispatch calculators", "path": "/insights/tools/"}
+  ],
   "allowed_source_hosts": [
     "wilmingtonbusinessdevelopment.com",
     "crtc.gc.ca",
