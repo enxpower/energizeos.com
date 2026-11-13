@@ -179,9 +179,9 @@ def cards(issues, config, archive=False):
     latest = issues[0]
     previous = issues[1] if len(issues) > 1 else None
     bits = [START, '<section class="edition-hub" aria-label="' + e(config['title']) + '"><div class="edition-wrap">',
-            '<div class="edition-top"><p class="edition-kicker">' + e(config['brand']) + ' / North America</p><span>Weekly intelligence · Source-led analysis</span></div>',
+            '<div class="edition-top"><p class="edition-kicker">' + e(config['brand']) + ' / North America</p><span>Source-dated intelligence · Source-led analysis</span></div>',
             '<div class="edition-heading"><h2>Latest Intelligence</h2><a href="' + BASE + 'archive/">Browse All Editions <span aria-hidden="true">↗</span></a></div>',
-            '<div class="edition-grid"><article class="edition-current"><p class="edition-kicker">Current Edition</p>', meta(latest),
+            '<div class="edition-grid"><article class="edition-current"><p class="edition-kicker">Latest Published Edition</p>', meta(latest),
             '<h3><a href="' + issue_url(latest) + '">' + e(latest['headline']) + '</a></h3><p>' + e(latest['summary']) + '</p>',
             '<div class="edition-tags">' + ''.join('<span>' + e(x['status']) + '</span>' for x in latest['developments']) + '</div>',
             '<a class="edition-button" href="' + issue_url(latest) + '">Read the full edition <span aria-hidden="true">→</span></a></article>',
@@ -190,9 +190,14 @@ def cards(issues, config, archive=False):
         bits += [meta(previous), '<h3><a href="' + issue_url(previous) + '">' + e(previous['headline']) + '</a></h3><p>' + e(previous['summary']) + '</p><a href="' + issue_url(previous) + '">Read previous edition →</a>']
     else:
         bits += ['<h3>The first edition</h3><p>This series has just launched. Future editions will retain this article in the archive.</p>']
-    bits += ['</article><aside class="edition-watch"><p class="edition-kicker">Next Week’s Watchlist</p>', bullets(latest['watchlist']),
-             '<p class="edition-note">Monitoring priorities, not predictions. New editions depend on verified evidence.</p></aside></div></div>']
+    bits += ['</article><aside class="edition-watch"><p class="edition-kicker">Watchlist from this edition</p>', bullets(latest['watchlist']),
+             '<p class="edition-note">These questions belong to the dated edition above. They are not a live update or a forecast.</p></aside></div></div>']
     if archive:
+        links = config.get('reference_links', [])
+        if links:
+            bits += ['<nav class="edition-archive" aria-label="Engineering reference library"><h2>Engineering references</h2><ul>',
+                     ''.join('<li><a href="' + e(link['path']) + '">' + e(link['title']) + '</a></li>' for link in links),
+                     '</ul></nav>']
         bits += ['<div class="edition-archive" id="archive"><h2>All Editions</h2>']
         years = sorted({x['published_at'][:4] for x in issues}, reverse=True)
         for year in years:
