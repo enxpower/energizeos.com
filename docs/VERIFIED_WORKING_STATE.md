@@ -1,3 +1,33 @@
+# Scheduled editorial workflow — current checkpoint, 2026-11-13 UTC
+
+## Objective
+Produce regular, independently useful English content for this existing site: AI prepares a complete GitHub draft, the Owner reviews its exact version, and the existing protected publishing pipeline releases it after genuine approval. Preserve historical content and pending AdSense/account state.
+
+## Verified Current State
+The existing cross-site editorial automation was updated, not duplicated, to prepare at most one complete Draft PR per site each Tuesday around 09:00 Asia/Shanghai. Its next configured occurrence is November 17, 2026. A single enabled event-driven publisher was created for Owner-authored `[Editorial]` PRs in the three explicitly authorized source repositories. It accepts genuine Owner approval bound to the full reviewed head SHA; bare approval comments are rejected. Automation configuration is verified, not an end-to-end publication result.
+
+## Completed
+- Automation service accepted the update of weekly task `6ade2902a668819189bfb89c6ac19502` and creation of publication trigger `Automation_0359124b10ac8191a65050d3c7b5bff6`; enabled state and final strict approval prompts were read back.
+- Independent technical review identified a version-binding weakness in the initial draft; final prompts require an exact full head SHA or matching formal review commit. The reviewer found no remaining important findings within the reviewed prompt/code scope.
+- Current source main was independently read as `4e3bb2d911bd13486555a5076f075f3c47ad7a22`; this entry preserves the earlier verified site/account history below.
+
+## Remaining
+The first execution of the revised weekly task, its complete draft PR delivery, the first genuine Owner approval event and the first automatic production publication have not yet been observed. Do not infer these from enabled configuration or manufacture an approval to test them. No future manuscript is approved by the workflow authorization.
+
+## Constraints / Do Not Touch
+Apply the repository's scheduled editorial approval contract. Existing advertising/account/application/privacy/CMP/DNS/brand/permissions and unrelated repositories stay unchanged. Do not resubmit Google review or promise zero impact, acceptance, indexing or ranking. Preserve native publication format, archive and genuine dates.
+
+## Evidence
+Existing weekly task: `6ade2902a668819189bfb89c6ac19502`; event publisher: `Automation_0359124b10ac8191a65050d3c7b5bff6`. Technical review is AI review, not Owner manuscript approval. Repository-local contract: `AGENTS.md`.
+
+## Success Criteria
+One complete source-backed draft per site when a useful topic exists; actual version-bound Owner approval before public promotion; required checks and native deployment; formal URL and existing archive/index verified against the approved body. Frequency targets draft preparation, not publication without approval.
+
+## Next Action
+At the next weekly execution, inspect each site's latest content and existing draft backlog, prepare or update the bounded full manuscript PR, and notify the Owner with its review link. After real approval, finish the same PR through protected release and live verification. Retain the first-run gates above until actual evidence exists.
+
+---
+
 # AdSense content-value remediation — current state, November 8, 2026
 
 ## Objective
