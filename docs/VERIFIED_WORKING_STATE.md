@@ -1,3 +1,34 @@
+# First observed weekly editorial draft run — November 17, 2026
+
+## Objective
+Prepare a useful, independently source-backed, reviewable English editorial draft without changing any public publishing input, bypassing the actual Owner approval gate or affecting the existing advertising review.
+
+## Verified Current State
+GitHub Draft PR [#89](https://github.com/enxpower/energizeos.com/pull/89) was opened against `main` at `a164f5db916304572ad8b9591f057eabea863713`. Before this VWS note, its staged head was `8fc8e401f0dd2c1952c39798f2e8b49fb8ec093d`. An original EMS microgrid islanded-load and control-authority worksheet, English Markdown, original Canada.ca evidence and pending issue JSON under drafts/editorial. The existing public publication source and manifest were not changed by draft staging. GitHub PR delivery is verified; human publication approval, merge, deployment, public appearance, next recurring run and Google decisions are **not** established.
+
+## Completed
+- Read current `main`, the local `AGENTS.md`, unique VWS, existing editorial/publishing constraints, prior releases and open PR inventory.
+- Created exactly one new `[Editorial]` Draft PR for this repository (none was previously open with that title prefix).
+- Read back the staged full Markdown from the live GitHub branch and verified it was located outside the public publication inputs; the PR has an exact-head approval instruction.
+- Kept source links, constructed arithmetic and uncertainties traceable. Did not authorize or perform a content release.
+
+## Remaining
+A real Owner must read the exact reviewed revision and issue an actual version-bound approval before the established publisher may prepare its existing native output; required checks, protected merge and real production comparison then remain separate. Numeric refresh and Google review outcomes are independent operational gates; a draft PR does not prove them.
+
+## Constraints / Do Not Touch
+No changes to publication manifest or approved narrative, public HTML, RSS, sitemap, source generators, advertising account/review/tag/ad pause/privacy/CMP, DNS, secrets, permissions, billing, workflows, deployment platform or customer content. Preserve the other open PRs. This new VWS checkpoint is staged in the editorial PR only, not in public `main`.
+
+## Evidence
+Source branch `editorial/2026-11-17-microgrid-island-load-budget`, original staged manuscript commit `8fc8e401f0dd2c1952c39798f2e8b49fb8ec093d`, PR URL https://github.com/enxpower/energizeos.com/pull/89, and repository-local publisher's restrictions. PR description must be synchronized to the **final** branch head after this VWS note.
+
+## Success Criteria
+One complete genuinely useful draft with evidence and reproducible analysis in a reviewable Draft PR; no pending source leaks into public content; future publication strictly dependent on actual Owner approval of the current exact head.
+
+## Next Action
+Re-read the final PR head and update the single copyable approval instruction to that full 40-character head. Then await actual Owner GitHub review; do not impersonate an Owner approval or release pending content.
+
+---
+
 # Scheduled editorial workflow — current checkpoint, 2026-11-13 UTC
 
 ## Objective
