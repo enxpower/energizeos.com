@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "issue": "2026-w47",
+  "label": "2026 · Week 47",
+  "language": "en",
+  "published_at": null,
+  "headline": "A microgrid islanding plan needs a load budget, not just an EMS dashboard",
+  "summary": "A reproducible island-mode load and battery-energy worksheet separates local grid-forming control, load shedding and EMS scheduling responsibilities.",
+  "briefing": "Grid-connected energy optimization and islanded electrical operation require different evidence. A supervisory EMS can help schedule equipment and optimize available energy, but its dashboard is not proof of power-system protection, grid-forming capability, reliable island transfer or utility permission. Three primary Canadian government releases provide distinct project-stage contexts: a Manitoba development plan naming a microgrid controller, a Nunavut proposal explicitly describing connected and islanded modes, and a British Columbia demonstration aiming to integrate solar and storage with existing diesel supply. None supplies the witnessed acceptance records for the entirely hypothetical case below. The worked power and energy budget illustrates which engineering questions a buyer should ask before relying on an island-mode commitment.",
+  "developments": [
+    {
+      "headline": "Separate grid-forming control from supervisory dispatch",
+      "status": "Engineering mechanism / project-stage evidence",
+      "fact": "Natural Resources Canada's June 22, 2026 Manitoba release identifies a planned integrated microgrid that combines solar photovoltaic generation, battery storage and a microgrid controller in the Tadoule Lake community. The release anticipated commissioning later in 2026; it does not verify actual commissioning or describe a witnessed transition test. A controller named in a project announcement is not an acceptance record.",
+      "why_it_matters": "A fast electrical-control function and an EMS energy schedule act on different time scales. Neither a cloud dashboard nor a simulation proves that a battery inverter can form an electrical island.",
+      "implications": "In a constructed facility load list, 220 kW is critical demand and 120 kW is deferrable, totaling 340 kW. The proposed island source has a hypothetical 250 kW continuous steady-state active-power rating. Connected load exceeds this limit by 90 kW. If 120 kW is shed using a separately engineered and validated scheme, the remaining 220 kW sits 30 kW below that nominal steady-state limit. The buyer should require a control-authority matrix naming the protection devices, grid-forming functions, shedding actuator and supervisory EMS, with expected communication-loss behavior and test evidence for each.",
+      "uncertainty": "All load and rating figures are invented teaching values, not the Manitoba site's figures. No transient rating, frequency stability, fault response or physical switching sequence can be inferred from steady-state arithmetic.",
+      "sources": [
+        "manitoba",
+        "nunavut"
+      ]
+    },
+    {
+      "headline": "Check energy endurance separately from instantaneous power",
+      "status": "Independent calculation / illustrative conditions only",
+      "fact": "Canada's June 22, 2026 Nunavut funding announcement distinguishes several preliminary microgrid engineering studies from a proposed solar-plus-battery demonstration designed to operate both connected to the local microgrid and in islanded mode. This is an announced demonstration objective, not a report of guaranteed runtime, validated protection settings or achieved island transfer. A planned operating mode is not necessarily a delivered capability.",
+      "why_it_matters": "Enough inverter kW for the load does not establish enough usable battery kWh for the necessary period. Dispatch commands cannot make up a shortfall in either physical resource.",
+      "implications": "Continue the hypothetical case: after the illustrative shed, 220 kW of critical load remains. Assume 500 kWh of usable energy at a specified AC boundary and a 30-minute uninterrupted interval. Energy required is 220 kW multiplied by 0.5 hour, or 110 kWh; the simple residual is 390 kWh before reserve and other losses. At 220 kW constant demand the idealized ratio 500 kWh divided by 220 kW equals 2.27 hours. A buyer should demand a minimum-SOC limit, peak demand trace, required start-up energy, auxiliary-load account and safety reserve before converting this paper estimate into a service commitment.",
+      "uncertainty": "The example omits reactive power, voltage behavior, losses, battery temperature, degradation, minimum SOC, transient load steps and overload constraints. The 2.27-hour quotient is not a tested capability or dispatch instruction.",
+      "sources": [
+        "nunavut",
+        "manitoba"
+      ]
+    },
+    {
+      "headline": "Ask for the site's own commissioning boundary, not an announcement",
+      "status": "Historical original source / procurement inference",
+      "fact": "The Government of Canada's January 18, 2024 British Columbia release lists support for the Nemiah Valley Renewable Microgrid Project, intended to demonstrate solar and battery storage integration with an existing diesel microgrid. The same release identifies a separate related hydro front-end engineering and design study. Public funding, design work and demonstration scope are different kinds of evidence from a site-specific commissioning, protection or operational acceptance report.",
+      "why_it_matters": "A supplier's EMS scope often stops at monitoring and scheduling, while another party owns the utility switchgear, inverter controls, protection, diesel coordination and safety validation.",
+      "implications": "The acceptance register should include, at minimum, utility/interconnection permission, the approved one-line diagram, switching and protection responsibility, inverter grid-forming capability, frequency/voltage limits, critical-load classification, load-shed verification, energy meter location, battery reserve, control-network failure response, operational handover and a witnessed reconnection test. Each row needs a responsible engineer or company, an acceptance document and an observable criterion. Qualify hardware and field performance independently; the announcement alone cannot settle a contract's complete deliverable.",
+      "uncertainty": "The release does not identify the exact installed EMS vendor, performed safety tests, project completion date, site acceptance result or authorization for any particular switching operation.",
+      "sources": [
+        "british-columbia",
+        "manitoba"
+      ]
+    }
+  ],
+  "takeaways": [
+    "Assign grid-forming, protection, load shedding and energy-scheduling authority to separately verified systems; an EMS user interface cannot certify the electrical transition.",
+    "In the constructed case, shedding 120 kW reduces the continuous load from 340 kW to 220 kW below a hypothetical 250 kW steady-state source rating.",
+    "The constructed half-hour 220 kW critical-load duty needs 110 kWh at the stated energy boundary, but it does not certify any battery's operating endurance."
+  ],
+  "uncertainties": [
+    "No public project announcement is represented as evidence of actual commissioning, a tested island transition or the capabilities of a product sold by a named vendor.",
+    "Illustrative steady-state kW and idealized AC kWh do not establish converter dynamics, reactive-power supply, protection coordination or safe site switching.",
+    "A qualified site-specific protection and controls authority must review local operating procedures and contractual guarantees."
+  ],
+  "watchlist": [
+    "Require a signed control-authority matrix mapping local protection, grid-forming inverter controls, shed actuators and supervisory EMS.",
+    "Validate the actual measured critical-load trace, energy-meter boundary, minimum SOC and weather-sensitive performance instead of copying the illustrative numbers.",
+    "Document utility permission and independently witnessed island-transfer and resynchronization acceptance before claiming a deliverable operating mode."
+  ],
+  "sources": [
+    {
+      "id": "manitoba",
+      "publisher": "Natural Resources Canada",
+      "title": "Government of Canada invests $21.6 million in first-of-its-kind clean energy project in Manitoba",
+      "url": "https://www.canada.ca/en/natural-resources-canada/news/2026/06/government-of-canada-invests-216-million-in-first-of-its-kind-clean-energy-project-in-manitoba.html",
+      "published_on": "2026-06-22",
+      "verified_on": "2026-11-17",
+      "kind": "primary",
+      "verified_fact": "The June 22 Manitoba release describes a planned PV-plus-battery microgrid with a microgrid controller at Tadoule Lake; the release's expected commissioning was prospective."
+    },
+    {
+      "id": "nunavut",
+      "publisher": "Natural Resources Canada",
+      "title": "Government of Canada announces $17.2 million to support clean energy projects in Nunavut",
+      "url": "https://www.canada.ca/en/natural-resources-canada/news/2026/06/government-of-canada-announces-172-million-to-support-clean-energy-projects-in-nunavut.html",
+      "published_on": "2026-06-22",
+      "verified_on": "2026-11-17",
+      "kind": "primary",
+      "verified_fact": "The release differentiates feasibility and front-end design from a proposed demonstration that could operate on the local microgrid and independently in islanded mode."
+    },
+    {
+      "id": "british-columbia",
+      "publisher": "Natural Resources Canada",
+      "title": "Government of Canada Contributes $13.5 Million to Advance Innovative Forest Technologies and Clean Energy Projects in British Columbia",
+      "url": "https://www.canada.ca/en/natural-resources-canada/news/2024/01/government-of-canada-contributes-135-million-to-advance-innovative-forest-technologies-and-clean-energy-projects-in-british-columbia.html",
+      "published_on": "2024-01-18",
+      "verified_on": "2026-11-17",
+      "kind": "primary",
+      "verified_fact": "The January 18 release includes a Nemiah Valley solar-plus-battery project intended for integration with an existing diesel microgrid; it does not report witnessed site acceptance."
+    }
+  ],
+  "approval": {
+    "status": "pending",
+    "reviewed_on": null,
+    "reviewer": null,
+    "content_sha256": null
+  }
+}
